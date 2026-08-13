@@ -6,6 +6,7 @@ class MainPage {
     readonly issueTrackingSystemLink: Locator;
     readonly issueTrackingSystemPageHeader: Locator;
     readonly searchButton: Locator;
+    readonly roadmapLink: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -13,6 +14,7 @@ class MainPage {
         this.issueTrackingSystemLink = page.locator('a[href="/projects/redmine/wiki/RedmineIssues"]');
         this.issueTrackingSystemPageHeader = page.locator('h1:has-text("Issue Tracking")');
         this.searchButton = page.locator('div#quick-search form label:has(a[href="/projects/redmine/search?scope=subprojects"])');
+        this.roadmapLink = page.locator('a[href="/projects/redmine/roadmap"]');
     }
 
     async verifyFeaturesHeaderVisibility() : Promise<void> {
@@ -36,6 +38,11 @@ class MainPage {
     async findAndClickSearchButton() : Promise<void> {
         await expect(this.searchButton).toBeVisible();
         await this.searchButton.click();
+    }
+
+    async findAndOpenRoadmapPage() : Promise<void> {
+        await expect(this.roadmapLink).toBeVisible();
+        await this.roadmapLink.click();
     }
 }
 
