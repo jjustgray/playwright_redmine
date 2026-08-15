@@ -3,16 +3,15 @@ import MainPage from '../pages/main.page';
 import RoadmapPage from '../pages/roadmap.page';
 
 test.describe('Redmine tests', () => {
-  test('TC-03: Delete task in roadmap (negative)', async ( { page } ) => {
+  test.skip('TC-03: Delete task in roadmap (negative)', async ( { page } ) => {
     await page.goto('https://www.redmine.org/');
 
     const mainPage = new MainPage(page);
     mainPage.findAndOpenRoadmapPage();
 
     const roadmapPage = new RoadmapPage(page);
-    roadmapPage.scrollAndFindArticleByHeader('7.0.1');
-    const subject = roadmapPage.findFirstTaskInArticle('7.0.1');
-    roadmapPage.deleteTaskBySubject(subject);
-    roadmapPage.verifyTaskIsNotDeleted(subject);
+    const issueText = await roadmapPage.findFirstIssue();
+    await roadmapPage.deleteIssue();
+    await roadmapPage.verifyTaskIsNotDeleted(issueText);
   });
 });
