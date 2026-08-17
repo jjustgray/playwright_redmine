@@ -3,7 +3,7 @@ import MainPage from '../pages/main.page';
 import RoadmapPage from '../pages/roadmap.page';
 
 test.describe('Redmine tests', () => {
-  test.skip('TC-03: Delete task in roadmap (negative)', async ( { page } ) => {
+  test('TC-03: Delete task in roadmap (negative)', async ( { page } ) => {
     await page.goto('https://www.redmine.org/');
 
     const mainPage = new MainPage(page);
