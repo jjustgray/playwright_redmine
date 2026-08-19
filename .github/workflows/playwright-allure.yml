@@ -32,11 +32,10 @@ jobs:
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-v7-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-playwright-v8-${{ hashFiles('package-lock.json') }}
 
-      - name: Install Playwright Browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install chromium firefox webkit
+      - name: Install Playwright Browsers and System Dependencies
+        run: npx playwright install --with-deps chromium firefox webkit
 
       - name: Run Playwright tests
         run: npx playwright test
