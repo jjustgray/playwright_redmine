@@ -34,18 +34,20 @@ jobs:
         run: npx playwright test
         continue-on-error: true
 
-      - name: Get Allure History
+      - name: Checkout gh-pages branch for history
         uses: actions/checkout@v4
         if: always()
         continue-on-error: true
         with:
           ref: gh-pages
-          path: gh-pages-branch
+          path: gh-pages
 
-      - name: Allure Report Action with History
-        uses: simple-elf/allure-report-action@v1.7
+      - name: Allure Report Action
+        uses: mgrybyk/allure-report-branch-action@v1.0.4
         if: always()
         with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          gh_pages: gh-pages
           allure_results: allure-results
           allure_history: allure-history
           keep_reports: 20
@@ -57,4 +59,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
-          
