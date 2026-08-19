@@ -10,6 +10,7 @@ test.describe('Redmine tests', () => {
     mainPage.findAndOpenRoadmapPage();
 
     const roadmapPage = new RoadmapPage(page);
+    await roadmapPage.closeAdIfPresent();
     const issueText = await roadmapPage.findFirstIssue();
     await roadmapPage.deleteIssue();
     await roadmapPage.verifyTaskIsNotDeleted(issueText);
