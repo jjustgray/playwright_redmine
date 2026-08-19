@@ -27,14 +27,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install chromium
 
       - name: Run Playwright tests
         run: npx playwright test
         continue-on-error: true
 
-      - name: Get Allure History
+      - name: Checkout gh-pages branch (Get History)
         uses: actions/checkout@v4
         if: always()
         continue-on-error: true
@@ -42,12 +50,13 @@ jobs:
           ref: gh-pages
           path: gh-pages-branch
 
-      - name: Allure Report Action with History
+      - name: Allure Report Action
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: allure-results
           allure_history: allure-history
+          gh_pages: gh-pages-branch
           keep_reports: 20
 
       - name: Deploy Allure Report to GitHub Pages
@@ -57,4 +66,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
-          
+  
