@@ -25,7 +25,6 @@ class MainPage {
 
     async findIssueTrackingSystemLink() : Promise<void> {
         await expect(this.issueTrackingSystemLink).toBeVisible();
-        await this.issueTrackingSystemLink.hover();
     }
 
     async clickIssueTrackingSystemLink() : Promise<void> {
