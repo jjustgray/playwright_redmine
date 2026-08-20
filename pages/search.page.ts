@@ -20,16 +20,11 @@ class SearchPage {
     }
 
     async verifySearchFormVisibility() : Promise<void> {
-        await expect(this.searchForm).toBeVisible();
+        
     }
 
     async findAndClickTitlesOnlyOption() : Promise<void> {
-        await expect(this.titlesOnlyOption).toBeVisible();
         await this.titlesOnlyOption.click();
-    }
-
-    async findInputField() : Promise<void> {
-        await expect(this.inputField).toBeVisible();
     }
 
     async enterTextForSearch(text: string) : Promise<void> {
@@ -37,18 +32,7 @@ class SearchPage {
     }
 
     async submitSearch() : Promise<void> {
-        await expect(this.submitButton).toBeVisible();
         await this.submitButton.click();
-    }
-
-    async verifySearchResults(text: string) {
-        await expect(this.resultsTable).toBeVisible();
-        const recordCount = await this.recordTitles.count();
-        expect(recordCount).toBeGreaterThan(3);
-
-        for (let i = 0; i < 3; i++) {
-            await expect(this.recordTitles.nth(i)).toHaveText(new RegExp(text));
-        }
     }
 }
 

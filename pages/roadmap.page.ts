@@ -19,32 +19,21 @@ class RoadmapPage {
 
     async findFirstIssue(): Promise<string> {
         const firstIssue = this.subject.nth(0);
-        await expect(firstIssue).toBeVisible();
         return await firstIssue.innerText();
     }
 
     async deleteIssue(): Promise<void> {
         const firstIssueButtons = this.buttons.nth(0);
-        await expect(firstIssueButtons).toBeVisible();
         await firstIssueButtons.click();
-        await expect(this.actionsMenu).toBeVisible();
-        await expect(this.deleteButton).toBeVisible();
         await this.deleteButton.click();
-    }
-
-    async verifyTaskIsNotDeleted(previousText: string) {
-        const newText = await this.subject.nth(0).innerText();
-        expect(newText).toBe(previousText);
     }
 
     async closeAdIfPresent(timeout = 3000): Promise<void> {
         try {
-        // Быстрая проверка видимости элемента с ограничением по времени
         if (await this.closeAdButton.isVisible({ timeout })) {
             await this.closeAdButton.click();
         }
         } catch {
-        // Если банер не появился — просто продолжаем выполнение теста
         }
     }
 }

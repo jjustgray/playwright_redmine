@@ -7,12 +7,13 @@ test.describe('Redmine tests', () => {
     await page.goto('https://www.redmine.org/');
 
     const mainPage = new MainPage(page);
-    mainPage.findAndOpenRoadmapPage();
+    await expect(mainPage.roadmapLink).toBeVisible();
+    await mainPage.findAndOpenRoadmapPage();
 
     const roadmapPage = new RoadmapPage(page);
     await roadmapPage.closeAdIfPresent();
     const issueText = await roadmapPage.findFirstIssue();
     await roadmapPage.deleteIssue();
-    await roadmapPage.verifyTaskIsNotDeleted(issueText);
+    expect(roadmapPage.subject.nth(0).innerText()).toBe(issueText);
   });
 });

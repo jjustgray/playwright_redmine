@@ -7,12 +7,10 @@ test.describe('Redmine tests', () => {
 
     const mainPage = new MainPage(page);
 
-    await mainPage.verifyFeaturesHeaderVisibility();
-
-    await mainPage.findIssueTrackingSystemLink();
-
+    await expect(mainPage.featuresHeader).toBeVisible();
+    await expect(mainPage.issueTrackingSystemLink).toBeVisible();
     await mainPage.clickIssueTrackingSystemLink();
-
-    await mainPage.verifyIssueTrackingSystemPage();
+    await expect(mainPage.page).toHaveURL(/RedmineIssues/);
+    await expect(mainPage.issueTrackingSystemPageHeader).toBeVisible();
   });
 });

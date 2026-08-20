@@ -11,43 +11,27 @@ class MainPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.featuresHeader = page.locator('h2:has(a[href="#Features"])');
-        this.issueTrackingSystemLink = page.locator('a[href="/projects/redmine/wiki/RedmineIssues"]');
-        this.issueTrackingSystemPageHeader = page.locator('h1:has-text("Issue Tracking")');
-        this.searchButton = page.locator('div#quick-search form label:has(a[href="/projects/redmine/search?scope=subprojects"])');
-        this.roadmapLink = page.locator('a[href="/projects/redmine/roadmap"]');
-        this.issues = page.locator('div#main-menu ul li a[href="/projects/redmine/issues"]');
-    }
-
-    async verifyFeaturesHeaderVisibility() : Promise<void> {
-        await expect(this.featuresHeader).toBeVisible();
-    }
-
-    async findIssueTrackingSystemLink() : Promise<void> {
-        await expect(this.issueTrackingSystemLink).toBeVisible();
+        this.featuresHeader = page.getByRole('heading', { name: 'Features' });
+        this.issueTrackingSystemLink = page.getByRole('link', { name: 'Issue tracking system' });
+        this.issueTrackingSystemPageHeader = page.getByRole('heading', { name: 'Issue Tracking', exact: true });
+        this.searchButton = page.getByRole('link', { name: 'Search' });
+        this.roadmapLink = page.getByRole('link', { name: 'Roadmap' });
+        this.issues = page.getByRole('link', { name: 'Issues', exact: true });
     }
 
     async clickIssueTrackingSystemLink() : Promise<void> {
         await this.issueTrackingSystemLink.click();
     }
 
-    async verifyIssueTrackingSystemPage() : Promise<void> {
-        await expect(this.page).toHaveURL(/RedmineIssues/);
-        await expect(this.issueTrackingSystemPageHeader).toBeVisible();
-    }
-
     async findAndClickSearchButton() : Promise<void> {
-        await expect(this.searchButton).toBeVisible();
         await this.searchButton.click();
     }
 
     async findAndOpenRoadmapPage() : Promise<void> {
-        await expect(this.roadmapLink).toBeVisible();
         await this.roadmapLink.click();
     }
 
     async goToIssuesPage(): Promise<void> {
-        await expect(this.issues).toBeVisible();
         await this.issues.click();
     }
 }
