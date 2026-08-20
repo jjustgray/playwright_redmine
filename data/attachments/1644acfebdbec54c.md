@@ -1,0 +1,4523 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: roadmapTaskDelete.spec.ts >> Redmine tests >> TC-03: Delete task in roadmap (negative)
+- Location: tests/roadmapTaskDelete.spec.ts:6:7
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "Defect #13723: Collapse doesn't work with section edit link"
+Received: Promise {}
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e4]:
+    - generic [ref=f13e5]:
+      - generic [ref=f13e6]:
+        - list:
+          - listitem [ref=f13e7]:
+            - link "Sign in" [ref=f13e8] [cursor=pointer]:
+              - /url: /login
+          - listitem [ref=f13e9]:
+            - link "Register" [ref=f13e10] [cursor=pointer]:
+              - /url: /account/register
+      - list:
+        - listitem [ref=f13e11]:
+          - link "Home" [ref=f13e12] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f13e13]:
+          - link "Projects" [ref=f13e14] [cursor=pointer]:
+            - /url: /projects
+        - listitem [ref=f13e15]:
+          - link "Help" [ref=f13e16] [cursor=pointer]:
+            - /url: https://www.redmine.org/guide
+    - generic [ref=f13e17]:
+      - generic [ref=f13e18]:
+        - generic [ref=f13e19]:
+          - generic [ref=f13e20]:
+            - link "Search" [ref=f13e21] [cursor=pointer]:
+              - /url: /projects/redmine/search?scope=subprojects
+            - text: ":"
+          - textbox "Search:" [ref=f13e22]
+        - generic [ref=f13e23]: Redmine
+      - heading "Redmine" [level=1] [ref=f13e25]
+      - list [ref=f13e27]:
+        - listitem [ref=f13e28]:
+          - link "Overview" [ref=f13e29] [cursor=pointer]:
+            - /url: /projects/redmine
+        - listitem [ref=f13e30]:
+          - link "Download" [ref=f13e31] [cursor=pointer]:
+            - /url: /projects/redmine/wiki/Download
+        - listitem [ref=f13e32]:
+          - link "Activity" [ref=f13e33] [cursor=pointer]:
+            - /url: /projects/redmine/activity
+        - listitem [ref=f13e34]:
+          - link "Roadmap" [ref=f13e35] [cursor=pointer]:
+            - /url: /projects/redmine/roadmap
+        - listitem [ref=f13e36]:
+          - link "Issues" [ref=f13e37] [cursor=pointer]:
+            - /url: /projects/redmine/issues
+        - listitem [ref=f13e38]:
+          - link "News" [ref=f13e39] [cursor=pointer]:
+            - /url: /projects/redmine/news
+        - listitem [ref=f13e40]:
+          - link "Wiki" [ref=f13e41] [cursor=pointer]:
+            - /url: /projects/redmine/wiki
+        - listitem [ref=f13e42]:
+          - link "Forums" [ref=f13e43] [cursor=pointer]:
+            - /url: /projects/redmine/boards
+        - listitem [ref=f13e44]:
+          - link "Repository" [ref=f13e45] [cursor=pointer]:
+            - /url: /projects/redmine/repository
+    - generic [ref=f13e46]:
+      - generic [ref=f13e47]:
+        - generic [ref=f13e48]:
+          - heading "Roadmap" [level=3] [ref=f13e49]
+          - list [ref=f13e50]:
+            - listitem [ref=f13e51]:
+              - generic [ref=f13e52]:
+                - checkbox "Defect" [checked] [ref=f13e53]
+                - text: Defect
+            - listitem [ref=f13e54]:
+              - generic [ref=f13e55]:
+                - checkbox "Feature" [checked] [ref=f13e56]
+                - text: Feature
+            - listitem [ref=f13e57]:
+              - generic [ref=f13e58]:
+                - checkbox "Patch" [checked] [ref=f13e59]
+                - text: Patch
+          - paragraph
+          - list [ref=f13e60]:
+            - listitem [ref=f13e61]:
+              - generic [ref=f13e62]:
+                - checkbox "Show completed versions" [ref=f13e63]
+                - text: Show completed versions
+            - listitem [ref=f13e64]:
+              - generic [ref=f13e65]:
+                - checkbox "Subprojects" [checked] [ref=f13e66]
+                - text: Subprojects
+          - paragraph [ref=f13e67]:
+            - button "Apply" [ref=f13e68] [cursor=pointer]
+        - heading "Versions" [level=3] [ref=f13e69]
+        - list [ref=f13e70]:
+          - listitem [ref=f13e71]:
+            - link "6.0.11" [ref=f13e72] [cursor=pointer]:
+              - /url: "#6.0.11"
+          - listitem [ref=f13e73]:
+            - link "6.1.4" [ref=f13e74] [cursor=pointer]:
+              - /url: "#6.1.4"
+          - listitem [ref=f13e75]:
+            - link "7.0.1" [ref=f13e76] [cursor=pointer]:
+              - /url: "#7.0.1"
+          - listitem [ref=f13e77]:
+            - link "7.1.0" [ref=f13e78] [cursor=pointer]:
+              - /url: "#7.1.0"
+          - listitem [ref=f13e79]:
+            - link "Candidate for next major release" [ref=f13e80] [cursor=pointer]:
+              - /url: "#Candidate_for_next_major_release"
+          - listitem [ref=f13e81]:
+            - link "Candidate for next minor release" [ref=f13e82] [cursor=pointer]:
+              - /url: "#Candidate_for_next_minor_release"
+          - listitem [ref=f13e83]:
+            - link "Unplanned backlogs" [ref=f13e84] [cursor=pointer]:
+              - /url: "#Unplanned_backlogs"
+        - paragraph [ref=f13e85]:
+          - link "Completed versions" [ref=f13e86] [cursor=pointer]:
+            - /url: "#"
+        - paragraph
+        - insertion [ref=f13e87]:
+          - iframe [ref=f13e89]:
+            - generic [ref=f15e1]:
+              - generic [ref=f15e5]:
+                - link [ref=f15e6] [cursor=pointer]:
+                  - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=Cp4cRR--Gap3HJZ7W1sQP5vrawQOi1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE4wFP0G2cpfIIg9L8LLZ7rU4BrmU5iJnVi2_qtmQEfJdwGDuelk65mWIoradgE-_4jSnewIoM8qJ6uFV-pI0yuy5MksnJ2oIMTC1tOvj-IRmiUsYFxCtWQjXk1HpZhjQ1B16Nci3PoFIFXwo5a8CgriciRg9-IPy799pLZdb6045jDtf7VtKKOnf_el9n3LxgM0mWFhs6eapxLZXjwua2zdoWgXVLmwRhWwB0ELT9sHKGRPD-xyXpjgFpeesIyQoOn02FBcg71G0Ws461s3GjoFRrunQIXXE35Re08BMEWK-d7D5kL8AEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WJax9oSXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCI-L-oSXr5YDFR6rlQIdZr02OPANAogOBbgT5APYEwqIFA7QFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRIC8FkYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE&num=1&cid=CAQS9AEAEQoqgcsX7Mm69lmEZQFO5onJcTDfndG_CoEC92IMrStgMnsuQozgIlzilihsJYS3ZP7a1wAKJVqoYryfHyyLRyf8HYvCaa5VSY-zQ-UMPuezZhpYQBG-shHF9C_IVOOskMa-Fkr2H-fpWZaUl7IBNlbQd_WtkxU29i9L_ECUicqGKDGUQ2OQxAS9Lvi1GRJcGkmwKHcxG2M-NJpuWcM3ElI5g7SWiXLRq6xVeQv4VA7eX-Lo8TRaW_j2XV55i9ULGdYWnPhb9Yhi2FX7XUNQoVmkGephrWPEJ_qf2aDfRaVLzS-QNEEG1DopwrlvtbIz1KyfGAE&sig=AOD64_2QJE6AoaBvknxNsQso6wyJjCvDUQ&client=ca-pub-0447284344517370&rf=1&nb=9&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE
+                - generic [ref=f15e8]:
+                  - link "Best hosting panel 2024" [ref=f15e10] [cursor=pointer]:
+                    - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=Cp4cRR--Gap3HJZ7W1sQP5vrawQOi1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE4wFP0G2cpfIIg9L8LLZ7rU4BrmU5iJnVi2_qtmQEfJdwGDuelk65mWIoradgE-_4jSnewIoM8qJ6uFV-pI0yuy5MksnJ2oIMTC1tOvj-IRmiUsYFxCtWQjXk1HpZhjQ1B16Nci3PoFIFXwo5a8CgriciRg9-IPy799pLZdb6045jDtf7VtKKOnf_el9n3LxgM0mWFhs6eapxLZXjwua2zdoWgXVLmwRhWwB0ELT9sHKGRPD-xyXpjgFpeesIyQoOn02FBcg71G0Ws461s3GjoFRrunQIXXE35Re08BMEWK-d7D5kL8AEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WJax9oSXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCI-L-oSXr5YDFR6rlQIdZr02OPANAogOBbgT5APYEwqIFA7QFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRIC8FkYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE&num=1&cid=CAQS9AEAEQoqgcsX7Mm69lmEZQFO5onJcTDfndG_CoEC92IMrStgMnsuQozgIlzilihsJYS3ZP7a1wAKJVqoYryfHyyLRyf8HYvCaa5VSY-zQ-UMPuezZhpYQBG-shHF9C_IVOOskMa-Fkr2H-fpWZaUl7IBNlbQd_WtkxU29i9L_ECUicqGKDGUQ2OQxAS9Lvi1GRJcGkmwKHcxG2M-NJpuWcM3ElI5g7SWiXLRq6xVeQv4VA7eX-Lo8TRaW_j2XV55i9ULGdYWnPhb9Yhi2FX7XUNQoVmkGephrWPEJ_qf2aDfRaVLzS-QNEEG1DopwrlvtbIz1KyfGAE&sig=AOD64_2QJE6AoaBvknxNsQso6wyJjCvDUQ&client=ca-pub-0447284344517370&rf=1&nb=0&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE
+                    - text: Best hostingpanel 2024
+                  - link [ref=f15e11] [cursor=pointer]:
+                    - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=Cp4cRR--Gap3HJZ7W1sQP5vrawQOi1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE4wFP0G2cpfIIg9L8LLZ7rU4BrmU5iJnVi2_qtmQEfJdwGDuelk65mWIoradgE-_4jSnewIoM8qJ6uFV-pI0yuy5MksnJ2oIMTC1tOvj-IRmiUsYFxCtWQjXk1HpZhjQ1B16Nci3PoFIFXwo5a8CgriciRg9-IPy799pLZdb6045jDtf7VtKKOnf_el9n3LxgM0mWFhs6eapxLZXjwua2zdoWgXVLmwRhWwB0ELT9sHKGRPD-xyXpjgFpeesIyQoOn02FBcg71G0Ws461s3GjoFRrunQIXXE35Re08BMEWK-d7D5kL8AEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WJax9oSXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCI-L-oSXr5YDFR6rlQIdZr02OPANAogOBbgT5APYEwqIFA7QFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRIC8FkYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE&num=1&cid=CAQS9AEAEQoqgcsX7Mm69lmEZQFO5onJcTDfndG_CoEC92IMrStgMnsuQozgIlzilihsJYS3ZP7a1wAKJVqoYryfHyyLRyf8HYvCaa5VSY-zQ-UMPuezZhpYQBG-shHF9C_IVOOskMa-Fkr2H-fpWZaUl7IBNlbQd_WtkxU29i9L_ECUicqGKDGUQ2OQxAS9Lvi1GRJcGkmwKHcxG2M-NJpuWcM3ElI5g7SWiXLRq6xVeQv4VA7eX-Lo8TRaW_j2XV55i9ULGdYWnPhb9Yhi2FX7XUNQoVmkGephrWPEJ_qf2aDfRaVLzS-QNEEG1DopwrlvtbIz1KyfGAE&sig=AOD64_2QJE6AoaBvknxNsQso6wyJjCvDUQ&client=ca-pub-0447284344517370&rf=1&nb=19&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE
+                  - link "Manage your server with a simple mouse movement. One- click install LAMP/ LEMP/SSL" [ref=f15e14] [cursor=pointer]:
+                    - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=Cp4cRR--Gap3HJZ7W1sQP5vrawQOi1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE4wFP0G2cpfIIg9L8LLZ7rU4BrmU5iJnVi2_qtmQEfJdwGDuelk65mWIoradgE-_4jSnewIoM8qJ6uFV-pI0yuy5MksnJ2oIMTC1tOvj-IRmiUsYFxCtWQjXk1HpZhjQ1B16Nci3PoFIFXwo5a8CgriciRg9-IPy799pLZdb6045jDtf7VtKKOnf_el9n3LxgM0mWFhs6eapxLZXjwua2zdoWgXVLmwRhWwB0ELT9sHKGRPD-xyXpjgFpeesIyQoOn02FBcg71G0Ws461s3GjoFRrunQIXXE35Re08BMEWK-d7D5kL8AEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WJax9oSXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCI-L-oSXr5YDFR6rlQIdZr02OPANAogOBbgT5APYEwqIFA7QFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRIC8FkYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE&num=1&cid=CAQS9AEAEQoqgcsX7Mm69lmEZQFO5onJcTDfndG_CoEC92IMrStgMnsuQozgIlzilihsJYS3ZP7a1wAKJVqoYryfHyyLRyf8HYvCaa5VSY-zQ-UMPuezZhpYQBG-shHF9C_IVOOskMa-Fkr2H-fpWZaUl7IBNlbQd_WtkxU29i9L_ECUicqGKDGUQ2OQxAS9Lvi1GRJcGkmwKHcxG2M-NJpuWcM3ElI5g7SWiXLRq6xVeQv4VA7eX-Lo8TRaW_j2XV55i9ULGdYWnPhb9Yhi2FX7XUNQoVmkGephrWPEJ_qf2aDfRaVLzS-QNEEG1DopwrlvtbIz1KyfGAE&sig=AOD64_2QJE6AoaBvknxNsQso6wyJjCvDUQ&client=ca-pub-0447284344517370&rf=1&nb=7&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE
+                    - text: Manage yourserver with asimple mousemovement. One-click install LAMP/LEMP/SSL
+                  - link [ref=f15e15] [cursor=pointer]:
+                    - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=Cp4cRR--Gap3HJZ7W1sQP5vrawQOi1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE4wFP0G2cpfIIg9L8LLZ7rU4BrmU5iJnVi2_qtmQEfJdwGDuelk65mWIoradgE-_4jSnewIoM8qJ6uFV-pI0yuy5MksnJ2oIMTC1tOvj-IRmiUsYFxCtWQjXk1HpZhjQ1B16Nci3PoFIFXwo5a8CgriciRg9-IPy799pLZdb6045jDtf7VtKKOnf_el9n3LxgM0mWFhs6eapxLZXjwua2zdoWgXVLmwRhWwB0ELT9sHKGRPD-xyXpjgFpeesIyQoOn02FBcg71G0Ws461s3GjoFRrunQIXXE35Re08BMEWK-d7D5kL8AEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WJax9oSXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCI-L-oSXr5YDFR6rlQIdZr02OPANAogOBbgT5APYEwqIFA7QFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRIC8FkYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE&num=1&cid=CAQS9AEAEQoqgcsX7Mm69lmEZQFO5onJcTDfndG_CoEC92IMrStgMnsuQozgIlzilihsJYS3ZP7a1wAKJVqoYryfHyyLRyf8HYvCaa5VSY-zQ-UMPuezZhpYQBG-shHF9C_IVOOskMa-Fkr2H-fpWZaUl7IBNlbQd_WtkxU29i9L_ECUicqGKDGUQ2OQxAS9Lvi1GRJcGkmwKHcxG2M-NJpuWcM3ElI5g7SWiXLRq6xVeQv4VA7eX-Lo8TRaW_j2XV55i9ULGdYWnPhb9Yhi2FX7XUNQoVmkGephrWPEJ_qf2aDfRaVLzS-QNEEG1DopwrlvtbIz1KyfGAE&sig=AOD64_2QJE6AoaBvknxNsQso6wyJjCvDUQ&client=ca-pub-0447284344517370&rf=1&nb=8&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMI3Yb6hJevlgMVHquVAh1mvTY4EAEYASAAEgK5efD_BwE
+              - generic [ref=f15e19] [cursor=pointer]
+              - button [ref=f15e24] [cursor=pointer]
+              - iframe
+      - generic [ref=f13e90]:
+        - heading "Roadmap" [level=2] [ref=f13e91]
+        - generic [ref=f13e92]:
+          - article [ref=f13e93]:
+            - generic [ref=f13e94]:
+              - heading [level=3] [ref=f13e95]:
+                - link "6.0.11" [ref=f13e96] [cursor=pointer]:
+                  - /url: /versions/226
+              - text: open
+            - generic [ref=f13e97]:
+              - paragraph
+              - table [ref=f13e98]:
+                - rowgroup [ref=f13e99]:
+                  - row [ref=f13e100]:
+                    - 'cell "closed: 66%" [ref=f13e101]'
+                    - cell [ref=f13e102]
+              - paragraph [ref=f13e103]: 66%
+              - paragraph [ref=f13e104]:
+                - link "6 issues" [ref=f13e105] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=226&set_filter=1&status_id=%2A
+                - text: (
+                - link "4 closed" [ref=f13e106] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=226&set_filter=1&status_id=c
+                - text: —
+                - link "2 open" [ref=f13e107] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=226&set_filter=1&status_id=o
+                - text: )
+            - table [ref=f13e109]:
+              - caption [ref=f13e110]: Related issues
+              - rowgroup [ref=f13e111]:
+                - row [ref=f13e112]:
+                  - cell [ref=f13e113]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e114]'
+                  - cell [ref=f13e115]:
+                    - 'link "Defect #13723" [ref=f13e116] [cursor=pointer]':
+                      - /url: /issues/13723
+                    - text: ": Collapse doesn't work with section edit link"
+                  - cell [ref=f13e117]:
+                    - link "Actions" [ref=f13e118] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e119]:
+                  - cell [ref=f13e120]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e121]'
+                  - cell [ref=f13e122]:
+                    - 'link "Defect #44220" [ref=f13e123] [cursor=pointer]':
+                      - /url: /issues/44220
+                    - text: ": Backport password reset security notification does not include IP address"
+                  - cell [ref=f13e124]:
+                    - link "Actions" [ref=f13e125] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e126]:
+                  - cell [ref=f13e127]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e128]'
+                  - cell [ref=f13e129]:
+                    - 'link "Defect #44354" [ref=f13e130] [cursor=pointer]':
+                      - /url: /issues/44354
+                    - text: ": GitAdapterTest#test_diff_path_invalid fails with Git 2.55.0"
+                  - cell [ref=f13e131]:
+                    - link "Actions" [ref=f13e132] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e133]:
+                  - cell [ref=f13e134]
+                  - cell [ref=f13e135]:
+                    - 'link "Defect #44360" [ref=f13e136] [cursor=pointer]':
+                      - /url: /issues/44360
+                    - text: ": Lost password page is unreachable by admins when two-factor authentication setup is required"
+                  - cell [ref=f13e137]:
+                    - link "Actions" [ref=f13e138] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e139]:
+                  - cell [ref=f13e140]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e141]'
+                  - cell [ref=f13e142]:
+                    - 'link "Patch #44304" [ref=f13e143] [cursor=pointer]':
+                      - /url: /issues/44304
+                    - text: ": Update Rails to 7.2.3.2"
+                  - cell [ref=f13e144]:
+                    - link "Actions" [ref=f13e145] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e146]:
+                  - cell [ref=f13e147]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e148]'
+                  - cell [ref=f13e149]:
+                    - 'link "Patch #44330" [ref=f13e150] [cursor=pointer]':
+                      - /url: /issues/44330
+                    - text: ": Convert CRLF line endings to LF in three test fixture files"
+                  - cell [ref=f13e151]:
+                    - link "Actions" [ref=f13e152] [cursor=pointer]:
+                      - /url: "#"
+          - article [ref=f13e153]:
+            - generic [ref=f13e154]:
+              - heading [level=3] [ref=f13e155]:
+                - link "6.1.4" [ref=f13e156] [cursor=pointer]:
+                  - /url: /versions/227
+              - text: open
+            - generic [ref=f13e157]:
+              - paragraph
+              - table [ref=f13e158]:
+                - rowgroup [ref=f13e159]:
+                  - row [ref=f13e160]:
+                    - 'cell "closed: 77%" [ref=f13e161]'
+                    - cell [ref=f13e162]
+              - paragraph [ref=f13e163]: 77%
+              - paragraph [ref=f13e164]:
+                - link "9 issues" [ref=f13e165] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=227&set_filter=1&status_id=%2A
+                - text: (
+                - link "7 closed" [ref=f13e166] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=227&set_filter=1&status_id=c
+                - text: —
+                - link "2 open" [ref=f13e167] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=227&set_filter=1&status_id=o
+                - text: )
+            - table [ref=f13e169]:
+              - caption [ref=f13e170]: Related issues
+              - rowgroup [ref=f13e171]:
+                - row [ref=f13e172]:
+                  - cell [ref=f13e173]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e174]'
+                  - cell [ref=f13e175]:
+                    - 'link "Defect #44216" [ref=f13e176] [cursor=pointer]':
+                      - /url: /issues/44216
+                    - text: ": Backport uploading files with excessively long extensions may fail"
+                  - cell [ref=f13e177]:
+                    - link "Actions" [ref=f13e178] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e179]:
+                  - cell [ref=f13e180]
+                  - cell [ref=f13e181]:
+                    - 'link "Defect #44221" [ref=f13e182] [cursor=pointer]':
+                      - /url: /issues/44221
+                    - text: ": \"Selected Columns\" checkbox does not enable or disable the column lists on the new Gantt query form"
+                  - cell [ref=f13e183]:
+                    - link "Actions" [ref=f13e184] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e185]:
+                  - cell [ref=f13e186]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e187]'
+                  - cell [ref=f13e188]:
+                    - 'link "Defect #44223" [ref=f13e189] [cursor=pointer]':
+                      - /url: /issues/44223
+                    - text: ": Setup Subversion and Mercurial on GitHub Actions"
+                  - cell [ref=f13e190]:
+                    - link "Actions" [ref=f13e191] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e192]:
+                  - cell [ref=f13e193]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e194]'
+                  - cell [ref=f13e195]:
+                    - 'link "Defect #44228" [ref=f13e196] [cursor=pointer]':
+                      - /url: /issues/44228
+                    - text: ": Uploading an attachment with a NUL byte in the filename causes an Internal Server Error"
+                  - cell [ref=f13e197]:
+                    - link "Actions" [ref=f13e198] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e199]:
+                  - cell [ref=f13e200]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e201]'
+                  - cell [ref=f13e202]:
+                    - 'link "Defect #44258" [ref=f13e203] [cursor=pointer]':
+                      - /url: /issues/44258
+                    - text: ": Deleting an issue journal (note) shifts #note-N anchors of later journals, breaking existing links"
+                  - cell [ref=f13e204]:
+                    - link "Actions" [ref=f13e205] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e206]:
+                  - cell [ref=f13e207]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e208]'
+                  - cell [ref=f13e209]:
+                    - 'link "Defect #44273" [ref=f13e210] [cursor=pointer]':
+                      - /url: /issues/44273
+                    - text: ": Applications item is not highlighted in the administration menu"
+                  - cell [ref=f13e211]:
+                    - link "Actions" [ref=f13e212] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e213]:
+                  - cell [ref=f13e214]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e215]'
+                  - cell [ref=f13e216]:
+                    - 'link "Defect #44291" [ref=f13e217] [cursor=pointer]':
+                      - /url: /issues/44291
+                    - text: ": Fix typos and inconsistent \"e-mail\" spelling in Czech translation"
+                  - cell [ref=f13e218]:
+                    - link "Actions" [ref=f13e219] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e220]:
+                  - cell [ref=f13e221]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e222]'
+                  - cell [ref=f13e223]:
+                    - 'link "Defect #44343" [ref=f13e224] [cursor=pointer]':
+                      - /url: /issues/44343
+                    - text: ": Deleting a user who has authorized an OAuth2 application fails with ActiveRecord::InvalidForeignKey"
+                  - cell [ref=f13e225]:
+                    - link "Actions" [ref=f13e226] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e227]:
+                  - cell [ref=f13e228]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e229]'
+                  - cell [ref=f13e230]:
+                    - 'link "Patch #44232" [ref=f13e231] [cursor=pointer]':
+                      - /url: /issues/44232
+                    - text: ": Document Ghostscript as an optional dependency in doc/INSTALL"
+                  - cell [ref=f13e232]:
+                    - link "Actions" [ref=f13e233] [cursor=pointer]:
+                      - /url: "#"
+          - article [ref=f13e234]:
+            - generic [ref=f13e235]:
+              - heading [level=3] [ref=f13e236]:
+                - link "7.0.1" [ref=f13e237] [cursor=pointer]:
+                  - /url: /versions/229
+              - text: open
+            - generic [ref=f13e238]:
+              - paragraph
+              - table [ref=f13e239]:
+                - rowgroup [ref=f13e240]:
+                  - row [ref=f13e241]:
+                    - 'cell "closed: 63%" [ref=f13e242]'
+                    - cell [ref=f13e243]
+              - paragraph [ref=f13e244]: 63%
+              - insertion [ref=f13e246]:
+                - iframe [ref=f13e248]:
+                  - generic [ref=f19e1]:
+                    - generic [ref=f19e6]:
+                      - generic [ref=f19e7]:
+                        - link [ref=f19e8] [cursor=pointer]:
+                          - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CS8n7S--GavTCKv2X4dUPuZS6mA-i1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE5gFP0NjErSRrC2Ps9gdkhonE9h-ECQNAxGpxYKn-miOrtMvRrvDT-ahieoq-nGsaymTzY2W0f5ipsY2eEEdR30U6PrFep64rzXlGaKm30i_-MhYb4ttF2lXscONG70ZR-CIxk86RX6GRNu58c5g2in2RXM7Yc2kk1wtfcZUqkqqLhhRxSKpDpBO570B4B8eLxqxM86z20yad6UUeHlfqncOSmERHacmxdK1sCSj8ZPPo-Lptjep0YDrLODGY_7YS9JaD3vA7VwkFTtCzvEfKdIfq-9KQaSjZvkn0-_RyfEJkGsYetGadzMAEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WOu-74aXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCNmb84aXr5YDFf1LuAQdOYoO8_ANAogOCdgTCogUDtAVAZgWAcoWAgoA-BYBgBcBshcEGAFQBroXAjgBshgJEgLwWRguIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE&num=1&cid=CAQS9AEAEQoqgR5Fv5kHk6DJ_KMCbg0l3kF-fMjwxAM2aPy1JK_sG7h6LRvZaZtf88ngEX_nNuO5HYHcHK-5Y7atSZYAwQYV4-GkVbIeVxRPZ3RP-6ns6D8V_rP2kGWqvO4ARTXAPGJgyNsNIWzys8VtxLq_-b2xII0_4avbiTJhqSndpT5lfBlCC1qyXrSAaacu5Cksu_iDWL8fAgpYjUeWxObpa-uTWy_O-K_EhNhr1kxKi4C-NEz-JN61UqrmraGwf7F-4PGikZ5tJq5RqU2bdIoi4oquCokfM0M4xvvCbx6w3md04lH2PJSgYevvMgNkow5QXSwiGAE&sig=AOD64_00wOHt4LAg5G9y0dGHS65h_fT4Uw&client=ca-pub-0447284344517370&rf=1&nb=9&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE
+                        - generic [ref=f19e10]:
+                          - link "Best hosting panel 2024" [ref=f19e14] [cursor=pointer]:
+                            - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CS8n7S--GavTCKv2X4dUPuZS6mA-i1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE5gFP0NjErSRrC2Ps9gdkhonE9h-ECQNAxGpxYKn-miOrtMvRrvDT-ahieoq-nGsaymTzY2W0f5ipsY2eEEdR30U6PrFep64rzXlGaKm30i_-MhYb4ttF2lXscONG70ZR-CIxk86RX6GRNu58c5g2in2RXM7Yc2kk1wtfcZUqkqqLhhRxSKpDpBO570B4B8eLxqxM86z20yad6UUeHlfqncOSmERHacmxdK1sCSj8ZPPo-Lptjep0YDrLODGY_7YS9JaD3vA7VwkFTtCzvEfKdIfq-9KQaSjZvkn0-_RyfEJkGsYetGadzMAEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WOu-74aXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCNmb84aXr5YDFf1LuAQdOYoO8_ANAogOCdgTCogUDtAVAZgWAcoWAgoA-BYBgBcBshcEGAFQBroXAjgBshgJEgLwWRguIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE&num=1&cid=CAQS9AEAEQoqgR5Fv5kHk6DJ_KMCbg0l3kF-fMjwxAM2aPy1JK_sG7h6LRvZaZtf88ngEX_nNuO5HYHcHK-5Y7atSZYAwQYV4-GkVbIeVxRPZ3RP-6ns6D8V_rP2kGWqvO4ARTXAPGJgyNsNIWzys8VtxLq_-b2xII0_4avbiTJhqSndpT5lfBlCC1qyXrSAaacu5Cksu_iDWL8fAgpYjUeWxObpa-uTWy_O-K_EhNhr1kxKi4C-NEz-JN61UqrmraGwf7F-4PGikZ5tJq5RqU2bdIoi4oquCokfM0M4xvvCbx6w3md04lH2PJSgYevvMgNkow5QXSwiGAE&sig=AOD64_00wOHt4LAg5G9y0dGHS65h_fT4Uw&client=ca-pub-0447284344517370&rf=1&nb=0&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE
+                          - link "Lightweight linux open source panel, One-click installation of LEMP/LAMP/SSL" [ref=f19e17] [cursor=pointer]:
+                            - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CS8n7S--GavTCKv2X4dUPuZS6mA-i1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE5gFP0NjErSRrC2Ps9gdkhonE9h-ECQNAxGpxYKn-miOrtMvRrvDT-ahieoq-nGsaymTzY2W0f5ipsY2eEEdR30U6PrFep64rzXlGaKm30i_-MhYb4ttF2lXscONG70ZR-CIxk86RX6GRNu58c5g2in2RXM7Yc2kk1wtfcZUqkqqLhhRxSKpDpBO570B4B8eLxqxM86z20yad6UUeHlfqncOSmERHacmxdK1sCSj8ZPPo-Lptjep0YDrLODGY_7YS9JaD3vA7VwkFTtCzvEfKdIfq-9KQaSjZvkn0-_RyfEJkGsYetGadzMAEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WOu-74aXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCNmb84aXr5YDFf1LuAQdOYoO8_ANAogOCdgTCogUDtAVAZgWAcoWAgoA-BYBgBcBshcEGAFQBroXAjgBshgJEgLwWRguIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE&num=1&cid=CAQS9AEAEQoqgR5Fv5kHk6DJ_KMCbg0l3kF-fMjwxAM2aPy1JK_sG7h6LRvZaZtf88ngEX_nNuO5HYHcHK-5Y7atSZYAwQYV4-GkVbIeVxRPZ3RP-6ns6D8V_rP2kGWqvO4ARTXAPGJgyNsNIWzys8VtxLq_-b2xII0_4avbiTJhqSndpT5lfBlCC1qyXrSAaacu5Cksu_iDWL8fAgpYjUeWxObpa-uTWy_O-K_EhNhr1kxKi4C-NEz-JN61UqrmraGwf7F-4PGikZ5tJq5RqU2bdIoi4oquCokfM0M4xvvCbx6w3md04lH2PJSgYevvMgNkow5QXSwiGAE&sig=AOD64_00wOHt4LAg5G9y0dGHS65h_fT4Uw&client=ca-pub-0447284344517370&rf=1&nb=7&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE
+                      - generic [ref=f19e20]:
+                        - link:
+                          - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CS8n7S--GavTCKv2X4dUPuZS6mA-i1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE5gFP0NjErSRrC2Ps9gdkhonE9h-ECQNAxGpxYKn-miOrtMvRrvDT-ahieoq-nGsaymTzY2W0f5ipsY2eEEdR30U6PrFep64rzXlGaKm30i_-MhYb4ttF2lXscONG70ZR-CIxk86RX6GRNu58c5g2in2RXM7Yc2kk1wtfcZUqkqqLhhRxSKpDpBO570B4B8eLxqxM86z20yad6UUeHlfqncOSmERHacmxdK1sCSj8ZPPo-Lptjep0YDrLODGY_7YS9JaD3vA7VwkFTtCzvEfKdIfq-9KQaSjZvkn0-_RyfEJkGsYetGadzMAEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WOu-74aXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCNmb84aXr5YDFf1LuAQdOYoO8_ANAogOCdgTCogUDtAVAZgWAcoWAgoA-BYBgBcBshcEGAFQBroXAjgBshgJEgLwWRguIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE&num=1&cid=CAQS9AEAEQoqgR5Fv5kHk6DJ_KMCbg0l3kF-fMjwxAM2aPy1JK_sG7h6LRvZaZtf88ngEX_nNuO5HYHcHK-5Y7atSZYAwQYV4-GkVbIeVxRPZ3RP-6ns6D8V_rP2kGWqvO4ARTXAPGJgyNsNIWzys8VtxLq_-b2xII0_4avbiTJhqSndpT5lfBlCC1qyXrSAaacu5Cksu_iDWL8fAgpYjUeWxObpa-uTWy_O-K_EhNhr1kxKi4C-NEz-JN61UqrmraGwf7F-4PGikZ5tJq5RqU2bdIoi4oquCokfM0M4xvvCbx6w3md04lH2PJSgYevvMgNkow5QXSwiGAE&sig=AOD64_00wOHt4LAg5G9y0dGHS65h_fT4Uw&client=ca-pub-0447284344517370&rf=1&nb=8&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE
+                        - link "aaPanel" [ref=f19e22] [cursor=pointer]:
+                          - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CS8n7S--GavTCKv2X4dUPuZS6mA-i1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE5gFP0NjErSRrC2Ps9gdkhonE9h-ECQNAxGpxYKn-miOrtMvRrvDT-ahieoq-nGsaymTzY2W0f5ipsY2eEEdR30U6PrFep64rzXlGaKm30i_-MhYb4ttF2lXscONG70ZR-CIxk86RX6GRNu58c5g2in2RXM7Yc2kk1wtfcZUqkqqLhhRxSKpDpBO570B4B8eLxqxM86z20yad6UUeHlfqncOSmERHacmxdK1sCSj8ZPPo-Lptjep0YDrLODGY_7YS9JaD3vA7VwkFTtCzvEfKdIfq-9KQaSjZvkn0-_RyfEJkGsYetGadzMAEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WOu-74aXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCNmb84aXr5YDFf1LuAQdOYoO8_ANAogOCdgTCogUDtAVAZgWAcoWAgoA-BYBgBcBshcEGAFQBroXAjgBshgJEgLwWRguIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE&num=1&cid=CAQS9AEAEQoqgR5Fv5kHk6DJ_KMCbg0l3kF-fMjwxAM2aPy1JK_sG7h6LRvZaZtf88ngEX_nNuO5HYHcHK-5Y7atSZYAwQYV4-GkVbIeVxRPZ3RP-6ns6D8V_rP2kGWqvO4ARTXAPGJgyNsNIWzys8VtxLq_-b2xII0_4avbiTJhqSndpT5lfBlCC1qyXrSAaacu5Cksu_iDWL8fAgpYjUeWxObpa-uTWy_O-K_EhNhr1kxKi4C-NEz-JN61UqrmraGwf7F-4PGikZ5tJq5RqU2bdIoi4oquCokfM0M4xvvCbx6w3md04lH2PJSgYevvMgNkow5QXSwiGAE&sig=AOD64_00wOHt4LAg5G9y0dGHS65h_fT4Uw&client=ca-pub-0447284344517370&rf=1&nb=1&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE
+                        - link "Install" [ref=f19e24] [cursor=pointer]:
+                          - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CS8n7S--GavTCKv2X4dUPuZS6mA-i1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE5gFP0NjErSRrC2Ps9gdkhonE9h-ECQNAxGpxYKn-miOrtMvRrvDT-ahieoq-nGsaymTzY2W0f5ipsY2eEEdR30U6PrFep64rzXlGaKm30i_-MhYb4ttF2lXscONG70ZR-CIxk86RX6GRNu58c5g2in2RXM7Yc2kk1wtfcZUqkqqLhhRxSKpDpBO570B4B8eLxqxM86z20yad6UUeHlfqncOSmERHacmxdK1sCSj8ZPPo-Lptjep0YDrLODGY_7YS9JaD3vA7VwkFTtCzvEfKdIfq-9KQaSjZvkn0-_RyfEJkGsYetGadzMAEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WOu-74aXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCNmb84aXr5YDFf1LuAQdOYoO8_ANAogOCdgTCogUDtAVAZgWAcoWAgoA-BYBgBcBshcEGAFQBroXAjgBshgJEgLwWRguIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE&num=1&cid=CAQS9AEAEQoqgR5Fv5kHk6DJ_KMCbg0l3kF-fMjwxAM2aPy1JK_sG7h6LRvZaZtf88ngEX_nNuO5HYHcHK-5Y7atSZYAwQYV4-GkVbIeVxRPZ3RP-6ns6D8V_rP2kGWqvO4ARTXAPGJgyNsNIWzys8VtxLq_-b2xII0_4avbiTJhqSndpT5lfBlCC1qyXrSAaacu5Cksu_iDWL8fAgpYjUeWxObpa-uTWy_O-K_EhNhr1kxKi4C-NEz-JN61UqrmraGwf7F-4PGikZ5tJq5RqU2bdIoi4oquCokfM0M4xvvCbx6w3md04lH2PJSgYevvMgNkow5QXSwiGAE&sig=AOD64_00wOHt4LAg5G9y0dGHS65h_fT4Uw&client=ca-pub-0447284344517370&rf=1&nb=8&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE
+                        - link [ref=f19e25] [cursor=pointer]:
+                          - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CS8n7S--GavTCKv2X4dUPuZS6mA-i1oauhgHbquTe_BDAjbcBEAEgwZf0B2ChAqAB0cDysALIAQmpAhkvZt2y9oM-qAMByAPLBKoE5gFP0NjErSRrC2Ps9gdkhonE9h-ECQNAxGpxYKn-miOrtMvRrvDT-ahieoq-nGsaymTzY2W0f5ipsY2eEEdR30U6PrFep64rzXlGaKm30i_-MhYb4ttF2lXscONG70ZR-CIxk86RX6GRNu58c5g2in2RXM7Yc2kk1wtfcZUqkqqLhhRxSKpDpBO570B4B8eLxqxM86z20yad6UUeHlfqncOSmERHacmxdK1sCSj8ZPPo-Lptjep0YDrLODGY_7YS9JaD3vA7VwkFTtCzvEfKdIfq-9KQaSjZvkn0-_RyfEJkGsYetGadzMAEzviFpfcCiAWP-Z3qJqAGLoAHl7-NzwGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB_7osQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB5_hsQKoB6brsQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB8LIsQLYBwDSCDMIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WOu-74aXr5YDYAGxCZ25ziazGLHIgAoBigpYaHR0cHM6Ly93d3cuYWFwYW5lbC5jb20vaW5kZXhfdHVpZ3Vhbmcydmlldy5odG1sP2dhZF9zb3VyY2U9NSZnYWRfY2FtcGFpZ25pZD0xMDQyMzMzNjA3OZgLAcgLAeALAYAMAaIMA5ABAaoNAkdIyA0B6g0TCNmb84aXr5YDFf1LuAQdOYoO8_ANAogOCdgTCogUDtAVAZgWAcoWAgoA-BYBgBcBshcEGAFQBroXAjgBshgJEgLwWRguIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE&num=1&cid=CAQS9AEAEQoqgR5Fv5kHk6DJ_KMCbg0l3kF-fMjwxAM2aPy1JK_sG7h6LRvZaZtf88ngEX_nNuO5HYHcHK-5Y7atSZYAwQYV4-GkVbIeVxRPZ3RP-6ns6D8V_rP2kGWqvO4ARTXAPGJgyNsNIWzys8VtxLq_-b2xII0_4avbiTJhqSndpT5lfBlCC1qyXrSAaacu5Cksu_iDWL8fAgpYjUeWxObpa-uTWy_O-K_EhNhr1kxKi4C-NEz-JN61UqrmraGwf7F-4PGikZ5tJq5RqU2bdIoi4oquCokfM0M4xvvCbx6w3md04lH2PJSgYevvMgNkow5QXSwiGAE&sig=AOD64_00wOHt4LAg5G9y0dGHS65h_fT4Uw&client=ca-pub-0447284344517370&rf=1&nb=8&adurl=https://www.aapanel.com/index-sub-view.html%3Fhttps://www.aapanel.com/index_tuiguang2view.html%26gad_source%3D5%26gad_campaignid%3D10423336079%26gclid%3DEAIaIQobChMItJTzhpevlgMV_Uu4BB05ig7zEAEYASAAEgJNfPD_BwE
+                    - generic [ref=f19e32] [cursor=pointer]
+                    - button [ref=f19e37] [cursor=pointer]
+                    - iframe
+              - paragraph [ref=f13e249]:
+                - link "19 issues" [ref=f13e250] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=229&set_filter=1&status_id=%2A
+                - text: (
+                - link "12 closed" [ref=f13e251] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=229&set_filter=1&status_id=c
+                - text: —
+                - link "7 open" [ref=f13e252] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=229&set_filter=1&status_id=o
+                - text: )
+            - table [ref=f13e254]:
+              - caption [ref=f13e255]: Related issues
+              - rowgroup [ref=f13e256]:
+                - row [ref=f13e257]:
+                  - cell [ref=f13e258]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e259]'
+                  - cell [ref=f13e260]:
+                    - 'link "Defect #44225" [ref=f13e261] [cursor=pointer]':
+                      - /url: /issues/44225
+                    - text: ": Add and configure pandoc on GitHub Actions"
+                  - cell [ref=f13e262]:
+                    - link "Actions" [ref=f13e263] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e264]:
+                  - cell [ref=f13e265]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e266]'
+                  - cell [ref=f13e267]:
+                    - 'link "Defect #44234" [ref=f13e268] [cursor=pointer]':
+                      - /url: /issues/44234
+                    - text: ": Gantt issue relation lines break when collapsing objects"
+                  - cell [ref=f13e269]:
+                    - link "Actions" [ref=f13e270] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e271]:
+                  - cell [ref=f13e272]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e273]'
+                  - cell [ref=f13e274]:
+                    - 'link "Defect #44243" [ref=f13e275] [cursor=pointer]':
+                      - /url: /issues/44243
+                    - text: ": Fix RuboCop Style/ArrayIntersect offenses"
+                  - cell [ref=f13e276]:
+                    - link "Actions" [ref=f13e277] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e278]:
+                  - cell [ref=f13e279]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e280]'
+                  - cell [ref=f13e281]:
+                    - 'link "Defect #44277" [ref=f13e282] [cursor=pointer]':
+                      - /url: /issues/44277
+                    - text: ": Translation missing: text_users_remove_from_group_confirmation"
+                  - cell [ref=f13e283]:
+                    - link "Actions" [ref=f13e284] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e285]:
+                  - cell [ref=f13e286]
+                  - cell [ref=f13e287]:
+                    - 'link "Defect #44289" [ref=f13e288] [cursor=pointer]':
+                      - /url: /issues/44289
+                    - text: ": No status icon is displayed after checking for plugin updates on the Plugins page"
+                  - cell [ref=f13e289]:
+                    - link "Actions" [ref=f13e290] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e291]:
+                  - cell [ref=f13e292]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e293]'
+                  - cell [ref=f13e294]:
+                    - 'link "Defect #44294" [ref=f13e295] [cursor=pointer]':
+                      - /url: /issues/44294
+                    - text: ": Charts are broken: empty app/assets/javascripts/chart.min.js shadows vendor/javascript/chart.min.js"
+                  - cell [ref=f13e296]:
+                    - link "Actions" [ref=f13e297] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e298]:
+                  - cell [ref=f13e299]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e300]'
+                  - cell [ref=f13e301]:
+                    - 'link "Defect #44318" [ref=f13e302] [cursor=pointer]':
+                      - /url: /issues/44318
+                    - text: ": Tab bar wraps to a semi-visible second row when the tabs are wider than 2000px"
+                  - cell [ref=f13e303]:
+                    - link "Actions" [ref=f13e304] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e305]:
+                  - cell [ref=f13e306]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e307]'
+                  - cell [ref=f13e308]:
+                    - 'link "Defect #44321" [ref=f13e309] [cursor=pointer]':
+                      - /url: /issues/44321
+                    - text: ": Random test failure in OauthProviderSystemTest due to incomplete sign out"
+                  - cell [ref=f13e310]:
+                    - link "Actions" [ref=f13e311] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e312]:
+                  - cell [ref=f13e313]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e314]'
+                  - cell [ref=f13e315]:
+                    - 'link "Defect #44335" [ref=f13e316] [cursor=pointer]':
+                      - /url: /issues/44335
+                    - text: ": PDF preview of .ai attachments triggers an automatic download"
+                  - cell [ref=f13e317]:
+                    - link "Actions" [ref=f13e318] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e319]:
+                  - cell [ref=f13e320]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e321]'
+                  - cell [ref=f13e322]:
+                    - 'link "Defect #44348" [ref=f13e323] [cursor=pointer]':
+                      - /url: /issues/44348
+                    - text: ": Formatting a text is much slower in 7.0.0 when its container has many attachments"
+                  - cell [ref=f13e324]:
+                    - link "Actions" [ref=f13e325] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e326]:
+                  - cell [ref=f13e327]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e328]'
+                  - cell [ref=f13e329]:
+                    - 'link "Defect #44351" [ref=f13e330] [cursor=pointer]':
+                      - /url: /issues/44351
+                    - text: ": Fix top menu position and icons in Classic theme"
+                  - cell [ref=f13e331]:
+                    - link "Actions" [ref=f13e332] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e333]:
+                  - cell [ref=f13e334]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e335]'
+                  - cell [ref=f13e336]:
+                    - 'link "Feature #44268" [ref=f13e337] [cursor=pointer]':
+                      - /url: /issues/44268
+                    - text: ": Prevent browsers from autofilling the administrator's own password into the user account form"
+                  - cell [ref=f13e338]:
+                    - link "Actions" [ref=f13e339] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e340]:
+                  - cell [ref=f13e341]
+                  - cell [ref=f13e342]:
+                    - 'link "Feature #44337" [ref=f13e343] [cursor=pointer]':
+                      - /url: /issues/44337
+                    - text: ": Add an administration page listing all webhooks"
+                  - cell [ref=f13e344]:
+                    - link "Actions" [ref=f13e345] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e346]:
+                  - cell [ref=f13e347]
+                  - cell [ref=f13e348]:
+                    - 'link "Feature #44353" [ref=f13e349] [cursor=pointer]':
+                      - /url: /issues/44353
+                    - text: ": Add project to wiki API response of endpoint /projects/{identifier}/wiki/index.{format}"
+                  - cell [ref=f13e350]:
+                    - link "Actions" [ref=f13e351] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e352]:
+                  - cell [ref=f13e353]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e354]'
+                  - cell [ref=f13e355]:
+                    - 'link "Patch #44259" [ref=f13e356] [cursor=pointer]':
+                      - /url: /issues/44259
+                    - text: ": New context menu controller tests don't run with standard rake tasks"
+                  - cell [ref=f13e357]:
+                    - link "Actions" [ref=f13e358] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e359]:
+                  - cell [ref=f13e360]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e361]'
+                  - cell [ref=f13e362]:
+                    - 'link "Patch #44265" [ref=f13e363] [cursor=pointer]':
+                      - /url: /issues/44265
+                    - text: ": WebhookTest occasionally hangs"
+                  - cell [ref=f13e364]:
+                    - link "Actions" [ref=f13e365] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e366]:
+                  - cell [ref=f13e367]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e368]'
+                  - cell [ref=f13e369]:
+                    - 'link "Patch #44293" [ref=f13e370] [cursor=pointer]':
+                      - /url: /issues/44293
+                    - text: ": Add a caret to the account menu to indicate it opens a dropdown"
+                  - cell [ref=f13e371]:
+                    - link "Actions" [ref=f13e372] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e373]:
+                  - cell [ref=f13e374]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e375]'
+                  - cell [ref=f13e376]:
+                    - 'link "Patch #44303" [ref=f13e377] [cursor=pointer]':
+                      - /url: /issues/44303
+                    - text: ": Update Rails to 8.1.3.1"
+                  - cell [ref=f13e378]:
+                    - link "Actions" [ref=f13e379] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e380]:
+                  - cell [ref=f13e381]
+                  - cell [ref=f13e382]:
+                    - 'link "Patch #44323" [ref=f13e383] [cursor=pointer]':
+                      - /url: /issues/44323
+                    - text: ": French translation update"
+                  - cell [ref=f13e384]:
+                    - link "Actions" [ref=f13e385] [cursor=pointer]:
+                      - /url: "#"
+          - article [ref=f13e386]:
+            - generic [ref=f13e387]:
+              - heading [level=3] [ref=f13e388]:
+                - link "7.1.0" [ref=f13e389] [cursor=pointer]:
+                  - /url: /versions/228
+              - text: open
+            - generic [ref=f13e390]:
+              - paragraph
+              - table [ref=f13e391]:
+                - rowgroup [ref=f13e392]:
+                  - row [ref=f13e393]:
+                    - 'cell "closed: 34%" [ref=f13e394]'
+                    - cell [ref=f13e395]
+              - paragraph [ref=f13e396]: 34%
+              - paragraph [ref=f13e397]:
+                - link "29 issues" [ref=f13e398] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=228&set_filter=1&status_id=%2A
+                - text: (
+                - link "10 closed" [ref=f13e399] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=228&set_filter=1&status_id=c
+                - text: —
+                - link "19 open" [ref=f13e400] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=228&set_filter=1&status_id=o
+                - text: )
+            - table [ref=f13e402]:
+              - caption [ref=f13e403]: Related issues
+              - rowgroup [ref=f13e404]:
+                - row [ref=f13e405]:
+                  - cell [ref=f13e406]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e407]'
+                  - cell [ref=f13e408]:
+                    - 'link "Defect #35248" [ref=f13e409] [cursor=pointer]':
+                      - /url: /issues/35248
+                    - text: ": Hard-coded error messages in IssueStatus"
+                  - cell [ref=f13e410]:
+                    - link "Actions" [ref=f13e411] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e412]:
+                  - cell [ref=f13e413]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e414]'
+                  - cell [ref=f13e415]:
+                    - 'link "Defect #43904" [ref=f13e416] [cursor=pointer]':
+                      - /url: /issues/43904
+                    - text: ": Activities of TimeEntries are not updated when moving the TimeEntry to a different project"
+                  - cell [ref=f13e417]:
+                    - link "Actions" [ref=f13e418] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e419]:
+                  - cell [ref=f13e420]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e421]'
+                  - cell [ref=f13e422]:
+                    - 'link "Defect #44264" [ref=f13e423] [cursor=pointer]':
+                      - /url: /issues/44264
+                    - text: ": Update SimpleCov to 1.1"
+                  - cell [ref=f13e424]:
+                    - link "Actions" [ref=f13e425] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e426]:
+                  - cell [ref=f13e427]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e428]'
+                  - cell [ref=f13e429]:
+                    - 'link "Defect #44317" [ref=f13e430] [cursor=pointer]':
+                      - /url: /issues/44317
+                    - text: ": Actions dropdown is not closed after copying a link"
+                  - cell [ref=f13e431]:
+                    - link "Actions" [ref=f13e432] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e433]:
+                  - cell [ref=f13e434]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e435]'
+                  - cell [ref=f13e436]:
+                    - 'link "Feature #12388" [ref=f13e437] [cursor=pointer]':
+                      - /url: /issues/12388
+                    - text: ": Diffs for editions of issue/notes entries"
+                  - cell [ref=f13e438]:
+                    - link "Actions" [ref=f13e439] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e440]:
+                  - cell [ref=f13e441]
+                  - cell [ref=f13e442]:
+                    - 'link "Feature #27705" [ref=f13e443] [cursor=pointer]':
+                      - /url: /issues/27705
+                    - text: ": Gemify redmine plugins"
+                  - cell [ref=f13e444]:
+                    - link "Actions" [ref=f13e445] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e446]:
+                  - cell [ref=f13e447]
+                  - cell [ref=f13e448]:
+                    - 'link "Feature #33868" [ref=f13e449] [cursor=pointer]':
+                      - /url: /issues/33868
+                    - text: ": Prevent adding notes to closed issues"
+                  - cell [ref=f13e450]:
+                    - link "Actions" [ref=f13e451] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e452]:
+                  - cell [ref=f13e453]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e454]'
+                  - cell [ref=f13e455]:
+                    - 'link "Feature #36933" [ref=f13e456] [cursor=pointer]':
+                      - /url: /issues/36933
+                    - text: ": Halt Redmine boot entirely instead of showing a warning in admin/info when there are pending migrations"
+                  - cell [ref=f13e457]:
+                    - link "Actions" [ref=f13e458] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e459]:
+                  - cell [ref=f13e460]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e461]'
+                  - cell [ref=f13e462]:
+                    - 'link "Feature #39528" [ref=f13e463] [cursor=pointer]':
+                      - /url: /issues/39528
+                    - text: ": Change mention link color for users without access to view issues"
+                  - cell [ref=f13e464]:
+                    - link "Actions" [ref=f13e465] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e466]:
+                  - cell [ref=f13e467]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e468]'
+                  - cell [ref=f13e469]:
+                    - 'link "Feature #39529" [ref=f13e470] [cursor=pointer]':
+                      - /url: /issues/39529
+                    - text: ": Add tooltips for clarifying non-notifiable user mentions"
+                  - cell [ref=f13e471]:
+                    - link "Actions" [ref=f13e472] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e473]:
+                  - cell [ref=f13e474]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e475]'
+                  - cell [ref=f13e476]:
+                    - 'link "Feature #43023" [ref=f13e477] [cursor=pointer]':
+                      - /url: /issues/43023
+                    - text: ": IMAP email retrieval via OAuth2"
+                  - cell [ref=f13e478]:
+                    - link "Actions" [ref=f13e479] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e480]:
+                  - cell [ref=f13e481]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e482]'
+                  - cell [ref=f13e483]:
+                    - 'link "Feature #43352" [ref=f13e484] [cursor=pointer]':
+                      - /url: /issues/43352
+                    - text: ": Provide an option to authenticate in Redmine through an OAuth provider."
+                  - cell [ref=f13e485]:
+                    - link "Actions" [ref=f13e486] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e487]:
+                  - cell [ref=f13e488]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e489]'
+                  - cell [ref=f13e490]:
+                    - 'link "Feature #43484" [ref=f13e491] [cursor=pointer]':
+                      - /url: /issues/43484
+                    - text: ": Detect attachment content type from file contents instead of trusting client-provided values"
+                  - cell [ref=f13e492]:
+                    - link "Actions" [ref=f13e493] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e494]:
+                  - cell [ref=f13e495]
+                  - cell [ref=f13e496]:
+                    - 'link "Feature #43997" [ref=f13e497] [cursor=pointer]':
+                      - /url: /issues/43997
+                    - text: ": Add a setting to control whether issue authors are always shown in the assignee list"
+                  - cell [ref=f13e498]:
+                    - link "Actions" [ref=f13e499] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e500]:
+                  - cell [ref=f13e501]
+                  - cell [ref=f13e502]:
+                    - 'link "Feature #44021" [ref=f13e503] [cursor=pointer]':
+                      - /url: /issues/44021
+                    - text: ": Update \"Author / Previous assignee\" to \"Author / Recent participants\" and include the latest note author"
+                  - cell [ref=f13e504]:
+                    - link "Actions" [ref=f13e505] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e506]:
+                  - cell [ref=f13e507]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e508]'
+                  - cell [ref=f13e509]:
+                    - 'link "Feature #44141" [ref=f13e510] [cursor=pointer]':
+                      - /url: /issues/44141
+                    - text: ": Add REST API for forums"
+                  - cell [ref=f13e511]:
+                    - link "Actions" [ref=f13e512] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e513]:
+                  - cell [ref=f13e514]
+                  - cell [ref=f13e515]:
+                    - 'link "Feature #44252" [ref=f13e516] [cursor=pointer]':
+                      - /url: /issues/44252
+                    - text: ": Preload journal details when retrieving Activity events to avoid N+1 queries"
+                  - cell [ref=f13e517]:
+                    - link "Actions" [ref=f13e518] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e519]:
+                  - cell [ref=f13e520]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e521]'
+                  - cell [ref=f13e522]:
+                    - 'link "Feature #44288" [ref=f13e523] [cursor=pointer]':
+                      - /url: /issues/44288
+                    - text: ": Add reactions to REST API responses for issues and news"
+                  - cell [ref=f13e524]:
+                    - link "Actions" [ref=f13e525] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e526]:
+                  - cell [ref=f13e527]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e528]'
+                  - cell [ref=f13e529]:
+                    - 'link "Feature #44345" [ref=f13e530] [cursor=pointer]':
+                      - /url: /issues/44345
+                    - text: ": Use SimpleCov's built-in HTML formatter instead of Redmine's own formatter"
+                  - cell [ref=f13e531]:
+                    - link "Actions" [ref=f13e532] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e533]:
+                  - cell [ref=f13e534]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e535]'
+                  - cell [ref=f13e536]:
+                    - 'link "Patch #37559" [ref=f13e537] [cursor=pointer]':
+                      - /url: /issues/37559
+                    - text: ": Use meta element instead of javascript object"
+                  - cell [ref=f13e538]:
+                    - link "Actions" [ref=f13e539] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e540]:
+                  - cell [ref=f13e541]
+                  - cell [ref=f13e542]:
+                    - 'link "Patch #43219" [ref=f13e543] [cursor=pointer]':
+                      - /url: /issues/43219
+                    - text: ": Replace legacy loader.gif with SVG icon in autocomplete input"
+                  - cell [ref=f13e544]:
+                    - link "Actions" [ref=f13e545] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e546]:
+                  - cell [ref=f13e547]
+                  - cell [ref=f13e548]:
+                    - 'link "Patch #43220" [ref=f13e549] [cursor=pointer]':
+                      - /url: /issues/43220
+                    - text: ": Replace legacy loader.gif with SVG icon in sorter handler"
+                  - cell [ref=f13e550]:
+                    - link "Actions" [ref=f13e551] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e552]:
+                  - cell [ref=f13e553]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e554]'
+                  - cell [ref=f13e555]:
+                    - 'link "Patch #43259" [ref=f13e556] [cursor=pointer]':
+                      - /url: /issues/43259
+                    - text: ": Convert jstoolbar to ES modules and class syntax."
+                  - cell [ref=f13e557]:
+                    - link "Actions" [ref=f13e558] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e559]:
+                  - cell [ref=f13e560]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e561]'
+                  - cell [ref=f13e562]:
+                    - 'link "Patch #44201" [ref=f13e563] [cursor=pointer]':
+                      - /url: /issues/44201
+                    - text: ": Use && instead of & in Attachment#move_to_target_directory! and add test coverage"
+                  - cell [ref=f13e564]:
+                    - link "Actions" [ref=f13e565] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e566]:
+                  - cell [ref=f13e567]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e568]'
+                  - cell [ref=f13e569]:
+                    - 'link "Patch #44205" [ref=f13e570] [cursor=pointer]':
+                      - /url: /issues/44205
+                    - text: ": Refactor actions dropdown to new dropdown component"
+                  - cell [ref=f13e571]:
+                    - link "Actions" [ref=f13e572] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e573]:
+                  - cell [ref=f13e574]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e575]'
+                  - cell [ref=f13e576]:
+                    - 'link "Patch #44260" [ref=f13e577] [cursor=pointer]':
+                      - /url: /issues/44260
+                    - text: ": Refactor context menu to use the new dropdown component"
+                  - cell [ref=f13e578]:
+                    - link "Actions" [ref=f13e579] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e580]:
+                  - cell [ref=f13e581]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e582]'
+                  - cell [ref=f13e583]:
+                    - 'link "Patch #44346" [ref=f13e584] [cursor=pointer]':
+                      - /url: /issues/44346
+                    - text: ": Update RuboCop to 1.89"
+                  - cell [ref=f13e585]:
+                    - link "Actions" [ref=f13e586] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e587]:
+                  - cell [ref=f13e588]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e589]'
+                  - cell [ref=f13e590]:
+                    - 'link "Patch #44352" [ref=f13e591] [cursor=pointer]':
+                      - /url: /issues/44352
+                    - text: ": Update Commonmarker gem to 2.9"
+                  - cell [ref=f13e592]:
+                    - link "Actions" [ref=f13e593] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e594]:
+                  - cell [ref=f13e595]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e596]'
+                  - cell [ref=f13e597]:
+                    - 'link "Patch #44356" [ref=f13e598] [cursor=pointer]':
+                      - /url: /issues/44356
+                    - text: ": Update RuboCop Performance to 1.27"
+                  - cell [ref=f13e599]:
+                    - link "Actions" [ref=f13e600] [cursor=pointer]:
+                      - /url: "#"
+          - article [ref=f13e601]:
+            - generic [ref=f13e602]:
+              - heading [level=3] [ref=f13e603]:
+                - link "Candidate for next major release" [ref=f13e604] [cursor=pointer]:
+                  - /url: /versions/32
+              - text: open
+            - generic [ref=f13e605]:
+              - paragraph [ref=f13e606]: Features that the contributors would like to add in the next major version
+              - table [ref=f13e607]:
+                - rowgroup [ref=f13e608]:
+                  - row [ref=f13e609]:
+                    - cell [ref=f13e610]
+              - paragraph [ref=f13e611]: 0%
+              - insertion [ref=f13e613]:
+                - iframe [ref=f13e615]:
+                  - generic [ref=f20e5]:
+                    - generic [ref=f20e7]:
+                      - generic [ref=f20e11]:
+                        - button "Play video" [ref=f20e15] [cursor=pointer]
+                        - button "Unmute video" [ref=f20e21] [cursor=pointer]
+                      - button "Replay" [ref=f20e28]:
+                        - generic [ref=f20e29] [cursor=pointer]
+                    - button "Learn more" [ref=f20e42] [cursor=pointer]
+              - paragraph [ref=f13e616]:
+                - link "234 issues" [ref=f13e617] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=32&set_filter=1&status_id=%2A
+                - text: (0 closed —
+                - link "234 open" [ref=f13e618] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=32&set_filter=1&status_id=o
+                - text: )
+            - table [ref=f13e620]:
+              - caption [ref=f13e621]: Related issues
+              - rowgroup [ref=f13e622]:
+                - row [ref=f13e623]:
+                  - cell [ref=f13e624]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e625]'
+                  - cell [ref=f13e626]:
+                    - 'link "Defect #668" [ref=f13e627] [cursor=pointer]':
+                      - /url: /issues/668
+                    - text: ": Date input fields don't respect date format settings"
+                  - cell [ref=f13e628]:
+                    - link "Actions" [ref=f13e629] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e630]:
+                  - cell [ref=f13e631]
+                  - cell [ref=f13e632]:
+                    - 'link "Defect #1420" [ref=f13e633] [cursor=pointer]':
+                      - /url: /issues/1420
+                    - text: ": LDAP authentication extremely flaky"
+                  - cell [ref=f13e634]:
+                    - link "Actions" [ref=f13e635] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e636]:
+                  - cell [ref=f13e637]
+                  - cell [ref=f13e638]:
+                    - 'link "Defect #5933" [ref=f13e639] [cursor=pointer]':
+                      - /url: /issues/5933
+                    - text: ": News don't appear in the parent project"
+                  - cell [ref=f13e640]:
+                    - link "Actions" [ref=f13e641] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e642]:
+                  - cell [ref=f13e643]
+                  - cell [ref=f13e644]:
+                    - 'link "Defect #5976" [ref=f13e645] [cursor=pointer]':
+                      - /url: /issues/5976
+                    - text: ": Uniqueness of User model fields is not checked sufficiently"
+                  - cell [ref=f13e646]:
+                    - link "Actions" [ref=f13e647] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e648]:
+                  - cell [ref=f13e649]
+                  - cell [ref=f13e650]:
+                    - 'link "Defect #6023" [ref=f13e651] [cursor=pointer]':
+                      - /url: /issues/6023
+                    - text: ": All members are displayed in issue summaries, even if they cannot be assigned"
+                  - cell [ref=f13e652]:
+                    - link "Actions" [ref=f13e653] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e654]:
+                  - cell [ref=f13e655]:
+                    - 'img "Assignee: Jean-Baptiste Barth" [ref=f13e656]'
+                  - cell [ref=f13e657]:
+                    - 'link "Defect #6324" [ref=f13e658] [cursor=pointer]':
+                      - /url: /issues/6324
+                    - text: ": requires_redmine_plugin should defer loading plugins if not all dependencies are met"
+                  - cell [ref=f13e659]:
+                    - link "Actions" [ref=f13e660] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e661]:
+                  - cell [ref=f13e662]
+                  - cell [ref=f13e663]:
+                    - 'link "Defect #6523" [ref=f13e664] [cursor=pointer]':
+                      - /url: /issues/6523
+                    - text: ": Sort order doesn't treat german \"umlaute\" correct in user listing"
+                  - cell [ref=f13e665]:
+                    - link "Actions" [ref=f13e666] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e667]:
+                  - cell [ref=f13e668]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e669]'
+                  - cell [ref=f13e670]:
+                    - 'link "Defect #6969" [ref=f13e671] [cursor=pointer]':
+                      - /url: /issues/6969
+                    - text: ": Less-than sign in issue description and comments are not escaped"
+                  - cell [ref=f13e672]:
+                    - link "Actions" [ref=f13e673] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e674]:
+                  - cell [ref=f13e675]
+                  - cell [ref=f13e676]:
+                    - 'link "Defect #7768" [ref=f13e677] [cursor=pointer]':
+                      - /url: /issues/7768
+                    - text: ": improve consistency of terms / language"
+                  - cell [ref=f13e678]:
+                    - link "Actions" [ref=f13e679] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e680]:
+                  - cell [ref=f13e681]
+                  - cell [ref=f13e682]:
+                    - 'link "Defect #7819" [ref=f13e683] [cursor=pointer]':
+                      - /url: /issues/7819
+                    - text: ": REST API Populating issue field enumerations + Issue list filters"
+                  - cell [ref=f13e684]:
+                    - link "Actions" [ref=f13e685] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e686]:
+                  - cell [ref=f13e687]
+                  - cell [ref=f13e688]:
+                    - 'link "Defect #7845" [ref=f13e689] [cursor=pointer]':
+                      - /url: /issues/7845
+                    - text: ": Pre environment and brackets breaks automatic issue linking"
+                  - cell [ref=f13e690]:
+                    - link "Actions" [ref=f13e691] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e692]:
+                  - cell [ref=f13e693]:
+                    - 'img "Assignee: Azamat Hackimov" [ref=f13e694]'
+                  - cell [ref=f13e695]:
+                    - 'link "Defect #8056" [ref=f13e696] [cursor=pointer]':
+                      - /url: /issues/8056
+                    - text: ": Some fields should be shown LTR even in RTL locales"
+                  - cell [ref=f13e697]:
+                    - link "Actions" [ref=f13e698] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e699]:
+                  - cell [ref=f13e700]
+                  - cell [ref=f13e701]:
+                    - 'link "Defect #10721" [ref=f13e702] [cursor=pointer]':
+                      - /url: /issues/10721
+                    - text: ": Loss of attachments while fetching emails from IMAP (GMail)"
+                  - cell [ref=f13e703]:
+                    - link "Actions" [ref=f13e704] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e705]:
+                  - cell [ref=f13e706]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e707]'
+                  - cell [ref=f13e708]:
+                    - 'link "Defect #13522" [ref=f13e709] [cursor=pointer]':
+                      - /url: /issues/13522
+                    - text: ": Private field is shown as required"
+                  - cell [ref=f13e710]:
+                    - link "Actions" [ref=f13e711] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e712]:
+                  - cell [ref=f13e713]
+                  - cell [ref=f13e714]:
+                    - 'link "Defect #13762" [ref=f13e715] [cursor=pointer]':
+                      - /url: /issues/13762
+                    - text: ": SCM auto status change bypassses roles and permissions"
+                  - cell [ref=f13e716]:
+                    - link "Actions" [ref=f13e717] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e718]:
+                  - cell [ref=f13e719]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e720]'
+                  - cell [ref=f13e721]:
+                    - 'link "Defect #14038" [ref=f13e722] [cursor=pointer]':
+                      - /url: /issues/14038
+                    - text: ": Ordered/unordered lists inside table cell are mangled"
+                  - cell [ref=f13e723]:
+                    - link "Actions" [ref=f13e724] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e725]:
+                  - cell [ref=f13e726]
+                  - cell [ref=f13e727]:
+                    - 'link "Defect #15676" [ref=f13e728] [cursor=pointer]':
+                      - /url: /issues/15676
+                    - text: ": \"Latest\" revisions on repository view is confused"
+                  - cell [ref=f13e729]:
+                    - link "Actions" [ref=f13e730] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e731]:
+                  - cell [ref=f13e732]
+                  - cell [ref=f13e733]:
+                    - 'link "Defect #17071" [ref=f13e734] [cursor=pointer]':
+                      - /url: /issues/17071
+                    - text: ": Adding Watchers UX Is Not Clean"
+                  - cell [ref=f13e735]:
+                    - link "Actions" [ref=f13e736] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e737]:
+                  - cell [ref=f13e738]:
+                    - 'img "Assignee: Jean-Baptiste Barth" [ref=f13e739]'
+                  - cell [ref=f13e740]:
+                    - 'link "Defect #17830" [ref=f13e741] [cursor=pointer]':
+                      - /url: /issues/17830
+                    - text: ": User creation: clear/plaintext password sent via unencrypted email"
+                  - cell [ref=f13e742]:
+                    - link "Actions" [ref=f13e743] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e744]:
+                  - cell [ref=f13e745]
+                  - cell [ref=f13e746]:
+                    - 'link "Defect #19861" [ref=f13e747] [cursor=pointer]':
+                      - /url: /issues/19861
+                    - text: ": Activities \"save\" and \"reset\"of project setting have no effect if required \"activities\" custom filed exist"
+                  - cell [ref=f13e748]:
+                    - link "Actions" [ref=f13e749] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e750]:
+                  - cell [ref=f13e751]
+                  - cell [ref=f13e752]:
+                    - 'link "Defect #24979" [ref=f13e753] [cursor=pointer]':
+                      - /url: /issues/24979
+                    - text: ": Email \"keyword\" lines deleted even if the sender doesn't have permission to edit that field"
+                  - cell [ref=f13e754]:
+                    - link "Actions" [ref=f13e755] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e756]:
+                  - cell [ref=f13e757]
+                  - cell [ref=f13e758]:
+                    - 'link "Defect #25130" [ref=f13e759] [cursor=pointer]':
+                      - /url: /issues/25130
+                    - text: ": support of agglutinative languages like Hungarian/Magyar"
+                  - cell [ref=f13e760]:
+                    - link "Actions" [ref=f13e761] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e762]:
+                  - cell [ref=f13e763]
+                  - cell [ref=f13e764]:
+                    - 'link "Defect #25867" [ref=f13e765] [cursor=pointer]':
+                      - /url: /issues/25867
+                    - text: ": Assignable users should respect database collation"
+                  - cell [ref=f13e766]:
+                    - link "Actions" [ref=f13e767] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e768]:
+                  - cell [ref=f13e769]
+                  - cell [ref=f13e770]:
+                    - 'link "Defect #26023" [ref=f13e771] [cursor=pointer]':
+                      - /url: /issues/26023
+                    - text: ": Category filter only shows categories of current project"
+                  - cell [ref=f13e772]:
+                    - link "Actions" [ref=f13e773] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e774]:
+                  - cell [ref=f13e775]
+                  - cell [ref=f13e776]:
+                    - 'link "Defect #28033" [ref=f13e777] [cursor=pointer]':
+                      - /url: /issues/28033
+                    - text: ": Unable to turn off \"For all projects\" flag of custom queries"
+                  - cell [ref=f13e778]:
+                    - link "Actions" [ref=f13e779] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e780]:
+                  - cell [ref=f13e781]
+                  - cell [ref=f13e782]:
+                    - 'link "Defect #28409" [ref=f13e783] [cursor=pointer]':
+                      - /url: /issues/28409
+                    - text: ": Total estimated time value not visible when tracker has estimate time field disabled"
+                  - cell [ref=f13e784]:
+                    - link "Actions" [ref=f13e785] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e786]:
+                  - cell [ref=f13e787]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e788]'
+                  - cell [ref=f13e789]:
+                    - 'link "Defect #30099" [ref=f13e790] [cursor=pointer]':
+                      - /url: /issues/30099
+                    - text: ": Multiple blank lines in pre tags are not preserved in Textile"
+                  - cell [ref=f13e791]:
+                    - link "Actions" [ref=f13e792] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e793]:
+                  - cell [ref=f13e794]
+                  - cell [ref=f13e795]:
+                    - 'link "Defect #31010" [ref=f13e796] [cursor=pointer]':
+                      - /url: /issues/31010
+                    - text: ": The query visibility option \"To me only\" actually behaves as \"To the owner only\""
+                  - cell [ref=f13e797]:
+                    - link "Actions" [ref=f13e798] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e799]:
+                  - cell [ref=f13e800]
+                  - cell [ref=f13e801]:
+                    - 'link "Defect #31550" [ref=f13e802] [cursor=pointer]':
+                      - /url: /issues/31550
+                    - text: ": Project \"Version\" view's \"Wiki page\" field is still shown, although \"Wiki\" module is disabled on the project"
+                  - cell [ref=f13e803]:
+                    - link "Actions" [ref=f13e804] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e805]:
+                  - cell [ref=f13e806]
+                  - cell [ref=f13e807]:
+                    - 'link "Defect #31637" [ref=f13e808] [cursor=pointer]':
+                      - /url: /issues/31637
+                    - text: ": CSV and PDF export don't respect Time span format"
+                  - cell [ref=f13e809]:
+                    - link "Actions" [ref=f13e810] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e811]:
+                  - cell [ref=f13e812]
+                  - cell [ref=f13e813]:
+                    - 'link "Defect #32168" [ref=f13e814] [cursor=pointer]':
+                      - /url: /issues/32168
+                    - text: ": Allow issue id with \"#\" prefix for the value of issue ids filter"
+                  - cell [ref=f13e815]:
+                    - link "Actions" [ref=f13e816] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e817]:
+                  - cell [ref=f13e818]
+                  - cell [ref=f13e819]:
+                    - 'link "Defect #32183" [ref=f13e820] [cursor=pointer]':
+                      - /url: /issues/32183
+                    - text: ": Notification sub-events for \"Issue updated\" does not cover all events which consist its parent"
+                  - cell [ref=f13e821]:
+                    - link "Actions" [ref=f13e822] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e823]:
+                  - cell [ref=f13e824]
+                  - cell [ref=f13e825]:
+                    - 'link "Defect #32664" [ref=f13e826] [cursor=pointer]':
+                      - /url: /issues/32664
+                    - text: ": Adding an empty reply to a forum message does not show any error"
+                  - cell [ref=f13e827]:
+                    - link "Actions" [ref=f13e828] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e829]:
+                  - cell [ref=f13e830]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e831]'
+                  - cell [ref=f13e832]:
+                    - 'link "Defect #33257" [ref=f13e833] [cursor=pointer]':
+                      - /url: /issues/33257
+                    - text: ": Bulk edit for time entries does not support User filed"
+                  - cell [ref=f13e834]:
+                    - link "Actions" [ref=f13e835] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e836]:
+                  - cell [ref=f13e837]
+                  - cell [ref=f13e838]:
+                    - 'link "Defect #33415" [ref=f13e839] [cursor=pointer]':
+                      - /url: /issues/33415
+                    - text: ": Issue#closable? doesn't handle the case of issues with open subtask(s) ánd being blocked by other open issue(s)"
+                  - cell [ref=f13e840]:
+                    - link "Actions" [ref=f13e841] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e842]:
+                  - cell [ref=f13e843]
+                  - cell [ref=f13e844]:
+                    - 'link "Defect #33458" [ref=f13e845] [cursor=pointer]':
+                      - /url: /issues/33458
+                    - text: ": The display of Forums tab of the project settings is broken"
+                  - cell [ref=f13e846]:
+                    - link "Actions" [ref=f13e847] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e848]:
+                  - cell [ref=f13e849]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e850]'
+                  - cell [ref=f13e851]:
+                    - 'link "Defect #33829" [ref=f13e852] [cursor=pointer]':
+                      - /url: /issues/33829
+                    - text: ": Fix Atom feed for issues to correctly use the updated time for \"updated\" element instead of the created time"
+                  - cell [ref=f13e853]:
+                    - link "Actions" [ref=f13e854] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e855]:
+                  - cell [ref=f13e856]
+                  - cell [ref=f13e857]:
+                    - 'link "Defect #33912" [ref=f13e858] [cursor=pointer]':
+                      - /url: /issues/33912
+                    - text: ": Sorting of multiple columns including Date column does not work"
+                  - cell [ref=f13e859]:
+                    - link "Actions" [ref=f13e860] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e861]:
+                  - cell [ref=f13e862]
+                  - cell [ref=f13e863]:
+                    - 'link "Defect #34068" [ref=f13e864] [cursor=pointer]':
+                      - /url: /issues/34068
+                    - text: ": Missing blank option on persisted records"
+                  - cell [ref=f13e865]:
+                    - link "Actions" [ref=f13e866] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e867]:
+                  - cell [ref=f13e868]
+                  - cell [ref=f13e869]:
+                    - 'link "Defect #34922" [ref=f13e870] [cursor=pointer]':
+                      - /url: /issues/34922
+                    - text: ": Reload whole time entries form on project change"
+                  - cell [ref=f13e871]:
+                    - link "Actions" [ref=f13e872] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e873]:
+                  - cell [ref=f13e874]
+                  - cell [ref=f13e875]:
+                    - 'link "Defect #35557" [ref=f13e876] [cursor=pointer]':
+                      - /url: /issues/35557
+                    - text: ": Fix position when rendering custom field enumerations"
+                  - cell [ref=f13e877]:
+                    - link "Actions" [ref=f13e878] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e879]:
+                  - cell [ref=f13e880]
+                  - cell [ref=f13e881]:
+                    - 'link "Defect #35726" [ref=f13e882] [cursor=pointer]':
+                      - /url: /issues/35726
+                    - text: ": Time Formatting does not apply to CSV exports"
+                  - cell [ref=f13e883]:
+                    - link "Actions" [ref=f13e884] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e885]:
+                  - cell [ref=f13e886]
+                  - cell [ref=f13e887]:
+                    - 'link "Defect #36059" [ref=f13e888] [cursor=pointer]':
+                      - /url: /issues/36059
+                    - text: ": Fulltext search in timelog comments"
+                  - cell [ref=f13e889]:
+                    - link "Actions" [ref=f13e890] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e891]:
+                  - cell [ref=f13e892]
+                  - cell [ref=f13e893]:
+                    - 'link "Defect #36444" [ref=f13e894] [cursor=pointer]':
+                      - /url: /issues/36444
+                    - text: ": Validation error message when no trackers are assigned to a project is confusing"
+                  - cell [ref=f13e895]:
+                    - link "Actions" [ref=f13e896] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e897]:
+                  - cell [ref=f13e898]
+                  - cell [ref=f13e899]:
+                    - 'link "Defect #37962" [ref=f13e900] [cursor=pointer]':
+                      - /url: /issues/37962
+                    - text: ": Missing where cause for allowed_to_condition"
+                  - cell [ref=f13e901]:
+                    - link "Actions" [ref=f13e902] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e903]:
+                  - cell [ref=f13e904]
+                  - cell [ref=f13e905]:
+                    - 'link "Defect #40100" [ref=f13e906] [cursor=pointer]':
+                      - /url: /issues/40100
+                    - text: ": User ordering by name is incorrect for french language"
+                  - cell [ref=f13e907]:
+                    - link "Actions" [ref=f13e908] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e909]:
+                  - cell [ref=f13e910]
+                  - cell [ref=f13e911]:
+                    - 'link "Defect #42517" [ref=f13e912] [cursor=pointer]':
+                      - /url: /issues/42517
+                    - text: ": Add tooltip using stimulus"
+                  - cell [ref=f13e913]:
+                    - link "Actions" [ref=f13e914] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e915]:
+                  - cell [ref=f13e916]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e917]'
+                  - cell [ref=f13e918]:
+                    - 'link "Defect #44244" [ref=f13e919] [cursor=pointer]':
+                      - /url: /issues/44244
+                    - text: ": Spent time tab on issue page does not render commit references as links"
+                  - cell [ref=f13e920]:
+                    - link "Actions" [ref=f13e921] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e922]:
+                  - cell [ref=f13e923]
+                  - cell [ref=f13e924]:
+                    - 'link "Feature #202" [ref=f13e925] [cursor=pointer]':
+                      - /url: /issues/202
+                    - text: ": Textilization of Documents, News and Timelog-entry comments"
+                  - cell [ref=f13e926]:
+                    - link "Actions" [ref=f13e927] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e928]:
+                  - cell [ref=f13e929]
+                  - cell [ref=f13e930]:
+                    - 'link "Feature #664" [ref=f13e931] [cursor=pointer]':
+                      - /url: /issues/664
+                    - text: ": User can choose what page he want's to be Start page"
+                  - cell [ref=f13e932]:
+                    - link "Actions" [ref=f13e933] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e934]:
+                  - cell [ref=f13e935]
+                  - cell [ref=f13e936]:
+                    - 'link "Feature #724" [ref=f13e937] [cursor=pointer]':
+                      - /url: /issues/724
+                    - text: ": change \"versions\" to \"milestones\""
+                  - cell [ref=f13e938]:
+                    - link "Actions" [ref=f13e939] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e940]:
+                  - cell [ref=f13e941]
+                  - cell [ref=f13e942]:
+                    - 'link "Feature #1151" [ref=f13e943] [cursor=pointer]':
+                      - /url: /issues/1151
+                    - text: ": Open Links in New-Window"
+                  - cell [ref=f13e944]:
+                    - link "Actions" [ref=f13e945] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e946]:
+                  - cell [ref=f13e947]
+                  - cell [ref=f13e948]:
+                    - 'link "Feature #1226" [ref=f13e949] [cursor=pointer]':
+                      - /url: /issues/1226
+                    - text: ": query results on wiki pages"
+                  - cell [ref=f13e950]:
+                    - link "Actions" [ref=f13e951] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e952]:
+                  - cell [ref=f13e953]
+                  - cell [ref=f13e954]:
+                    - 'link "Feature #1232" [ref=f13e955] [cursor=pointer]':
+                      - /url: /issues/1232
+                    - text: ": Referencing and fixing issues in commit messages"
+                  - cell [ref=f13e956]:
+                    - link "Actions" [ref=f13e957] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e958]:
+                  - cell [ref=f13e959]
+                  - cell [ref=f13e960]:
+                    - 'link "Feature #1233" [ref=f13e961] [cursor=pointer]':
+                      - /url: /issues/1233
+                    - text: ": change default homepage to My page"
+                  - cell [ref=f13e962]:
+                    - link "Actions" [ref=f13e963] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e964]:
+                  - cell [ref=f13e965]
+                  - cell [ref=f13e966]:
+                    - 'link "Feature #1339" [ref=f13e967] [cursor=pointer]':
+                      - /url: /issues/1339
+                    - text: ": Comments on revisions"
+                  - cell [ref=f13e968]:
+                    - link "Actions" [ref=f13e969] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e970]:
+                  - cell [ref=f13e971]
+                  - cell [ref=f13e972]:
+                    - 'link "Feature #1342" [ref=f13e973] [cursor=pointer]':
+                      - /url: /issues/1342
+                    - text: ": Global versions roadmap"
+                  - cell [ref=f13e974]:
+                    - link "Actions" [ref=f13e975] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e976]:
+                  - cell [ref=f13e977]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e978]'
+                  - cell [ref=f13e979]:
+                    - 'link "Feature #1448" [ref=f13e980] [cursor=pointer]':
+                      - /url: /issues/1448
+                    - text: ": Add tags to issues"
+                  - cell [ref=f13e981]:
+                    - link "Actions" [ref=f13e982] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e983]:
+                  - cell [ref=f13e984]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e985]'
+                  - cell [ref=f13e986]:
+                    - 'link "Feature #1543" [ref=f13e987] [cursor=pointer]':
+                      - /url: /issues/1543
+                    - text: ": Setting permissions for viewing the Activity page."
+                  - cell [ref=f13e988]:
+                    - link "Actions" [ref=f13e989] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e990]:
+                  - cell [ref=f13e991]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e992]'
+                  - cell [ref=f13e993]:
+                    - 'link "Feature #1739" [ref=f13e994] [cursor=pointer]':
+                      - /url: /issues/1739
+                    - text: ": Add ability to change issue author"
+                  - cell [ref=f13e995]:
+                    - link "Actions" [ref=f13e996] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e997]:
+                  - cell [ref=f13e998]
+                  - cell [ref=f13e999]:
+                    - 'link "Feature #1767" [ref=f13e1000] [cursor=pointer]':
+                      - /url: /issues/1767
+                    - text: ": Make spent time - & project custom fields configurable/switchable per project"
+                  - cell [ref=f13e1001]:
+                    - link "Actions" [ref=f13e1002] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1003]:
+                  - cell [ref=f13e1004]
+                  - cell [ref=f13e1005]:
+                    - 'link "Feature #1853" [ref=f13e1006] [cursor=pointer]':
+                      - /url: /issues/1853
+                    - text: ": Make Projects truly independent of each other"
+                  - cell [ref=f13e1007]:
+                    - link "Actions" [ref=f13e1008] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1009]:
+                  - cell [ref=f13e1010]
+                  - cell [ref=f13e1011]:
+                    - 'link "Feature #2047" [ref=f13e1012] [cursor=pointer]':
+                      - /url: /issues/2047
+                    - text: ": Add SVG support, like images"
+                  - cell [ref=f13e1013]:
+                    - link "Actions" [ref=f13e1014] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1015]:
+                  - cell [ref=f13e1016]
+                  - cell [ref=f13e1017]:
+                    - 'link "Feature #2477" [ref=f13e1018] [cursor=pointer]':
+                      - /url: /issues/2477
+                    - text: ": mail reminder for watchers"
+                  - cell [ref=f13e1019]:
+                    - link "Actions" [ref=f13e1020] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1021]:
+                  - cell [ref=f13e1022]
+                  - cell [ref=f13e1023]:
+                    - 'link "Feature #2595" [ref=f13e1024] [cursor=pointer]':
+                      - /url: /issues/2595
+                    - text: ": Issue report for all projects"
+                  - cell [ref=f13e1025]:
+                    - link "Actions" [ref=f13e1026] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1027]:
+                  - cell [ref=f13e1028]
+                  - cell [ref=f13e1029]:
+                    - 'link "Feature #2687" [ref=f13e1030] [cursor=pointer]':
+                      - /url: /issues/2687
+                    - text: ": different estimated time units hours<>days per tracker type"
+                  - cell [ref=f13e1031]:
+                    - link "Actions" [ref=f13e1032] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1033]:
+                  - cell [ref=f13e1034]
+                  - cell [ref=f13e1035]:
+                    - 'link "Feature #2722" [ref=f13e1036] [cursor=pointer]':
+                      - /url: /issues/2722
+                    - text: ": New user notification"
+                  - cell [ref=f13e1037]:
+                    - link "Actions" [ref=f13e1038] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1039]:
+                  - cell [ref=f13e1040]
+                  - cell [ref=f13e1041]:
+                    - 'link "Feature #2848" [ref=f13e1042] [cursor=pointer]':
+                      - /url: /issues/2848
+                    - text: ": Sort time entries by name, not ID"
+                  - cell [ref=f13e1043]:
+                    - link "Actions" [ref=f13e1044] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1045]:
+                  - cell [ref=f13e1046]
+                  - cell [ref=f13e1047]:
+                    - 'link "Feature #3035" [ref=f13e1048] [cursor=pointer]':
+                      - /url: /issues/3035
+                    - text: ": Reminder at start-date"
+                  - cell [ref=f13e1049]:
+                    - link "Actions" [ref=f13e1050] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1051]:
+                  - cell [ref=f13e1052]
+                  - cell [ref=f13e1053]:
+                    - 'link "Feature #3088" [ref=f13e1054] [cursor=pointer]':
+                      - /url: /issues/3088
+                    - text: ": Estimated hours field able to hide role based"
+                  - cell [ref=f13e1055]:
+                    - link "Actions" [ref=f13e1056] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1057]:
+                  - cell [ref=f13e1058]
+                  - cell [ref=f13e1059]:
+                    - 'link "Feature #3143" [ref=f13e1060] [cursor=pointer]':
+                      - /url: /issues/3143
+                    - text: ": Add an 'Add Note' function to issue, to avoid optimistic-lock of issue' update when user just want to add a note"
+                  - cell [ref=f13e1061]:
+                    - link "Actions" [ref=f13e1062] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1063]:
+                  - cell [ref=f13e1064]
+                  - cell [ref=f13e1065]:
+                    - 'link "Feature #3300" [ref=f13e1066] [cursor=pointer]':
+                      - /url: /issues/3300
+                    - text: ": Default project for user"
+                  - cell [ref=f13e1067]:
+                    - link "Actions" [ref=f13e1068] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1069]:
+                  - cell [ref=f13e1070]
+                  - cell [ref=f13e1071]:
+                    - 'link "Feature #3527" [ref=f13e1072] [cursor=pointer]':
+                      - /url: /issues/3527
+                    - text: ": Activity List should wiki parse summaries"
+                  - cell [ref=f13e1073]:
+                    - link "Actions" [ref=f13e1074] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1075]:
+                  - cell [ref=f13e1076]
+                  - cell [ref=f13e1077]:
+                    - 'link "Feature #3547" [ref=f13e1078] [cursor=pointer]':
+                      - /url: /issues/3547
+                    - text: ": Wiki include macro: add ability to include single section"
+                  - cell [ref=f13e1079]:
+                    - link "Actions" [ref=f13e1080] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1081]:
+                  - cell [ref=f13e1082]
+                  - cell [ref=f13e1083]:
+                    - 'link "Feature #4015" [ref=f13e1084] [cursor=pointer]':
+                      - /url: /issues/4015
+                    - text: ": Make app settings overridable at project level"
+                  - cell [ref=f13e1085]:
+                    - link "Actions" [ref=f13e1086] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1087]:
+                  - cell [ref=f13e1088]
+                  - cell [ref=f13e1089]:
+                    - 'link "Feature #4138" [ref=f13e1090] [cursor=pointer]':
+                      - /url: /issues/4138
+                    - text: ": Add spent time comments in search"
+                  - cell [ref=f13e1091]:
+                    - link "Actions" [ref=f13e1092] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1093]:
+                  - cell [ref=f13e1094]
+                  - cell [ref=f13e1095]:
+                    - 'link "Feature #4687" [ref=f13e1096] [cursor=pointer]':
+                      - /url: /issues/4687
+                    - text: ": Add copy project permission"
+                  - cell [ref=f13e1097]:
+                    - link "Actions" [ref=f13e1098] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1099]:
+                  - cell [ref=f13e1100]:
+                    - 'img "Assignee: Toshi MARUYAMA" [ref=f13e1101]'
+                  - cell [ref=f13e1102]:
+                    - 'link "Feature #4741" [ref=f13e1103] [cursor=pointer]':
+                      - /url: /issues/4741
+                    - text: ": Improve Bazaar repositories error message in case to use shared repository"
+                  - cell [ref=f13e1104]:
+                    - link "Actions" [ref=f13e1105] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1106]:
+                  - cell [ref=f13e1107]
+                  - cell [ref=f13e1108]:
+                    - 'link "Feature #5284" [ref=f13e1109] [cursor=pointer]':
+                      - /url: /issues/5284
+                    - text: ": \"% done\" should provide data in text form too"
+                  - cell [ref=f13e1110]:
+                    - link "Actions" [ref=f13e1111] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1112]:
+                  - cell [ref=f13e1113]
+                  - cell [ref=f13e1114]:
+                    - 'link "Feature #5325" [ref=f13e1115] [cursor=pointer]':
+                      - /url: /issues/5325
+                    - text: ": Add Parent Task to 'Group Results By' drop down"
+                  - cell [ref=f13e1116]:
+                    - link "Actions" [ref=f13e1117] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1118]:
+                  - cell [ref=f13e1119]
+                  - cell [ref=f13e1120]:
+                    - 'link "Feature #5840" [ref=f13e1121] [cursor=pointer]':
+                      - /url: /issues/5840
+                    - text: ": Live lookup of the existing issues based on the keywords entered in the title for new issue"
+                  - cell [ref=f13e1122]:
+                    - link "Actions" [ref=f13e1123] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1124]:
+                  - cell [ref=f13e1125]
+                  - cell [ref=f13e1126]:
+                    - 'link "Feature #5901" [ref=f13e1127] [cursor=pointer]':
+                      - /url: /issues/5901
+                    - text: ": REST API to expose the Redmine version"
+                  - cell [ref=f13e1128]:
+                    - link "Actions" [ref=f13e1129] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1130]:
+                  - cell [ref=f13e1131]
+                  - cell [ref=f13e1132]:
+                    - 'link "Feature #6501" [ref=f13e1133] [cursor=pointer]':
+                      - /url: /issues/6501
+                    - text: ": Be able to choose the details to show in the Roadmap section"
+                  - cell [ref=f13e1134]:
+                    - link "Actions" [ref=f13e1135] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1136]:
+                  - cell [ref=f13e1137]
+                  - cell [ref=f13e1138]:
+                    - 'link "Feature #6914" [ref=f13e1139] [cursor=pointer]':
+                      - /url: /issues/6914
+                    - text: ": Allow reporter to opt out from receiving email updates"
+                  - cell [ref=f13e1140]:
+                    - link "Actions" [ref=f13e1141] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1142]:
+                  - cell [ref=f13e1143]
+                  - cell [ref=f13e1144]:
+                    - 'link "Feature #6984" [ref=f13e1145] [cursor=pointer]':
+                      - /url: /issues/6984
+                    - text: ": Configure order/position and visbility of tabs in menu"
+                  - cell [ref=f13e1146]:
+                    - link "Actions" [ref=f13e1147] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1148]:
+                  - cell [ref=f13e1149]
+                  - cell [ref=f13e1150]:
+                    - 'link "Feature #7342" [ref=f13e1151] [cursor=pointer]':
+                      - /url: /issues/7342
+                    - text: ": Default \"Everyone\" / \"Authenticated Users\" group for all users"
+                  - cell [ref=f13e1152]:
+                    - link "Actions" [ref=f13e1153] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1154]:
+                  - cell [ref=f13e1155]
+                  - cell [ref=f13e1156]:
+                    - 'link "Feature #7402" [ref=f13e1157] [cursor=pointer]':
+                      - /url: /issues/7402
+                    - text: ": REST API - Enumerations"
+                  - cell [ref=f13e1158]:
+                    - link "Actions" [ref=f13e1159] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1160]:
+                  - cell [ref=f13e1161]
+                  - cell [ref=f13e1162]:
+                    - 'link "Feature #7667" [ref=f13e1163] [cursor=pointer]':
+                      - /url: /issues/7667
+                    - text: ": Hierarchy columns should not be nullables"
+                  - cell [ref=f13e1164]:
+                    - link "Actions" [ref=f13e1165] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1166]:
+                  - cell [ref=f13e1167]
+                  - cell [ref=f13e1168]:
+                    - 'link "Feature #8058" [ref=f13e1169] [cursor=pointer]':
+                      - /url: /issues/8058
+                    - text: ": Separation of content language from UI language"
+                  - cell [ref=f13e1170]:
+                    - link "Actions" [ref=f13e1171] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1172]:
+                  - cell [ref=f13e1173]
+                  - cell [ref=f13e1174]:
+                    - 'link "Feature #8488" [ref=f13e1175] [cursor=pointer]':
+                      - /url: /issues/8488
+                    - text: ": Create an 'Involve' mechanism to private issues"
+                  - cell [ref=f13e1176]:
+                    - link "Actions" [ref=f13e1177] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1178]:
+                  - cell [ref=f13e1179]
+                  - cell [ref=f13e1180]:
+                    - 'link "Feature #8879" [ref=f13e1181] [cursor=pointer]':
+                      - /url: /issues/8879
+                    - text: ": Update option for documents and files"
+                  - cell [ref=f13e1182]:
+                    - link "Actions" [ref=f13e1183] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1184]:
+                  - cell [ref=f13e1185]:
+                    - 'img "Assignee: Toshi MARUYAMA" [ref=f13e1186]'
+                  - cell [ref=f13e1187]:
+                    - 'link "Feature #8915" [ref=f13e1188] [cursor=pointer]':
+                      - /url: /issues/8915
+                    - text: ": Use *.exe (e.g. hg.exe) for SCM command on Windows"
+                  - cell [ref=f13e1189]:
+                    - link "Actions" [ref=f13e1190] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1191]:
+                  - cell [ref=f13e1192]
+                  - cell [ref=f13e1193]:
+                    - 'link "Feature #9226" [ref=f13e1194] [cursor=pointer]':
+                      - /url: /issues/9226
+                    - text: ": Add new issue status to all workflows by default"
+                  - cell [ref=f13e1195]:
+                    - link "Actions" [ref=f13e1196] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1197]:
+                  - cell [ref=f13e1198]
+                  - cell [ref=f13e1199]:
+                    - 'link "Feature #9992" [ref=f13e1200] [cursor=pointer]':
+                      - /url: /issues/9992
+                    - text: ": Ability to filter issue subtasks in issue form"
+                  - cell [ref=f13e1201]:
+                    - link "Actions" [ref=f13e1202] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1203]:
+                  - cell [ref=f13e1204]
+                  - cell [ref=f13e1205]:
+                    - 'link "Feature #10248" [ref=f13e1206] [cursor=pointer]':
+                      - /url: /issues/10248
+                    - text: ": Specific text instead of addresses to the Redmine internal links"
+                  - cell [ref=f13e1207]:
+                    - link "Actions" [ref=f13e1208] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1209]:
+                  - cell [ref=f13e1210]
+                  - cell [ref=f13e1211]:
+                    - 'link "Feature #11313" [ref=f13e1212] [cursor=pointer]':
+                      - /url: /issues/11313
+                    - text: ": Automatic closing of resolved issues"
+                  - cell [ref=f13e1213]:
+                    - link "Actions" [ref=f13e1214] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1215]:
+                  - cell [ref=f13e1216]
+                  - cell [ref=f13e1217]:
+                    - 'link "Feature #11530" [ref=f13e1218] [cursor=pointer]':
+                      - /url: /issues/11530
+                    - text: ": Support hooks in mailer"
+                  - cell [ref=f13e1219]:
+                    - link "Actions" [ref=f13e1220] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1221]:
+                  - cell [ref=f13e1222]
+                  - cell [ref=f13e1223]:
+                    - 'link "Feature #11543" [ref=f13e1224] [cursor=pointer]':
+                      - /url: /issues/11543
+                    - text: ": Sort attachments by name"
+                  - cell [ref=f13e1225]:
+                    - link "Actions" [ref=f13e1226] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1227]:
+                  - cell [ref=f13e1228]
+                  - cell [ref=f13e1229]:
+                    - 'link "Feature #11698" [ref=f13e1230] [cursor=pointer]':
+                      - /url: /issues/11698
+                    - text: ": Ability to configure additional groups of keywords with extra features in commit messages"
+                  - cell [ref=f13e1231]:
+                    - link "Actions" [ref=f13e1232] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1233]:
+                  - cell [ref=f13e1234]
+                  - cell [ref=f13e1235]:
+                    - 'link "Feature #12297" [ref=f13e1236] [cursor=pointer]':
+                      - /url: /issues/12297
+                    - text: ": Render Readme.txt in repository"
+                  - cell [ref=f13e1237]:
+                    - link "Actions" [ref=f13e1238] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1239]:
+                  - cell [ref=f13e1240]
+                  - cell [ref=f13e1241]:
+                    - 'link "Feature #12355" [ref=f13e1242] [cursor=pointer]':
+                      - /url: /issues/12355
+                    - text: ": Being able to close blocking and blocked issues in one bulk update operation"
+                  - cell [ref=f13e1243]:
+                    - link "Actions" [ref=f13e1244] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1245]:
+                  - cell [ref=f13e1246]
+                  - cell [ref=f13e1247]:
+                    - 'link "Feature #12762" [ref=f13e1248] [cursor=pointer]':
+                      - /url: /issues/12762
+                    - text: ": Add option to calculate done ratio with the data from time tracking"
+                  - cell [ref=f13e1249]:
+                    - link "Actions" [ref=f13e1250] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1251]:
+                  - cell [ref=f13e1252]
+                  - cell [ref=f13e1253]:
+                    - 'link "Feature #12816" [ref=f13e1254] [cursor=pointer]':
+                      - /url: /issues/12816
+                    - text: ": Filter issues by progress state"
+                  - cell [ref=f13e1255]:
+                    - link "Actions" [ref=f13e1256] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1257]:
+                  - cell [ref=f13e1258]
+                  - cell [ref=f13e1259]:
+                    - 'link "Feature #12869" [ref=f13e1260] [cursor=pointer]':
+                      - /url: /issues/12869
+                    - text: ": Notificaion if ticket-creation failed"
+                  - cell [ref=f13e1261]:
+                    - link "Actions" [ref=f13e1262] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1263]:
+                  - cell [ref=f13e1264]
+                  - cell [ref=f13e1265]:
+                    - 'link "Feature #13088" [ref=f13e1266] [cursor=pointer]':
+                      - /url: /issues/13088
+                    - text: ": CDN support to jquery/ui lib"
+                  - cell [ref=f13e1267]:
+                    - link "Actions" [ref=f13e1268] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1269]:
+                  - cell [ref=f13e1270]
+                  - cell [ref=f13e1271]:
+                    - 'link "Feature #13182" [ref=f13e1272] [cursor=pointer]':
+                      - /url: /issues/13182
+                    - text: ": Activity page should display changes of the defined versions"
+                  - cell [ref=f13e1273]:
+                    - link "Actions" [ref=f13e1274] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1275]:
+                  - cell [ref=f13e1276]
+                  - cell [ref=f13e1277]:
+                    - 'link "Feature #13244" [ref=f13e1278] [cursor=pointer]':
+                      - /url: /issues/13244
+                    - text: ": Restrict log time for old days"
+                  - cell [ref=f13e1279]:
+                    - link "Actions" [ref=f13e1280] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1281]:
+                  - cell [ref=f13e1282]
+                  - cell [ref=f13e1283]:
+                    - 'link "Feature #13315" [ref=f13e1284] [cursor=pointer]':
+                      - /url: /issues/13315
+                    - text: ": Bulk edit for version list view"
+                  - cell [ref=f13e1285]:
+                    - link "Actions" [ref=f13e1286] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1287]:
+                  - cell [ref=f13e1288]
+                  - cell [ref=f13e1289]:
+                    - 'link "Feature #14418" [ref=f13e1290] [cursor=pointer]':
+                      - /url: /issues/14418
+                    - text: ": Copy inner issues relations along with issues"
+                  - cell [ref=f13e1291]:
+                    - link "Actions" [ref=f13e1292] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1293]:
+                  - cell [ref=f13e1294]
+                  - cell [ref=f13e1295]:
+                    - 'link "Feature #14508" [ref=f13e1296] [cursor=pointer]':
+                      - /url: /issues/14508
+                    - text: ": Workflow administration screen - loss of overview when working with many statuses"
+                  - cell [ref=f13e1297]:
+                    - link "Actions" [ref=f13e1298] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1299]:
+                  - cell [ref=f13e1300]
+                  - cell [ref=f13e1301]:
+                    - 'link "Feature #15348" [ref=f13e1302] [cursor=pointer]':
+                      - /url: /issues/15348
+                    - text: ": \"Issues can be assigned to this group\""
+                  - cell [ref=f13e1303]:
+                    - link "Actions" [ref=f13e1304] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1305]:
+                  - cell [ref=f13e1306]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e1307]'
+                  - cell [ref=f13e1308]:
+                    - 'link "Feature #15760" [ref=f13e1309] [cursor=pointer]':
+                      - /url: /issues/15760
+                    - text: ": JS response support for #render_error"
+                  - cell [ref=f13e1310]:
+                    - link "Actions" [ref=f13e1311] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1312]:
+                  - cell [ref=f13e1313]
+                  - cell [ref=f13e1314]:
+                    - 'link "Feature #15900" [ref=f13e1315] [cursor=pointer]':
+                      - /url: /issues/15900
+                    - text: ": Add to Issues List column of the attachment icon"
+                  - cell [ref=f13e1316]:
+                    - link "Actions" [ref=f13e1317] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1318]:
+                  - cell [ref=f13e1319]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e1320]'
+                  - cell [ref=f13e1321]:
+                    - 'link "Feature #16098" [ref=f13e1322] [cursor=pointer]':
+                      - /url: /issues/16098
+                    - text: ": On relation change/add notification setting"
+                  - cell [ref=f13e1323]:
+                    - link "Actions" [ref=f13e1324] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1325]:
+                  - cell [ref=f13e1326]
+                  - cell [ref=f13e1327]:
+                    - 'link "Feature #17599" [ref=f13e1328] [cursor=pointer]':
+                      - /url: /issues/17599
+                    - text: ": Allow users to edit issues without adding notes."
+                  - cell [ref=f13e1329]:
+                    - link "Actions" [ref=f13e1330] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1331]:
+                  - cell [ref=f13e1332]
+                  - cell [ref=f13e1333]:
+                    - 'link "Feature #17607" [ref=f13e1334] [cursor=pointer]':
+                      - /url: /issues/17607
+                    - text: ": More than one ContextMenu on single page"
+                  - cell [ref=f13e1335]:
+                    - link "Actions" [ref=f13e1336] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1337]:
+                  - cell [ref=f13e1338]
+                  - cell [ref=f13e1339]:
+                    - 'link "Feature #20289" [ref=f13e1340] [cursor=pointer]':
+                      - /url: /issues/20289
+                    - text: ": Add category-id to issue's CSS classes when present"
+                  - cell [ref=f13e1341]:
+                    - link "Actions" [ref=f13e1342] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1343]:
+                  - cell [ref=f13e1344]
+                  - cell [ref=f13e1345]:
+                    - 'link "Feature #20310" [ref=f13e1346] [cursor=pointer]':
+                      - /url: /issues/20310
+                    - text: ": Ability to switch date format (from relative into absolute) in issue notes titles"
+                  - cell [ref=f13e1347]:
+                    - link "Actions" [ref=f13e1348] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1349]:
+                  - cell [ref=f13e1350]
+                  - cell [ref=f13e1351]:
+                    - 'link "Feature #20812" [ref=f13e1352] [cursor=pointer]':
+                      - /url: /issues/20812
+                    - text: ": Highlight overdue issues and private issues in issue list"
+                  - cell [ref=f13e1353]:
+                    - link "Actions" [ref=f13e1354] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1355]:
+                  - cell [ref=f13e1356]
+                  - cell [ref=f13e1357]:
+                    - 'link "Feature #22915" [ref=f13e1358] [cursor=pointer]':
+                      - /url: /issues/22915
+                    - text: ": Additional filetypes (tif,tiff) for thumbnails generation"
+                  - cell [ref=f13e1359]:
+                    - link "Actions" [ref=f13e1360] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1361]:
+                  - cell [ref=f13e1362]
+                  - cell [ref=f13e1363]:
+                    - 'link "Feature #23894" [ref=f13e1364] [cursor=pointer]':
+                      - /url: /issues/23894
+                    - text: ": Expose repository through REST API"
+                  - cell [ref=f13e1365]:
+                    - link "Actions" [ref=f13e1366] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1367]:
+                  - cell [ref=f13e1368]
+                  - cell [ref=f13e1369]:
+                    - 'link "Feature #24089" [ref=f13e1370] [cursor=pointer]':
+                      - /url: /issues/24089
+                    - text: ": Call to Action (CTA) and improved conversion for registration"
+                  - cell [ref=f13e1371]:
+                    - link "Actions" [ref=f13e1372] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1373]:
+                  - cell [ref=f13e1374]
+                  - cell [ref=f13e1375]:
+                    - 'link "Feature #24198" [ref=f13e1376] [cursor=pointer]':
+                      - /url: /issues/24198
+                    - text: ": Setting for subtasks optionally follow the project change of the parent"
+                  - cell [ref=f13e1377]:
+                    - link "Actions" [ref=f13e1378] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1379]:
+                  - cell [ref=f13e1380]
+                  - cell [ref=f13e1381]:
+                    - 'link "Feature #24266" [ref=f13e1382] [cursor=pointer]':
+                      - /url: /issues/24266
+                    - text: ": Receiving email by mail_handler.rb does not trigger corresponding events"
+                  - cell [ref=f13e1383]:
+                    - link "Actions" [ref=f13e1384] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1385]:
+                  - cell [ref=f13e1386]
+                  - cell [ref=f13e1387]:
+                    - 'link "Feature #24277" [ref=f13e1388] [cursor=pointer]':
+                      - /url: /issues/24277
+                    - text: ": Introducing Remaining Time field as method to track the remaining time to complete an issue"
+                  - cell [ref=f13e1389]:
+                    - link "Actions" [ref=f13e1390] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1391]:
+                  - cell [ref=f13e1392]
+                  - cell [ref=f13e1393]:
+                    - 'link "Feature #24763" [ref=f13e1394] [cursor=pointer]':
+                      - /url: /issues/24763
+                    - text: ": Force SSL when Setting.protocol is \"https\""
+                  - cell [ref=f13e1395]:
+                    - link "Actions" [ref=f13e1396] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1397]:
+                  - cell [ref=f13e1398]
+                  - cell [ref=f13e1399]:
+                    - 'link "Feature #25198" [ref=f13e1400] [cursor=pointer]':
+                      - /url: /issues/25198
+                    - text: ": Add rank in search result as data attribute"
+                  - cell [ref=f13e1401]:
+                    - link "Actions" [ref=f13e1402] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1403]:
+                  - cell [ref=f13e1404]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1405]'
+                  - cell [ref=f13e1406]:
+                    - 'link "Feature #25808" [ref=f13e1407] [cursor=pointer]':
+                      - /url: /issues/25808
+                    - text: ": Allow import issues and time entries on multiple projects (map Project field to a column from CSV)"
+                  - cell [ref=f13e1408]:
+                    - link "Actions" [ref=f13e1409] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1410]:
+                  - cell [ref=f13e1411]
+                  - cell [ref=f13e1412]:
+                    - 'link "Feature #26525" [ref=f13e1413] [cursor=pointer]':
+                      - /url: /issues/26525
+                    - text: ": Add ability to configure the number of weeks to display on Calendar block in My Page"
+                  - cell [ref=f13e1414]:
+                    - link "Actions" [ref=f13e1415] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1416]:
+                  - cell [ref=f13e1417]
+                  - cell [ref=f13e1418]:
+                    - 'link "Feature #26642" [ref=f13e1419] [cursor=pointer]':
+                      - /url: /issues/26642
+                    - text: ": Support of ActiveRecord i18n scope in query filters"
+                  - cell [ref=f13e1420]:
+                    - link "Actions" [ref=f13e1421] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1422]:
+                  - cell [ref=f13e1423]
+                  - cell [ref=f13e1424]:
+                    - 'link "Feature #26680" [ref=f13e1425] [cursor=pointer]':
+                      - /url: /issues/26680
+                    - text: ": Show default assignee when creating new issue"
+                  - cell [ref=f13e1426]:
+                    - link "Actions" [ref=f13e1427] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1428]:
+                  - cell [ref=f13e1429]
+                  - cell [ref=f13e1430]:
+                    - 'link "Feature #27313" [ref=f13e1431] [cursor=pointer]':
+                      - /url: /issues/27313
+                    - text: ": More custom queries on My page"
+                  - cell [ref=f13e1432]:
+                    - link "Actions" [ref=f13e1433] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1434]:
+                  - cell [ref=f13e1435]
+                  - cell [ref=f13e1436]:
+                    - 'link "Feature #27831" [ref=f13e1437] [cursor=pointer]':
+                      - /url: /issues/27831
+                    - text: ": ATOM Feed for repository changes"
+                  - cell [ref=f13e1438]:
+                    - link "Actions" [ref=f13e1439] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1440]:
+                  - cell [ref=f13e1441]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1442]'
+                  - cell [ref=f13e1443]:
+                    - 'link "Feature #27988" [ref=f13e1444] [cursor=pointer]':
+                      - /url: /issues/27988
+                    - text: ": Option to configure which trackers can be set as subtasks for each tracker"
+                  - cell [ref=f13e1445]:
+                    - link "Actions" [ref=f13e1446] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1447]:
+                  - cell [ref=f13e1448]
+                  - cell [ref=f13e1449]:
+                    - 'link "Feature #28412" [ref=f13e1450] [cursor=pointer]':
+                      - /url: /issues/28412
+                    - text: ": Reject plugin same ID with registered one"
+                  - cell [ref=f13e1451]:
+                    - link "Actions" [ref=f13e1452] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1453]:
+                  - cell [ref=f13e1454]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e1455]'
+                  - cell [ref=f13e1456]:
+                    - 'link "Feature #29470" [ref=f13e1457] [cursor=pointer]':
+                      - /url: /issues/29470
+                    - text: ": Possibility to mark tracker as \"Subtask only\""
+                  - cell [ref=f13e1458]:
+                    - link "Actions" [ref=f13e1459] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1460]:
+                  - cell [ref=f13e1461]
+                  - cell [ref=f13e1462]:
+                    - 'link "Feature #30112" [ref=f13e1463] [cursor=pointer]':
+                      - /url: /issues/30112
+                    - text: ": Option to stop sending reminders on non-working days"
+                  - cell [ref=f13e1464]:
+                    - link "Actions" [ref=f13e1465] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1466]:
+                  - cell [ref=f13e1467]
+                  - cell [ref=f13e1468]:
+                    - 'link "Feature #30471" [ref=f13e1469] [cursor=pointer]':
+                      - /url: /issues/30471
+                    - text: ": Move \"Default columns\" checkbox on the query edit page from \"Options\" to \"Columns\" fieldset"
+                  - cell [ref=f13e1470]:
+                    - link "Actions" [ref=f13e1471] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1472]:
+                  - cell [ref=f13e1473]
+                  - cell [ref=f13e1474]:
+                    - 'link "Feature #30822" [ref=f13e1475] [cursor=pointer]':
+                      - /url: /issues/30822
+                    - text: ": Show Gravatar icons in email notifications"
+                  - cell [ref=f13e1476]:
+                    - link "Actions" [ref=f13e1477] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1478]:
+                  - cell [ref=f13e1479]
+                  - cell [ref=f13e1480]:
+                    - 'link "Feature #30893" [ref=f13e1481] [cursor=pointer]':
+                      - /url: /issues/30893
+                    - text: ": Show \"Updated issues\" on the profile page"
+                  - cell [ref=f13e1482]:
+                    - link "Actions" [ref=f13e1483] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1484]:
+                  - cell [ref=f13e1485]
+                  - cell [ref=f13e1486]:
+                    - 'link "Feature #31538" [ref=f13e1487] [cursor=pointer]':
+                      - /url: /issues/31538
+                    - text: ": Allow a plugin to be installed in the directory different from the plugin id"
+                  - cell [ref=f13e1488]:
+                    - link "Actions" [ref=f13e1489] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1490]:
+                  - cell [ref=f13e1491]
+                  - cell [ref=f13e1492]:
+                    - 'link "Feature #31631" [ref=f13e1493] [cursor=pointer]':
+                      - /url: /issues/31631
+                    - text: ": Add links to child pages to wiki page"
+                  - cell [ref=f13e1494]:
+                    - link "Actions" [ref=f13e1495] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1496]:
+                  - cell [ref=f13e1497]
+                  - cell [ref=f13e1498]:
+                    - 'link "Feature #32029" [ref=f13e1499] [cursor=pointer]':
+                      - /url: /issues/32029
+                    - text: ": Replace gantt and calendar tooltips with jquery tooltips"
+                  - cell [ref=f13e1500]:
+                    - link "Actions" [ref=f13e1501] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1502]:
+                  - cell [ref=f13e1503]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e1504]'
+                  - cell [ref=f13e1505]:
+                    - 'link "Feature #32030" [ref=f13e1506] [cursor=pointer]':
+                      - /url: /issues/32030
+                    - text: ": Show Gravatar icons in the Members tab in the project setting"
+                  - cell [ref=f13e1507]:
+                    - link "Actions" [ref=f13e1508] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1509]:
+                  - cell [ref=f13e1510]
+                  - cell [ref=f13e1511]:
+                    - 'link "Feature #32085" [ref=f13e1512] [cursor=pointer]':
+                      - /url: /issues/32085
+                    - text: ": Allow newline as a separator in \"Allowed extensions\", \"Disallowed extensions\", \"Exclude attachments by name\" field in Administration"
+                  - cell [ref=f13e1513]:
+                    - link "Actions" [ref=f13e1514] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1515]:
+                  - cell [ref=f13e1516]
+                  - cell [ref=f13e1517]:
+                    - 'link "Feature #32545" [ref=f13e1518] [cursor=pointer]':
+                      - /url: /issues/32545
+                    - text: ": Plugin API for adding a new notification"
+                  - cell [ref=f13e1519]:
+                    - link "Actions" [ref=f13e1520] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1521]:
+                  - cell [ref=f13e1522]
+                  - cell [ref=f13e1523]:
+                    - 'link "Feature #32856" [ref=f13e1524] [cursor=pointer]':
+                      - /url: /issues/32856
+                    - text: ": Bar charts in the spent time report"
+                  - cell [ref=f13e1525]:
+                    - link "Actions" [ref=f13e1526] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1527]:
+                  - cell [ref=f13e1528]
+                  - cell [ref=f13e1529]:
+                    - 'link "Feature #33018" [ref=f13e1530] [cursor=pointer]':
+                      - /url: /issues/33018
+                    - text: ": Add an ability to attach and embed a file to \"Image\" button in the Wiki toolbar"
+                  - cell [ref=f13e1531]:
+                    - link "Actions" [ref=f13e1532] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1533]:
+                  - cell [ref=f13e1534]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e1535]'
+                  - cell [ref=f13e1536]:
+                    - 'link "Feature #33071" [ref=f13e1537] [cursor=pointer]':
+                      - /url: /issues/33071
+                    - text: ": Prevent accidental deletion of contents with sudo mode"
+                  - cell [ref=f13e1538]:
+                    - link "Actions" [ref=f13e1539] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1540]:
+                  - cell [ref=f13e1541]
+                  - cell [ref=f13e1542]:
+                    - 'link "Feature #33425" [ref=f13e1543] [cursor=pointer]':
+                      - /url: /issues/33425
+                    - text: ": Auto complete wiki macros"
+                  - cell [ref=f13e1544]:
+                    - link "Actions" [ref=f13e1545] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1546]:
+                  - cell [ref=f13e1547]
+                  - cell [ref=f13e1548]:
+                    - 'link "Feature #33641" [ref=f13e1549] [cursor=pointer]':
+                      - /url: /issues/33641
+                    - text: ": Show badges that indicate author in issue journal, news comments, and forum replies"
+                  - cell [ref=f13e1550]:
+                    - link "Actions" [ref=f13e1551] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1552]:
+                  - cell [ref=f13e1553]
+                  - cell [ref=f13e1554]:
+                    - 'link "Feature #33730" [ref=f13e1555] [cursor=pointer]':
+                      - /url: /issues/33730
+                    - text: ": Add new issue links for each version to the version list page"
+                  - cell [ref=f13e1556]:
+                    - link "Actions" [ref=f13e1557] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1558]:
+                  - cell [ref=f13e1559]
+                  - cell [ref=f13e1560]:
+                    - 'link "Feature #34040" [ref=f13e1561] [cursor=pointer]':
+                      - /url: /issues/34040
+                    - text: ": Include all notes in issue list csv"
+                  - cell [ref=f13e1562]:
+                    - link "Actions" [ref=f13e1563] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1564]:
+                  - cell [ref=f13e1565]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1566]'
+                  - cell [ref=f13e1567]:
+                    - 'link "Feature #34070" [ref=f13e1568] [cursor=pointer]':
+                      - /url: /issues/34070
+                    - text: ": Allow setting a grace period when forcing 2FA"
+                  - cell [ref=f13e1569]:
+                    - link "Actions" [ref=f13e1570] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1571]:
+                  - cell [ref=f13e1572]
+                  - cell [ref=f13e1573]:
+                    - 'link "Feature #34861" [ref=f13e1574] [cursor=pointer]':
+                      - /url: /issues/34861
+                    - text: ": Bulk delete news attachments"
+                  - cell [ref=f13e1575]:
+                    - link "Actions" [ref=f13e1576] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1577]:
+                  - cell [ref=f13e1578]
+                  - cell [ref=f13e1579]:
+                    - 'link "Feature #34862" [ref=f13e1580] [cursor=pointer]':
+                      - /url: /issues/34862
+                    - text: ": Bulk delete forum attachments"
+                  - cell [ref=f13e1581]:
+                    - link "Actions" [ref=f13e1582] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1583]:
+                  - cell [ref=f13e1584]
+                  - cell [ref=f13e1585]:
+                    - 'link "Feature #35035" [ref=f13e1586] [cursor=pointer]':
+                      - /url: /issues/35035
+                    - text: ": Refactor text formatting to HTML::Pipeline"
+                  - cell [ref=f13e1587]:
+                    - link "Actions" [ref=f13e1588] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1589]:
+                  - cell [ref=f13e1590]
+                  - cell [ref=f13e1591]:
+                    - 'link "Feature #35221" [ref=f13e1592] [cursor=pointer]':
+                      - /url: /issues/35221
+                    - text: ": Show public badge on project's overview page when the project is public"
+                  - cell [ref=f13e1593]:
+                    - link "Actions" [ref=f13e1594] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1595]:
+                  - cell [ref=f13e1596]
+                  - cell [ref=f13e1597]:
+                    - 'link "Feature #35281" [ref=f13e1598] [cursor=pointer]':
+                      - /url: /issues/35281
+                    - text: ": [Meta] (Issues) Custom (and Standard) Fields Grouping and Positioning"
+                  - cell [ref=f13e1599]:
+                    - link "Actions" [ref=f13e1600] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1601]:
+                  - cell [ref=f13e1602]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1603]'
+                  - cell [ref=f13e1604]:
+                    - 'link "Feature #35657" [ref=f13e1605] [cursor=pointer]':
+                      - /url: /issues/35657
+                    - text: ": Spent time ratio column and filter"
+                  - cell [ref=f13e1606]:
+                    - link "Actions" [ref=f13e1607] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1608]:
+                  - cell [ref=f13e1609]
+                  - cell [ref=f13e1610]:
+                    - 'link "Feature #35797" [ref=f13e1611] [cursor=pointer]':
+                      - /url: /issues/35797
+                    - text: ": Don't show issues without spent time on the issues list with 0.00/0:00 spent time values"
+                  - cell [ref=f13e1612]:
+                    - link "Actions" [ref=f13e1613] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1614]:
+                  - cell [ref=f13e1615]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1616]'
+                  - cell [ref=f13e1617]:
+                    - 'link "Feature #36162" [ref=f13e1618] [cursor=pointer]':
+                      - /url: /issues/36162
+                    - text: ": Add notification reason to the email instead of the default static email footer"
+                  - cell [ref=f13e1619]:
+                    - link "Actions" [ref=f13e1620] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1621]:
+                  - cell [ref=f13e1622]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1623]'
+                  - cell [ref=f13e1624]:
+                    - 'link "Feature #37169" [ref=f13e1625] [cursor=pointer]':
+                      - /url: /issues/37169
+                    - text: ": Update sanitization rules to allow footnotes markup to match the original structure"
+                  - cell [ref=f13e1626]:
+                    - link "Actions" [ref=f13e1627] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1628]:
+                  - cell [ref=f13e1629]
+                  - cell [ref=f13e1630]:
+                    - 'link "Feature #37973" [ref=f13e1631] [cursor=pointer]':
+                      - /url: /issues/37973
+                    - text: ": Enable to display watches count on issues list"
+                  - cell [ref=f13e1632]:
+                    - link "Actions" [ref=f13e1633] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1634]:
+                  - cell [ref=f13e1635]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1636]'
+                  - cell [ref=f13e1637]:
+                    - 'link "Feature #39130" [ref=f13e1638] [cursor=pointer]':
+                      - /url: /issues/39130
+                    - text: ": Common Formatting - Check tasklist item without editing function"
+                  - cell [ref=f13e1639]:
+                    - link "Actions" [ref=f13e1640] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1641]:
+                  - cell [ref=f13e1642]
+                  - cell [ref=f13e1643]:
+                    - 'link "Feature #39723" [ref=f13e1644] [cursor=pointer]':
+                      - /url: /issues/39723
+                    - text: ": Add 'Assigned to You' Tag in Email Subjects for Personal Assignments"
+                  - cell [ref=f13e1645]:
+                    - link "Actions" [ref=f13e1646] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1647]:
+                  - cell [ref=f13e1648]
+                  - cell [ref=f13e1649]:
+                    - 'link "Feature #40411" [ref=f13e1650] [cursor=pointer]':
+                      - /url: /issues/40411
+                    - text: ": The watch button/link should show if the issue is watched by group"
+                  - cell [ref=f13e1651]:
+                    - link "Actions" [ref=f13e1652] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1653]:
+                  - cell [ref=f13e1654]
+                  - cell [ref=f13e1655]:
+                    - 'link "Feature #40489" [ref=f13e1656] [cursor=pointer]':
+                      - /url: /issues/40489
+                    - text: ": `copyTextToClipboard` to make it easy to see that you have copied to the clipboard"
+                  - cell [ref=f13e1657]:
+                    - link "Actions" [ref=f13e1658] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1659]:
+                  - cell [ref=f13e1660]
+                  - cell [ref=f13e1661]:
+                    - 'link "Feature #42604" [ref=f13e1662] [cursor=pointer]':
+                      - /url: /issues/42604
+                    - text: ": Enable commonmark spoiler extension"
+                  - cell [ref=f13e1663]:
+                    - link "Actions" [ref=f13e1664] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1665]:
+                  - cell [ref=f13e1666]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1667]'
+                  - cell [ref=f13e1668]:
+                    - 'link "Feature #42605" [ref=f13e1669] [cursor=pointer]':
+                      - /url: /issues/42605
+                    - text: ": Enable commonmark math support using the math_latex extension"
+                  - cell [ref=f13e1670]:
+                    - link "Actions" [ref=f13e1671] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1672]:
+                  - cell [ref=f13e1673]
+                  - cell [ref=f13e1674]:
+                    - 'link "Feature #43680" [ref=f13e1675] [cursor=pointer]':
+                      - /url: /issues/43680
+                    - text: ": Improve subprojects list display on project overview"
+                  - cell [ref=f13e1676]:
+                    - link "Actions" [ref=f13e1677] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1678]:
+                  - cell [ref=f13e1679]
+                  - cell [ref=f13e1680]:
+                    - 'link "Feature #43703" [ref=f13e1681] [cursor=pointer]':
+                      - /url: /issues/43703
+                    - text: ": Update jQuery to 4.0.0"
+                  - cell [ref=f13e1682]:
+                    - link "Actions" [ref=f13e1683] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1684]:
+                  - cell [ref=f13e1685]
+                  - cell [ref=f13e1686]:
+                    - 'link "Feature #43859" [ref=f13e1687] [cursor=pointer]':
+                      - /url: /issues/43859
+                    - text: ": Default Query for Time Entries (Time Tracking), similar to Issues and Projects"
+                  - cell [ref=f13e1688]:
+                    - link "Actions" [ref=f13e1689] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1690]:
+                  - cell [ref=f13e1691]
+                  - cell [ref=f13e1692]:
+                    - 'link "Feature #43959" [ref=f13e1693] [cursor=pointer]':
+                      - /url: /issues/43959
+                    - text: ": add wikitoolbar on custom field on other types than issue"
+                  - cell [ref=f13e1694]:
+                    - link "Actions" [ref=f13e1695] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1696]:
+                  - cell [ref=f13e1697]
+                  - cell [ref=f13e1698]:
+                    - 'link "Feature #44233" [ref=f13e1699] [cursor=pointer]':
+                      - /url: /issues/44233
+                    - text: ": Add show, update, and destroy to the REST API for custom fields"
+                  - cell [ref=f13e1700]:
+                    - link "Actions" [ref=f13e1701] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1702]:
+                  - cell [ref=f13e1703]:
+                    - 'img "Assignee: Mischa The Evil" [ref=f13e1704]'
+                  - cell [ref=f13e1705]:
+                    - 'link "Patch #1671" [ref=f13e1706] [cursor=pointer]':
+                      - /url: /issues/1671
+                    - text: ": Show a breakdown of estimated/spent/remaining time for a version"
+                  - cell [ref=f13e1707]:
+                    - link "Actions" [ref=f13e1708] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1709]:
+                  - cell [ref=f13e1710]
+                  - cell [ref=f13e1711]:
+                    - 'link "Patch #2931" [ref=f13e1712] [cursor=pointer]':
+                      - /url: /issues/2931
+                    - text: ": Templating for description of new tickets by Tracker"
+                  - cell [ref=f13e1713]:
+                    - link "Actions" [ref=f13e1714] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1715]:
+                  - cell [ref=f13e1716]
+                  - cell [ref=f13e1717]:
+                    - 'link "Patch #3358" [ref=f13e1718] [cursor=pointer]':
+                      - /url: /issues/3358
+                    - text: ": Advanced LDAP authentication"
+                  - cell [ref=f13e1719]:
+                    - link "Actions" [ref=f13e1720] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1721]:
+                  - cell [ref=f13e1722]
+                  - cell [ref=f13e1723]:
+                    - 'link "Patch #6722" [ref=f13e1724] [cursor=pointer]':
+                      - /url: /issues/6722
+                    - text: ": Add a summary to projects"
+                  - cell [ref=f13e1725]:
+                    - link "Actions" [ref=f13e1726] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1727]:
+                  - cell [ref=f13e1728]
+                  - cell [ref=f13e1729]:
+                    - 'link "Patch #7456" [ref=f13e1730] [cursor=pointer]':
+                      - /url: /issues/7456
+                    - text: ": Gantt filters"
+                  - cell [ref=f13e1731]:
+                    - link "Actions" [ref=f13e1732] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1733]:
+                  - cell [ref=f13e1734]
+                  - cell [ref=f13e1735]:
+                    - 'link "Patch #8831" [ref=f13e1736] [cursor=pointer]':
+                      - /url: /issues/8831
+                    - text: ": CSS class for issues due today in the issue list"
+                  - cell [ref=f13e1737]:
+                    - link "Actions" [ref=f13e1738] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1739]:
+                  - cell [ref=f13e1740]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e1741]'
+                  - cell [ref=f13e1742]:
+                    - 'link "Patch #12730" [ref=f13e1743] [cursor=pointer]':
+                      - /url: /issues/12730
+                    - text: ": Fix sorting and PDF output of Gantt diagram & start date calculation and grouping"
+                  - cell [ref=f13e1744]:
+                    - link "Actions" [ref=f13e1745] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1746]:
+                  - cell [ref=f13e1747]
+                  - cell [ref=f13e1748]:
+                    - 'link "Patch #12850" [ref=f13e1749] [cursor=pointer]':
+                      - /url: /issues/12850
+                    - text: ": User profile : Link to project in mail notifications by project selection"
+                  - cell [ref=f13e1750]:
+                    - link "Actions" [ref=f13e1751] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1752]:
+                  - cell [ref=f13e1753]:
+                    - 'img "Assignee: Jean-Baptiste Barth" [ref=f13e1754]'
+                  - cell [ref=f13e1755]:
+                    - 'link "Patch #13413" [ref=f13e1756] [cursor=pointer]':
+                      - /url: /issues/13413
+                    - text: ": Let users choose how many days in advance they want to receive issue due date reminders via email"
+                  - cell [ref=f13e1757]:
+                    - link "Actions" [ref=f13e1758] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1759]:
+                  - cell [ref=f13e1760]
+                  - cell [ref=f13e1761]:
+                    - 'link "Patch #13665" [ref=f13e1762] [cursor=pointer]':
+                      - /url: /issues/13665
+                    - text: ": atom available on wiki page footer"
+                  - cell [ref=f13e1763]:
+                    - link "Actions" [ref=f13e1764] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1765]:
+                  - cell [ref=f13e1766]
+                  - cell [ref=f13e1767]:
+                    - 'link "Patch #16069" [ref=f13e1768] [cursor=pointer]':
+                      - /url: /issues/16069
+                    - text: ": Allow configuration of API limit instead of hardcoding at 100"
+                  - cell [ref=f13e1769]:
+                    - link "Actions" [ref=f13e1770] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1771]:
+                  - cell [ref=f13e1772]
+                  - cell [ref=f13e1773]:
+                    - 'link "Patch #18059" [ref=f13e1774] [cursor=pointer]':
+                      - /url: /issues/18059
+                    - text: ": Activity when issue change assigned to."
+                  - cell [ref=f13e1775]:
+                    - link "Actions" [ref=f13e1776] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1777]:
+                  - cell [ref=f13e1778]
+                  - cell [ref=f13e1779]:
+                    - 'link "Patch #18326" [ref=f13e1780] [cursor=pointer]':
+                      - /url: /issues/18326
+                    - text: ": Show associated revisions in issue list query column"
+                  - cell [ref=f13e1781]:
+                    - link "Actions" [ref=f13e1782] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1783]:
+                  - cell [ref=f13e1784]
+                  - cell [ref=f13e1785]:
+                    - 'link "Patch #18419" [ref=f13e1786] [cursor=pointer]':
+                      - /url: /issues/18419
+                    - text: ": Copy news along with the project"
+                  - cell [ref=f13e1787]:
+                    - link "Actions" [ref=f13e1788] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1789]:
+                  - cell [ref=f13e1790]
+                  - cell [ref=f13e1791]:
+                    - 'link "Patch #20121" [ref=f13e1792] [cursor=pointer]':
+                      - /url: /issues/20121
+                    - text: ": Respect working days configuration when sending reminder emails"
+                  - cell [ref=f13e1793]:
+                    - link "Actions" [ref=f13e1794] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1795]:
+                  - cell [ref=f13e1796]
+                  - cell [ref=f13e1797]:
+                    - 'link "Patch #22291" [ref=f13e1798] [cursor=pointer]':
+                      - /url: /issues/22291
+                    - text: ": Link Category in the issue page to all open issues from that project with the same category"
+                  - cell [ref=f13e1799]:
+                    - link "Actions" [ref=f13e1800] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1801]:
+                  - cell [ref=f13e1802]
+                  - cell [ref=f13e1803]:
+                    - 'link "Patch #24623" [ref=f13e1804] [cursor=pointer]':
+                      - /url: /issues/24623
+                    - text: ": Implements CRUD permissions and restrictions to issue attachments"
+                  - cell [ref=f13e1805]:
+                    - link "Actions" [ref=f13e1806] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1807]:
+                  - cell [ref=f13e1808]
+                  - cell [ref=f13e1809]:
+                    - 'link "Patch #26030" [ref=f13e1810] [cursor=pointer]':
+                      - /url: /issues/26030
+                    - text: ": Like issues and news comments, want to specify the display order of the forum's reply."
+                  - cell [ref=f13e1811]:
+                    - link "Actions" [ref=f13e1812] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1813]:
+                  - cell [ref=f13e1814]
+                  - cell [ref=f13e1815]:
+                    - 'link "Patch #26122" [ref=f13e1816] [cursor=pointer]':
+                      - /url: /issues/26122
+                    - text: ": Implementation of visible conditions with inner join instead of subselect"
+                  - cell [ref=f13e1817]:
+                    - link "Actions" [ref=f13e1818] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1819]:
+                  - cell [ref=f13e1820]
+                  - cell [ref=f13e1821]:
+                    - 'link "Patch #27678" [ref=f13e1822] [cursor=pointer]':
+                      - /url: /issues/27678
+                    - text: ": Make \"Check all / Uncheck all\" link noticeable"
+                  - cell [ref=f13e1823]:
+                    - link "Actions" [ref=f13e1824] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1825]:
+                  - cell [ref=f13e1826]
+                  - cell [ref=f13e1827]:
+                    - 'link "Patch #28025" [ref=f13e1828] [cursor=pointer]':
+                      - /url: /issues/28025
+                    - text: ": Access project jump box with hotkey"
+                  - cell [ref=f13e1829]:
+                    - link "Actions" [ref=f13e1830] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1831]:
+                  - cell [ref=f13e1832]
+                  - cell [ref=f13e1833]:
+                    - 'link "Patch #28861" [ref=f13e1834] [cursor=pointer]':
+                      - /url: /issues/28861
+                    - text: ": Add a date item to the context menu"
+                  - cell [ref=f13e1835]:
+                    - link "Actions" [ref=f13e1836] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1837]:
+                  - cell [ref=f13e1838]
+                  - cell [ref=f13e1839]:
+                    - 'link "Patch #29184" [ref=f13e1840] [cursor=pointer]':
+                      - /url: /issues/29184
+                    - text: ": Add home to the application menu"
+                  - cell [ref=f13e1841]:
+                    - link "Actions" [ref=f13e1842] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1843]:
+                  - cell [ref=f13e1844]
+                  - cell [ref=f13e1845]:
+                    - 'link "Patch #29830" [ref=f13e1846] [cursor=pointer]':
+                      - /url: /issues/29830
+                    - text: ": Issue CSV export options: checkboxes have no effect for columns activated in query"
+                  - cell [ref=f13e1847]:
+                    - link "Actions" [ref=f13e1848] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1849]:
+                  - cell [ref=f13e1850]
+                  - cell [ref=f13e1851]:
+                    - 'link "Patch #30026" [ref=f13e1852] [cursor=pointer]':
+                      - /url: /issues/30026
+                    - text: ": macros and textile at pdf export in custom field"
+                  - cell [ref=f13e1853]:
+                    - link "Actions" [ref=f13e1854] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1855]:
+                  - cell [ref=f13e1856]
+                  - cell [ref=f13e1857]:
+                    - 'link "Patch #30071" [ref=f13e1858] [cursor=pointer]':
+                      - /url: /issues/30071
+                    - text: ": Show parent projects when filtering in the project jump box"
+                  - cell [ref=f13e1859]:
+                    - link "Actions" [ref=f13e1860] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1861]:
+                  - cell [ref=f13e1862]
+                  - cell [ref=f13e1863]:
+                    - 'link "Patch #30262" [ref=f13e1864] [cursor=pointer]':
+                      - /url: /issues/30262
+                    - text: ": Show 'Add filter' dropdown menu as button beneath the filters"
+                  - cell [ref=f13e1865]:
+                    - link "Actions" [ref=f13e1866] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1867]:
+                  - cell [ref=f13e1868]
+                  - cell [ref=f13e1869]:
+                    - 'link "Patch #30730" [ref=f13e1870] [cursor=pointer]':
+                      - /url: /issues/30730
+                    - text: ": [Revision view] Place link to add a related issue next to the heading"
+                  - cell [ref=f13e1871]:
+                    - link "Actions" [ref=f13e1872] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1873]:
+                  - cell [ref=f13e1874]
+                  - cell [ref=f13e1875]:
+                    - 'link "Patch #30739" [ref=f13e1876] [cursor=pointer]':
+                      - /url: /issues/30739
+                    - text: ": Project Custom Fields configuration : split by tracker"
+                  - cell [ref=f13e1877]:
+                    - link "Actions" [ref=f13e1878] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1879]:
+                  - cell [ref=f13e1880]
+                  - cell [ref=f13e1881]:
+                    - 'link "Patch #31076" [ref=f13e1882] [cursor=pointer]':
+                      - /url: /issues/31076
+                    - text: ": Issues CSV / PDF export via ActiveJob"
+                  - cell [ref=f13e1883]:
+                    - link "Actions" [ref=f13e1884] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1885]:
+                  - cell [ref=f13e1886]
+                  - cell [ref=f13e1887]:
+                    - 'link "Patch #31224" [ref=f13e1888] [cursor=pointer]':
+                      - /url: /issues/31224
+                    - text: ": My page, add Time Entry queries"
+                  - cell [ref=f13e1889]:
+                    - link "Actions" [ref=f13e1890] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1891]:
+                  - cell [ref=f13e1892]
+                  - cell [ref=f13e1893]:
+                    - 'link "Patch #31385" [ref=f13e1894] [cursor=pointer]':
+                      - /url: /issues/31385
+                    - text: ": Formating toolbar : new color tools"
+                  - cell [ref=f13e1895]:
+                    - link "Actions" [ref=f13e1896] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1897]:
+                  - cell [ref=f13e1898]
+                  - cell [ref=f13e1899]:
+                    - 'link "Patch #31987" [ref=f13e1900] [cursor=pointer]':
+                      - /url: /issues/31987
+                    - text: ": Add rake task which synchronize all revisions in repositories related with all active projects"
+                  - cell [ref=f13e1901]:
+                    - link "Actions" [ref=f13e1902] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1903]:
+                  - cell [ref=f13e1904]
+                  - cell [ref=f13e1905]:
+                    - 'link "Patch #32016" [ref=f13e1906] [cursor=pointer]':
+                      - /url: /issues/32016
+                    - text: ": Rounded corners on roadmap's progress bar"
+                  - cell [ref=f13e1907]:
+                    - link "Actions" [ref=f13e1908] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1909]:
+                  - cell [ref=f13e1910]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e1911]'
+                  - cell [ref=f13e1912]:
+                    - 'link "Patch #32099" [ref=f13e1913] [cursor=pointer]':
+                      - /url: /issues/32099
+                    - text: ": Fix inconsistent gap sizes on My page"
+                  - cell [ref=f13e1914]:
+                    - link "Actions" [ref=f13e1915] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1916]:
+                  - cell [ref=f13e1917]
+                  - cell [ref=f13e1918]:
+                    - 'link "Patch #32166" [ref=f13e1919] [cursor=pointer]':
+                      - /url: /issues/32166
+                    - text: ": Rounded corners on table.gantt-table"
+                  - cell [ref=f13e1920]:
+                    - link "Actions" [ref=f13e1921] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1922]:
+                  - cell [ref=f13e1923]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e1924]'
+                  - cell [ref=f13e1925]:
+                    - 'link "Patch #32405" [ref=f13e1926] [cursor=pointer]':
+                      - /url: /issues/32405
+                    - text: ": Updating sq translation"
+                  - cell [ref=f13e1927]:
+                    - link "Actions" [ref=f13e1928] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1929]:
+                  - cell [ref=f13e1930]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e1931]'
+                  - cell [ref=f13e1932]:
+                    - 'link "Patch #33211" [ref=f13e1933] [cursor=pointer]':
+                      - /url: /issues/33211
+                    - text: ": Include block columns (ex: Description, Last notes) in CSV export when option \"All columns\" is selected"
+                  - cell [ref=f13e1934]:
+                    - link "Actions" [ref=f13e1935] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1936]:
+                  - cell [ref=f13e1937]
+                  - cell [ref=f13e1938]:
+                    - 'link "Patch #33431" [ref=f13e1939] [cursor=pointer]':
+                      - /url: /issues/33431
+                    - text: ": Better performance for Time entries without issue and activity filters"
+                  - cell [ref=f13e1940]:
+                    - link "Actions" [ref=f13e1941] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1942]:
+                  - cell [ref=f13e1943]
+                  - cell [ref=f13e1944]:
+                    - 'link "Patch #34426" [ref=f13e1945] [cursor=pointer]':
+                      - /url: /issues/34426
+                    - text: ": Issue Categories sortable"
+                  - cell [ref=f13e1946]:
+                    - link "Actions" [ref=f13e1947] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1948]:
+                  - cell [ref=f13e1949]
+                  - cell [ref=f13e1950]:
+                    - 'link "Patch #35268" [ref=f13e1951] [cursor=pointer]':
+                      - /url: /issues/35268
+                    - text: ": Issue.acts_as_searchable columns option cleanup"
+                  - cell [ref=f13e1952]:
+                    - link "Actions" [ref=f13e1953] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1954]:
+                  - cell [ref=f13e1955]
+                  - cell [ref=f13e1956]:
+                    - 'link "Patch #35373" [ref=f13e1957] [cursor=pointer]':
+                      - /url: /issues/35373
+                    - text: ": Improve project deletion warning text"
+                  - cell [ref=f13e1958]:
+                    - link "Actions" [ref=f13e1959] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1960]:
+                  - cell [ref=f13e1961]
+                  - cell [ref=f13e1962]:
+                    - 'link "Patch #36742" [ref=f13e1963] [cursor=pointer]':
+                      - /url: /issues/36742
+                    - text: ": Scroll to top button"
+                  - cell [ref=f13e1964]:
+                    - link "Actions" [ref=f13e1965] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1966]:
+                  - cell [ref=f13e1967]
+                  - cell [ref=f13e1968]:
+                    - 'link "Patch #37600" [ref=f13e1969] [cursor=pointer]':
+                      - /url: /issues/37600
+                    - text: ": Cache attachments and thumbnails in web browsers"
+                  - cell [ref=f13e1970]:
+                    - link "Actions" [ref=f13e1971] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1972]:
+                  - cell [ref=f13e1973]
+                  - cell [ref=f13e1974]:
+                    - 'link "Patch #37664" [ref=f13e1975] [cursor=pointer]':
+                      - /url: /issues/37664
+                    - text: ": Preload all stylesheets and JavaScripts"
+                  - cell [ref=f13e1976]:
+                    - link "Actions" [ref=f13e1977] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1978]:
+                  - cell [ref=f13e1979]
+                  - cell [ref=f13e1980]:
+                    - 'link "Patch #38732" [ref=f13e1981] [cursor=pointer]':
+                      - /url: /issues/38732
+                    - text: ": Adjusting elements position on Issue Edit View"
+                  - cell [ref=f13e1982]:
+                    - link "Actions" [ref=f13e1983] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1984]:
+                  - cell [ref=f13e1985]
+                  - cell [ref=f13e1986]:
+                    - 'link "Patch #38740" [ref=f13e1987] [cursor=pointer]':
+                      - /url: /issues/38740
+                    - text: ": Enhanced collapsing/expanding functionalities for Gantt Chart"
+                  - cell [ref=f13e1988]:
+                    - link "Actions" [ref=f13e1989] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1990]:
+                  - cell [ref=f13e1991]
+                  - cell [ref=f13e1992]:
+                    - 'link "Patch #38796" [ref=f13e1993] [cursor=pointer]':
+                      - /url: /issues/38796
+                    - text: ": Improved display of tracker selection area in custom field settings"
+                  - cell [ref=f13e1994]:
+                    - link "Actions" [ref=f13e1995] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e1996]:
+                  - cell [ref=f13e1997]
+                  - cell [ref=f13e1998]:
+                    - 'link "Patch #40499" [ref=f13e1999] [cursor=pointer]':
+                      - /url: /issues/40499
+                    - text: ": Replace deprecated `document.execCommand` with Clipboard API in copyTextToClipboard function"
+                  - cell [ref=f13e2000]:
+                    - link "Actions" [ref=f13e2001] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2002]:
+                  - cell [ref=f13e2003]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e2004]'
+                  - cell [ref=f13e2005]:
+                    - 'link "Patch #41094" [ref=f13e2006] [cursor=pointer]':
+                      - /url: /issues/41094
+                    - text: ": Migrate System Tests from Selenium to Playwright"
+                  - cell [ref=f13e2007]:
+                    - link "Actions" [ref=f13e2008] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2009]:
+                  - cell [ref=f13e2010]
+                  - cell [ref=f13e2011]:
+                    - 'link "Patch #41827" [ref=f13e2012] [cursor=pointer]':
+                      - /url: /issues/41827
+                    - text: ": Increase maximum size for custom field name"
+                  - cell [ref=f13e2013]:
+                    - link "Actions" [ref=f13e2014] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2015]:
+                  - cell [ref=f13e2016]
+                  - cell [ref=f13e2017]:
+                    - 'link "Patch #42521" [ref=f13e2018] [cursor=pointer]':
+                      - /url: /issues/42521
+                    - text: ": Reimplement modal dialog with Stimulus"
+                  - cell [ref=f13e2019]:
+                    - link "Actions" [ref=f13e2020] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2021]:
+                  - cell [ref=f13e2022]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e2023]'
+                  - cell [ref=f13e2024]:
+                    - 'link "Patch #42599" [ref=f13e2025] [cursor=pointer]':
+                      - /url: /issues/42599
+                    - text: ": Update database versions on CI"
+                  - cell [ref=f13e2026]:
+                    - link "Actions" [ref=f13e2027] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2028]:
+                  - cell [ref=f13e2029]
+                  - cell [ref=f13e2030]:
+                    - 'link "Patch #42847" [ref=f13e2031] [cursor=pointer]':
+                      - /url: /issues/42847
+                    - text: ": Improve clarity of mail option labels in en.yml"
+                  - cell [ref=f13e2032]:
+                    - link "Actions" [ref=f13e2033] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2034]:
+                  - cell [ref=f13e2035]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e2036]'
+                  - cell [ref=f13e2037]:
+                    - 'link "Patch #43641" [ref=f13e2038] [cursor=pointer]':
+                      - /url: /issues/43641
+                    - text: ": Make the issues list header sticky on vertical scroll"
+                  - cell [ref=f13e2039]:
+                    - link "Actions" [ref=f13e2040] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2041]:
+                  - cell [ref=f13e2042]
+                  - cell [ref=f13e2043]:
+                    - 'link "Patch #43710" [ref=f13e2044] [cursor=pointer]':
+                      - /url: /issues/43710
+                    - text: ": Moves wiki image mime types to meta tag"
+                  - cell [ref=f13e2045]:
+                    - link "Actions" [ref=f13e2046] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2047]:
+                  - cell [ref=f13e2048]
+                  - cell [ref=f13e2049]:
+                    - 'link "Patch #43917" [ref=f13e2050] [cursor=pointer]':
+                      - /url: /issues/43917
+                    - text: ": Add Any Searchable Text as a Default Filter"
+                  - cell [ref=f13e2051]:
+                    - link "Actions" [ref=f13e2052] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2053]:
+                  - cell [ref=f13e2054]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e2055]'
+                  - cell [ref=f13e2056]:
+                    - 'link "Patch #44341" [ref=f13e2057] [cursor=pointer]':
+                      - /url: /issues/44341
+                    - text: ": Top menu hover highlight does not cover the height of the bar"
+                  - cell [ref=f13e2058]:
+                    - link "Actions" [ref=f13e2059] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2060]:
+                  - cell [ref=f13e2061]
+                  - cell [ref=f13e2062]:
+                    - 'link "Patch #44359" [ref=f13e2063] [cursor=pointer]':
+                      - /url: /issues/44359
+                    - text: ": Drop support for Ruby 3.2"
+                  - cell [ref=f13e2064]:
+                    - link "Actions" [ref=f13e2065] [cursor=pointer]:
+                      - /url: "#"
+          - article [ref=f13e2066]:
+            - generic [ref=f13e2067]:
+              - heading [level=3] [ref=f13e2068]:
+                - link "Candidate for next minor release" [ref=f13e2069] [cursor=pointer]:
+                  - /url: /versions/33
+              - text: open
+            - generic [ref=f13e2070]:
+              - paragraph [ref=f13e2071]: Fixes that the contributors would like to add in the next minor version
+              - table [ref=f13e2072]:
+                - rowgroup [ref=f13e2073]:
+                  - row [ref=f13e2074]:
+                    - cell [ref=f13e2075]
+              - paragraph [ref=f13e2076]: 0%
+              - insertion [ref=f13e2078]
+              - paragraph [ref=f13e2080]:
+                - link "54 issues" [ref=f13e2081] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=33&set_filter=1&status_id=%2A
+                - text: (0 closed —
+                - link "54 open" [ref=f13e2082] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=33&set_filter=1&status_id=o
+                - text: )
+            - table [ref=f13e2084]:
+              - caption [ref=f13e2085]: Related issues
+              - rowgroup [ref=f13e2086]:
+                - row [ref=f13e2087]:
+                  - cell [ref=f13e2088]
+                  - cell [ref=f13e2089]:
+                    - 'link "Defect #1013" [ref=f13e2090] [cursor=pointer]':
+                      - /url: /issues/1013
+                    - text: ": Custom queries can be saved under same name"
+                  - cell [ref=f13e2091]:
+                    - link "Actions" [ref=f13e2092] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2093]:
+                  - cell [ref=f13e2094]
+                  - cell [ref=f13e2095]:
+                    - 'link "Defect #2493" [ref=f13e2096] [cursor=pointer]':
+                      - /url: /issues/2493
+                    - text: ": Subversion: Error message for some of view differences"
+                  - cell [ref=f13e2097]:
+                    - link "Actions" [ref=f13e2098] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2099]:
+                  - cell [ref=f13e2100]
+                  - cell [ref=f13e2101]:
+                    - 'link "Defect #2638" [ref=f13e2102] [cursor=pointer]':
+                      - /url: /issues/2638
+                    - text: ": LDAP authentication should allow username to contain space(s)"
+                  - cell [ref=f13e2103]:
+                    - link "Actions" [ref=f13e2104] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2105]:
+                  - cell [ref=f13e2106]
+                  - cell [ref=f13e2107]:
+                    - 'link "Defect #4472" [ref=f13e2108] [cursor=pointer]':
+                      - /url: /issues/4472
+                    - text: ": Escape <code> tag"
+                  - cell [ref=f13e2109]:
+                    - link "Actions" [ref=f13e2110] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2111]:
+                  - cell [ref=f13e2112]
+                  - cell [ref=f13e2113]:
+                    - 'link "Defect #5994" [ref=f13e2114] [cursor=pointer]':
+                      - /url: /issues/5994
+                    - text: ": Creating new issue via email submission strips attached emails"
+                  - cell [ref=f13e2115]:
+                    - link "Actions" [ref=f13e2116] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2117]:
+                  - cell [ref=f13e2118]
+                  - cell [ref=f13e2119]:
+                    - 'link "Defect #6857" [ref=f13e2120] [cursor=pointer]':
+                      - /url: /issues/6857
+                    - text: ": git references leaking from subproject to project"
+                  - cell [ref=f13e2121]:
+                    - link "Actions" [ref=f13e2122] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2123]:
+                  - cell [ref=f13e2124]
+                  - cell [ref=f13e2125]:
+                    - 'link "Defect #6868" [ref=f13e2126] [cursor=pointer]':
+                      - /url: /issues/6868
+                    - text: ": migrate_from_trac and trac 0.12"
+                  - cell [ref=f13e2127]:
+                    - link "Actions" [ref=f13e2128] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2129]:
+                  - cell [ref=f13e2130]
+                  - cell [ref=f13e2131]:
+                    - 'link "Defect #7293" [ref=f13e2132] [cursor=pointer]':
+                      - /url: /issues/7293
+                    - text: ": Activity page displays wrong status of modified issues"
+                  - cell [ref=f13e2133]:
+                    - link "Actions" [ref=f13e2134] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2135]:
+                  - cell [ref=f13e2136]
+                  - cell [ref=f13e2137]:
+                    - 'link "Defect #8055" [ref=f13e2138] [cursor=pointer]':
+                      - /url: /issues/8055
+                    - text: ": Links ending with curly brackets are not correctly interpreted"
+                  - cell [ref=f13e2139]:
+                    - link "Actions" [ref=f13e2140] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2141]:
+                  - cell [ref=f13e2142]
+                  - cell [ref=f13e2143]:
+                    - 'link "Defect #8603" [ref=f13e2144] [cursor=pointer]':
+                      - /url: /issues/8603
+                    - text: ": Query 'without subprojects' cannot be created"
+                  - cell [ref=f13e2145]:
+                    - link "Actions" [ref=f13e2146] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2147]:
+                  - cell [ref=f13e2148]
+                  - cell [ref=f13e2149]:
+                    - 'link "Defect #9080" [ref=f13e2150] [cursor=pointer]':
+                      - /url: /issues/9080
+                    - text: ": Shared versions not shown when upload a file"
+                  - cell [ref=f13e2151]:
+                    - link "Actions" [ref=f13e2152] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2153]:
+                  - cell [ref=f13e2154]
+                  - cell [ref=f13e2155]:
+                    - 'link "Defect #10528" [ref=f13e2156] [cursor=pointer]':
+                      - /url: /issues/10528
+                    - text: ": Error with rake redmine:email:receive_imap and cram-md5"
+                  - cell [ref=f13e2157]:
+                    - link "Actions" [ref=f13e2158] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2159]:
+                  - cell [ref=f13e2160]:
+                    - 'img "Assignee: Alan Chandler" [ref=f13e2161]'
+                  - cell [ref=f13e2162]:
+                    - 'link "Defect #10532" [ref=f13e2163] [cursor=pointer]':
+                      - /url: /issues/10532
+                    - text: ": migrate_from_mantis script fails with missing table name"
+                  - cell [ref=f13e2164]:
+                    - link "Actions" [ref=f13e2165] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2166]:
+                  - cell [ref=f13e2167]:
+                    - 'img "Assignee: Jean-Baptiste Barth" [ref=f13e2168]'
+                  - cell [ref=f13e2169]:
+                    - 'link "Defect #12146" [ref=f13e2170] [cursor=pointer]':
+                      - /url: /issues/12146
+                    - text: ": Required (list-, user- or version) custom field \"fixed version\" with Multiple values allows nil value during status transition"
+                  - cell [ref=f13e2171]:
+                    - link "Actions" [ref=f13e2172] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2173]:
+                  - cell [ref=f13e2174]
+                  - cell [ref=f13e2175]:
+                    - 'link "Defect #18914" [ref=f13e2176] [cursor=pointer]':
+                      - /url: /issues/18914
+                    - text: ": Slow rendering pages with many small macros"
+                  - cell [ref=f13e2177]:
+                    - link "Actions" [ref=f13e2178] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2179]:
+                  - cell [ref=f13e2180]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e2181]'
+                  - cell [ref=f13e2182]:
+                    - 'link "Defect #19174" [ref=f13e2183] [cursor=pointer]':
+                      - /url: /issues/19174
+                    - text: ": db migrate error from old version to 2.6"
+                  - cell [ref=f13e2184]:
+                    - link "Actions" [ref=f13e2185] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2186]:
+                  - cell [ref=f13e2187]
+                  - cell [ref=f13e2188]:
+                    - 'link "Defect #23341" [ref=f13e2189] [cursor=pointer]':
+                      - /url: /issues/23341
+                    - text: ": Markdown Table formatting breaks with redmine wiki links"
+                  - cell [ref=f13e2190]:
+                    - link "Actions" [ref=f13e2191] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2192]:
+                  - cell [ref=f13e2193]:
+                    - 'img "Assignee: Mischa The Evil" [ref=f13e2194]'
+                  - cell [ref=f13e2195]:
+                    - 'link "Defect #26090" [ref=f13e2196] [cursor=pointer]':
+                      - /url: /issues/26090
+                    - text: ": Dutch (NL) translation: some small issues found during review of r16029 for #24407"
+                  - cell [ref=f13e2197]:
+                    - link "Actions" [ref=f13e2198] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2199]:
+                  - cell [ref=f13e2200]
+                  - cell [ref=f13e2201]:
+                    - 'link "Defect #28322" [ref=f13e2202] [cursor=pointer]':
+                      - /url: /issues/28322
+                    - text: ": Commit messages referencing issues should stop at line breaks"
+                  - cell [ref=f13e2203]:
+                    - link "Actions" [ref=f13e2204] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2205]:
+                  - cell [ref=f13e2206]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e2207]'
+                  - cell [ref=f13e2208]:
+                    - 'link "Defect #29694" [ref=f13e2209] [cursor=pointer]':
+                      - /url: /issues/29694
+                    - text: ": Some buttons in wiki toolbar are hidden in responsive layout"
+                  - cell [ref=f13e2210]:
+                    - link "Actions" [ref=f13e2211] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2212]:
+                  - cell [ref=f13e2213]
+                  - cell [ref=f13e2214]:
+                    - 'link "Defect #29695" [ref=f13e2215] [cursor=pointer]':
+                      - /url: /issues/29695
+                    - text: ": Duplicated assignee option when selecting a category with default assignee"
+                  - cell [ref=f13e2216]:
+                    - link "Actions" [ref=f13e2217] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2218]:
+                  - cell [ref=f13e2219]:
+                    - 'img "Assignee: Go MAEDA" [ref=f13e2220]'
+                  - cell [ref=f13e2221]:
+                    - 'link "Defect #29855" [ref=f13e2222] [cursor=pointer]':
+                      - /url: /issues/29855
+                    - text: ": add_working_days returns wrong date"
+                  - cell [ref=f13e2223]:
+                    - link "Actions" [ref=f13e2224] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2225]:
+                  - cell [ref=f13e2226]
+                  - cell [ref=f13e2227]:
+                    - 'link "Defect #30371" [ref=f13e2228] [cursor=pointer]':
+                      - /url: /issues/30371
+                    - text: ": Textile formatter generates broken link if a URL is followed by a tag"
+                  - cell [ref=f13e2229]:
+                    - link "Actions" [ref=f13e2230] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2231]:
+                  - cell [ref=f13e2232]
+                  - cell [ref=f13e2233]:
+                    - 'link "Defect #33432" [ref=f13e2234] [cursor=pointer]':
+                      - /url: /issues/33432
+                    - text: ": Rendering of Macros with (empty) text parameter different in preview and non preview mode"
+                  - cell [ref=f13e2235]:
+                    - link "Actions" [ref=f13e2236] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2237]:
+                  - cell [ref=f13e2238]
+                  - cell [ref=f13e2239]:
+                    - 'link "Defect #33673" [ref=f13e2240] [cursor=pointer]':
+                      - /url: /issues/33673
+                    - text: ": Calendar View / The right side of the tooltip is cut off"
+                  - cell [ref=f13e2241]:
+                    - link "Actions" [ref=f13e2242] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2243]:
+                  - cell [ref=f13e2244]
+                  - cell [ref=f13e2245]:
+                    - 'link "Defect #34046" [ref=f13e2246] [cursor=pointer]':
+                      - /url: /issues/34046
+                    - text: ": Escaping symbols in task subject can broke export to Gantt (PNG)"
+                  - cell [ref=f13e2247]:
+                    - link "Actions" [ref=f13e2248] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2249]:
+                  - cell [ref=f13e2250]
+                  - cell [ref=f13e2251]:
+                    - 'link "Defect #34108" [ref=f13e2252] [cursor=pointer]':
+                      - /url: /issues/34108
+                    - text: ": \"Is duplicate of\" and \"Has duplicate\" issue relations can be a circular reference"
+                  - cell [ref=f13e2253]:
+                    - link "Actions" [ref=f13e2254] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2255]:
+                  - cell [ref=f13e2256]
+                  - cell [ref=f13e2257]:
+                    - 'link "Defect #40856" [ref=f13e2258] [cursor=pointer]':
+                      - /url: /issues/40856
+                    - text: ": random failing integration test for plugin routes in 5.1.3"
+                  - cell [ref=f13e2259]:
+                    - link "Actions" [ref=f13e2260] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2261]:
+                  - cell [ref=f13e2262]
+                  - cell [ref=f13e2263]:
+                    - 'link "Defect #41502" [ref=f13e2264] [cursor=pointer]':
+                      - /url: /issues/41502
+                    - text: ": Custom field values for versions are not copied when copying a project that includes versions"
+                  - cell [ref=f13e2265]:
+                    - link "Actions" [ref=f13e2266] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2267]:
+                  - cell [ref=f13e2268]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e2269]'
+                  - cell [ref=f13e2270]:
+                    - 'link "Defect #41726" [ref=f13e2271] [cursor=pointer]':
+                      - /url: /issues/41726
+                    - text: ": Allow plugin assets to be loaded from app/assets"
+                  - cell [ref=f13e2272]:
+                    - link "Actions" [ref=f13e2273] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2274]:
+                  - cell [ref=f13e2275]:
+                    - 'img "Assignee: Marius BĂLTEANU" [ref=f13e2276]'
+                  - cell [ref=f13e2277]:
+                    - 'link "Defect #43730" [ref=f13e2278] [cursor=pointer]':
+                      - /url: /issues/43730
+                    - text: ": Redmine generates invalid HTML when there are multiple `collapse` macros in one paragraph in Textile"
+                  - cell [ref=f13e2279]:
+                    - link "Actions" [ref=f13e2280] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2281]:
+                  - cell [ref=f13e2282]
+                  - cell [ref=f13e2283]:
+                    - 'link "Defect #44300" [ref=f13e2284] [cursor=pointer]':
+                      - /url: /issues/44300
+                    - text: ": Mailer.with_deliveries(false) does not prevent emails from being sent"
+                  - cell [ref=f13e2285]:
+                    - link "Actions" [ref=f13e2286] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2287]:
+                  - cell [ref=f13e2288]
+                  - cell [ref=f13e2289]:
+                    - 'link "Feature #2770" [ref=f13e2290] [cursor=pointer]':
+                      - /url: /issues/2770
+                    - text: ": Display of inline attached images in email notification"
+                  - cell [ref=f13e2291]:
+                    - link "Actions" [ref=f13e2292] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2293]:
+                  - cell [ref=f13e2294]
+                  - cell [ref=f13e2295]:
+                    - 'link "Feature #4519" [ref=f13e2296] [cursor=pointer]':
+                      - /url: /issues/4519
+                    - text: ": Target version pulldown should sort in descending order"
+                  - cell [ref=f13e2297]:
+                    - link "Actions" [ref=f13e2298] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2299]:
+                  - cell [ref=f13e2300]
+                  - cell [ref=f13e2301]:
+                    - 'link "Feature #6687" [ref=f13e2302] [cursor=pointer]':
+                      - /url: /issues/6687
+                    - text: ": Making an issue a subtask leads to loss of issue-property values"
+                  - cell [ref=f13e2303]:
+                    - link "Actions" [ref=f13e2304] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2305]:
+                  - cell [ref=f13e2306]
+                  - cell [ref=f13e2307]:
+                    - 'link "Feature #9851" [ref=f13e2308] [cursor=pointer]':
+                      - /url: /issues/9851
+                    - text: ": Equalize the way how available shared versions are differentiated in target version drop-downs"
+                  - cell [ref=f13e2309]:
+                    - link "Actions" [ref=f13e2310] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2311]:
+                  - cell [ref=f13e2312]
+                  - cell [ref=f13e2313]:
+                    - 'link "Feature #13715" [ref=f13e2314] [cursor=pointer]':
+                      - /url: /issues/13715
+                    - text: ": show SCM identifier (repository) in associated revisions"
+                  - cell [ref=f13e2315]:
+                    - link "Actions" [ref=f13e2316] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2317]:
+                  - cell [ref=f13e2318]
+                  - cell [ref=f13e2319]:
+                    - 'link "Feature #29034" [ref=f13e2320] [cursor=pointer]':
+                      - /url: /issues/29034
+                    - text: ": Option to collapse/expand issue sections"
+                  - cell [ref=f13e2321]:
+                    - link "Actions" [ref=f13e2322] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2323]:
+                  - cell [ref=f13e2324]
+                  - cell [ref=f13e2325]:
+                    - 'link "Feature #30986" [ref=f13e2326] [cursor=pointer]':
+                      - /url: /issues/30986
+                    - text: ": New toolbar button to insert wiki macros"
+                  - cell [ref=f13e2327]:
+                    - link "Actions" [ref=f13e2328] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2329]:
+                  - cell [ref=f13e2330]
+                  - cell [ref=f13e2331]:
+                    - 'link "Feature #41731" [ref=f13e2332] [cursor=pointer]':
+                      - /url: /issues/41731
+                    - text: ": Prevent Redmine startup if themes remain in deprecated public/themes directory"
+                  - cell [ref=f13e2333]:
+                    - link "Actions" [ref=f13e2334] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2335]:
+                  - cell [ref=f13e2336]
+                  - cell [ref=f13e2337]:
+                    - 'link "Feature #43261" [ref=f13e2338] [cursor=pointer]':
+                      - /url: /issues/43261
+                    - text: ": Add border-bottom to issue history to avoid accidental issue deletion"
+                  - cell [ref=f13e2339]:
+                    - link "Actions" [ref=f13e2340] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2341]:
+                  - cell [ref=f13e2342]
+                  - cell [ref=f13e2343]:
+                    - 'link "Feature #43632" [ref=f13e2344] [cursor=pointer]':
+                      - /url: /issues/43632
+                    - text: ": Show a message when recent_pages macro does not return any page"
+                  - cell [ref=f13e2345]:
+                    - link "Actions" [ref=f13e2346] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2347]:
+                  - cell [ref=f13e2348]
+                  - cell [ref=f13e2349]:
+                    - 'link "Patch #1021" [ref=f13e2350] [cursor=pointer]':
+                      - /url: /issues/1021
+                    - text: ": Patch for #1013 (uniqueness-validation of custom query name within user-scope)"
+                  - cell [ref=f13e2351]:
+                    - link "Actions" [ref=f13e2352] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2353]:
+                  - cell [ref=f13e2354]
+                  - cell [ref=f13e2355]:
+                    - 'link "Patch #5764" [ref=f13e2356] [cursor=pointer]':
+                      - /url: /issues/5764
+                    - text: ": migrate_from_trac does not support trac 0.12"
+                  - cell [ref=f13e2357]:
+                    - link "Actions" [ref=f13e2358] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2359]:
+                  - cell [ref=f13e2360]
+                  - cell [ref=f13e2361]:
+                    - 'link "Patch #8222" [ref=f13e2362] [cursor=pointer]':
+                      - /url: /issues/8222
+                    - text: ": Setting model should use Rails.cache instead of class variable"
+                  - cell [ref=f13e2363]:
+                    - link "Actions" [ref=f13e2364] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2365]:
+                  - cell [ref=f13e2366]
+                  - cell [ref=f13e2367]:
+                    - 'link "Patch #13400" [ref=f13e2368] [cursor=pointer]':
+                      - /url: /issues/13400
+                    - text: ": Calculate %done based on estimated and logged time"
+                  - cell [ref=f13e2369]:
+                    - link "Actions" [ref=f13e2370] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2371]:
+                  - cell [ref=f13e2372]
+                  - cell [ref=f13e2373]:
+                    - 'link "Patch #13612" [ref=f13e2374] [cursor=pointer]':
+                      - /url: /issues/13612
+                    - text: ": Members roles : display group of role"
+                  - cell [ref=f13e2375]:
+                    - link "Actions" [ref=f13e2376] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2377]:
+                  - cell [ref=f13e2378]:
+                    - 'img "Assignee: Jean-Baptiste Barth" [ref=f13e2379]'
+                  - cell [ref=f13e2380]:
+                    - 'link "Patch #15906" [ref=f13e2381] [cursor=pointer]':
+                      - /url: /issues/15906
+                    - text: ": Create a default forum by default"
+                  - cell [ref=f13e2382]:
+                    - link "Actions" [ref=f13e2383] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2384]:
+                  - cell [ref=f13e2385]
+                  - cell [ref=f13e2386]:
+                    - 'link "Patch #22798" [ref=f13e2387] [cursor=pointer]':
+                      - /url: /issues/22798
+                    - text: ": fetching of Git changesets sometimes fails due to non existant revisions in prev_db_heads"
+                  - cell [ref=f13e2388]:
+                    - link "Actions" [ref=f13e2389] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2390]:
+                  - cell [ref=f13e2391]
+                  - cell [ref=f13e2392]:
+                    - 'link "Patch #26104" [ref=f13e2393] [cursor=pointer]':
+                      - /url: /issues/26104
+                    - text: ": Quick jump to issue only if searching for issues"
+                  - cell [ref=f13e2394]:
+                    - link "Actions" [ref=f13e2395] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2396]:
+                  - cell [ref=f13e2397]
+                  - cell [ref=f13e2398]:
+                    - 'link "Patch #28618" [ref=f13e2399] [cursor=pointer]':
+                      - /url: /issues/28618
+                    - text: ": Datepicker is called incorrectly"
+                  - cell [ref=f13e2400]:
+                    - link "Actions" [ref=f13e2401] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2402]:
+                  - cell [ref=f13e2403]
+                  - cell [ref=f13e2404]:
+                    - 'link "Patch #29885" [ref=f13e2405] [cursor=pointer]':
+                      - /url: /issues/29885
+                    - text: ": Fix 403 error while adding new watchers when selected issues in context_menu from different projects"
+                  - cell [ref=f13e2406]:
+                    - link "Actions" [ref=f13e2407] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2408]:
+                  - cell [ref=f13e2409]
+                  - cell [ref=f13e2410]:
+                    - 'link "Patch #36182" [ref=f13e2411] [cursor=pointer]':
+                      - /url: /issues/36182
+                    - text: ": Show notifications for all Redmine users"
+                  - cell [ref=f13e2412]:
+                    - link "Actions" [ref=f13e2413] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2414]:
+                  - cell [ref=f13e2415]
+                  - cell [ref=f13e2416]:
+                    - 'link "Patch #41954" [ref=f13e2417] [cursor=pointer]':
+                      - /url: /issues/41954
+                    - text: ": Update extract_fixtures task with configurable output directory"
+                  - cell [ref=f13e2418]:
+                    - link "Actions" [ref=f13e2419] [cursor=pointer]:
+                      - /url: "#"
+          - article [ref=f13e2420]:
+            - generic [ref=f13e2421]:
+              - heading [level=3] [ref=f13e2422]:
+                - link "Unplanned backlogs" [ref=f13e2423] [cursor=pointer]:
+                  - /url: /versions/23
+              - text: open
+            - generic [ref=f13e2424]:
+              - paragraph [ref=f13e2425]: Features that the core contributors of Redmine would like to add in a future version
+              - table [ref=f13e2426]:
+                - rowgroup [ref=f13e2427]:
+                  - row [ref=f13e2428]:
+                    - 'cell "% Done: 5%" [ref=f13e2429]'
+                    - cell [ref=f13e2430]
+              - paragraph [ref=f13e2431]: 5%
+              - insertion [ref=f13e2433]
+              - paragraph [ref=f13e2435]:
+                - link "18 issues" [ref=f13e2436] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=23&set_filter=1&status_id=%2A
+                - text: (0 closed —
+                - link "18 open" [ref=f13e2437] [cursor=pointer]:
+                  - /url: /projects/redmine/issues?fixed_version_id=23&set_filter=1&status_id=o
+                - text: )
+            - table [ref=f13e2439]:
+              - caption [ref=f13e2440]: Related issues
+              - rowgroup [ref=f13e2441]:
+                - row [ref=f13e2442]:
+                  - cell [ref=f13e2443]:
+                    - 'img "Assignee: Toshi MARUYAMA" [ref=f13e2444]'
+                  - cell [ref=f13e2445]:
+                    - 'link "Defect #5357" [ref=f13e2446] [cursor=pointer]':
+                      - /url: /issues/5357
+                    - text: ": Git: SCM revisions ordered by date/time (should be reverse commit order)"
+                  - cell [ref=f13e2447]:
+                    - link "Actions" [ref=f13e2448] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2449]:
+                  - cell [ref=f13e2450]
+                  - cell [ref=f13e2451]:
+                    - 'link "Defect #6609" [ref=f13e2452] [cursor=pointer]':
+                      - /url: /issues/6609
+                    - text: ": % Done for Parent Tasks [2]"
+                  - cell [ref=f13e2453]:
+                    - link "Actions" [ref=f13e2454] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2455]:
+                  - cell [ref=f13e2456]
+                  - cell [ref=f13e2457]:
+                    - 'link "Defect #6662" [ref=f13e2458] [cursor=pointer]':
+                      - /url: /issues/6662
+                    - text: ": JavaScript is not minified for production use"
+                  - cell [ref=f13e2459]:
+                    - link "Actions" [ref=f13e2460] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2461]:
+                  - cell [ref=f13e2462]
+                  - cell [ref=f13e2463]:
+                    - 'link "Defect #6725" [ref=f13e2464] [cursor=pointer]':
+                      - /url: /issues/6725
+                    - text: ": Acronyms don't work for Russian language"
+                  - cell [ref=f13e2465]:
+                    - link "Actions" [ref=f13e2466] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2467]:
+                  - cell [ref=f13e2468]
+                  - cell [ref=f13e2469]:
+                    - 'link "Feature #559" [ref=f13e2470] [cursor=pointer]':
+                      - /url: /issues/559
+                    - text: ": Workflow Enhancements"
+                  - cell [ref=f13e2471]:
+                    - link "Actions" [ref=f13e2472] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2473]:
+                  - cell [ref=f13e2474]
+                  - cell [ref=f13e2475]:
+                    - 'link "Feature #643" [ref=f13e2476] [cursor=pointer]':
+                      - /url: /issues/643
+                    - text: ": Issue description templates"
+                  - cell [ref=f13e2477]:
+                    - link "Actions" [ref=f13e2478] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2479]:
+                  - cell [ref=f13e2480]
+                  - cell [ref=f13e2481]:
+                    - 'link "Feature #938" [ref=f13e2482] [cursor=pointer]':
+                      - /url: /issues/938
+                    - text: ": Add default Activity value per user"
+                  - cell [ref=f13e2483]:
+                    - link "Actions" [ref=f13e2484] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2485]:
+                  - cell [ref=f13e2486]:
+                    - 'img "Assignee: Jean-Philippe Lang" [ref=f13e2487]'
+                  - cell [ref=f13e2488]:
+                    - 'link "Feature #1536" [ref=f13e2489] [cursor=pointer]':
+                      - /url: /issues/1536
+                    - text: ": Using libsvn"
+                  - cell [ref=f13e2490]:
+                    - link "Actions" [ref=f13e2491] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2492]:
+                  - cell [ref=f13e2493]
+                  - cell [ref=f13e2494]:
+                    - 'link "Feature #1953" [ref=f13e2495] [cursor=pointer]':
+                      - /url: /issues/1953
+                    - text: ": Due date calculation based on developer's estimations"
+                  - cell [ref=f13e2496]:
+                    - link "Actions" [ref=f13e2497] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2498]:
+                  - cell [ref=f13e2499]
+                  - cell [ref=f13e2500]:
+                    - 'link "Feature #2069" [ref=f13e2501] [cursor=pointer]':
+                      - /url: /issues/2069
+                    - text: ": Wiki syntax to link to files in the files-module"
+                  - cell [ref=f13e2502]:
+                    - link "Actions" [ref=f13e2503] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2504]:
+                  - cell [ref=f13e2505]
+                  - cell [ref=f13e2506]:
+                    - 'link "Feature #3912" [ref=f13e2507] [cursor=pointer]':
+                      - /url: /issues/3912
+                    - text: ": Add support for AND's and OR's in search"
+                  - cell [ref=f13e2508]:
+                    - link "Actions" [ref=f13e2509] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2510]:
+                  - cell [ref=f13e2511]
+                  - cell [ref=f13e2512]:
+                    - 'link "Feature #5492" [ref=f13e2513] [cursor=pointer]':
+                      - /url: /issues/5492
+                    - text: ": Issues should implement acts_as_ferret"
+                  - cell [ref=f13e2514]:
+                    - link "Actions" [ref=f13e2515] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2516]:
+                  - cell [ref=f13e2517]
+                  - cell [ref=f13e2518]:
+                    - 'link "Feature #6701" [ref=f13e2519] [cursor=pointer]':
+                      - /url: /issues/6701
+                    - text: ": Split the Enumerations admin panel to separate panels"
+                  - cell [ref=f13e2520]:
+                    - link "Actions" [ref=f13e2521] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2522]:
+                  - cell [ref=f13e2523]
+                  - cell [ref=f13e2524]:
+                    - 'link "Feature #6846" [ref=f13e2525] [cursor=pointer]':
+                      - /url: /issues/6846
+                    - text: ": Add VIM-like keyboard shortcuts"
+                  - cell [ref=f13e2526]:
+                    - link "Actions" [ref=f13e2527] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2528]:
+                  - cell [ref=f13e2529]
+                  - cell [ref=f13e2530]:
+                    - 'link "Feature #25357" [ref=f13e2531] [cursor=pointer]':
+                      - /url: /issues/25357
+                    - text: ": \"Raw view\" of a file in repository"
+                  - cell [ref=f13e2532]:
+                    - link "Actions" [ref=f13e2533] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2534]:
+                  - cell [ref=f13e2535]
+                  - cell [ref=f13e2536]:
+                    - 'link "Feature #25773" [ref=f13e2537] [cursor=pointer]':
+                      - /url: /issues/25773
+                    - text: ": Add more custom fields types to criteria in time entries report"
+                  - cell [ref=f13e2538]:
+                    - link "Actions" [ref=f13e2539] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2540]:
+                  - cell [ref=f13e2541]
+                  - cell [ref=f13e2542]:
+                    - 'link "Feature #31472" [ref=f13e2543] [cursor=pointer]':
+                      - /url: /issues/31472
+                    - text: ": Add file upload when editing documents"
+                  - cell [ref=f13e2544]:
+                    - link "Actions" [ref=f13e2545] [cursor=pointer]:
+                      - /url: "#"
+                - row [ref=f13e2546]:
+                  - cell [ref=f13e2547]:
+                    - 'img "Assignee: Jean-Baptiste Barth" [ref=f13e2548]'
+                  - cell [ref=f13e2549]:
+                    - 'link "Patch #13927" [ref=f13e2550] [cursor=pointer]':
+                      - /url: /issues/13927
+                    - text: ": Reduce coupling between plugins and the \"plugins/\" directory"
+                  - cell [ref=f13e2551]:
+                    - link "Actions" [ref=f13e2552] [cursor=pointer]:
+                      - /url: "#"
+    - generic [ref=f13e2553]:
+      - text: Powered by
+      - link "Redmine" [ref=f13e2554] [cursor=pointer]:
+        - /url: https://www.redmine.org/
+      - text: © 2006-2023 Jean-Philippe Lang
+  - log [ref=f13e2555]
+  - log [ref=f13e2556]
+  - log [ref=f13e2557]
+  - log [ref=f13e2558]
+  - log [ref=f13e2559]
+  - log [ref=f13e2560]
+  - log [ref=f13e2561]
+  - log [ref=f13e2562]
+  - log [ref=f13e2563]
+  - log [ref=f13e2564]
+  - log [ref=f13e2565]
+  - log [ref=f13e2566]
+  - log [ref=f13e2567]
+  - log [ref=f13e2568]
+  - log [ref=f13e2569]
+  - log [ref=f13e2570]
+  - log [ref=f13e2571]
+  - log [ref=f13e2572]
+  - log [ref=f13e2573]
+  - log [ref=f13e2574]
+  - log [ref=f13e2575]
+  - log [ref=f13e2576]
+  - log [ref=f13e2577]
+  - log [ref=f13e2578]
+  - log [ref=f13e2579]
+  - log [ref=f13e2580]
+  - log [ref=f13e2581]
+  - log [ref=f13e2582]
+  - log [ref=f13e2583]
+  - log [ref=f13e2584]
+  - log [ref=f13e2585]
+  - log [ref=f13e2586]
+  - log [ref=f13e2587]
+  - log [ref=f13e2588]
+  - log [ref=f13e2589]
+  - log [ref=f13e2590]
+  - log [ref=f13e2591]
+  - log [ref=f13e2592]
+  - log [ref=f13e2593]
+  - log [ref=f13e2594]
+  - log [ref=f13e2595]
+  - log [ref=f13e2596]
+  - log [ref=f13e2597]
+  - log [ref=f13e2598]
+  - log [ref=f13e2599]
+  - log [ref=f13e2600]
+  - log [ref=f13e2601]
+  - log [ref=f13e2602]
+  - log [ref=f13e2603]
+  - log [ref=f13e2604]
+  - log [ref=f13e2605]
+  - log [ref=f13e2606]
+  - log [ref=f13e2607]
+  - log [ref=f13e2608]
+  - log [ref=f13e2609]
+  - log [ref=f13e2610]
+  - log [ref=f13e2611]
+  - log [ref=f13e2612]
+  - log [ref=f13e2613]
+  - log [ref=f13e2614]
+  - log [ref=f13e2615]
+  - log [ref=f13e2616]
+  - log [ref=f13e2617]
+  - log [ref=f13e2618]
+  - log [ref=f13e2619]
+  - log [ref=f13e2620]
+  - log [ref=f13e2621]
+  - log [ref=f13e2622]
+  - log [ref=f13e2623]
+  - log [ref=f13e2624]
+  - log [ref=f13e2625]
+  - log [ref=f13e2626]
+  - log [ref=f13e2627]
+  - log [ref=f13e2628]
+  - log [ref=f13e2629]
+  - log [ref=f13e2630]
+  - log [ref=f13e2631]
+  - log [ref=f13e2632]
+  - log [ref=f13e2633]
+  - log [ref=f13e2634]
+  - log [ref=f13e2635]
+  - log [ref=f13e2636]
+  - log [ref=f13e2637]
+  - log [ref=f13e2638]
+  - log [ref=f13e2639]
+  - log [ref=f13e2640]
+  - log [ref=f13e2641]
+  - log [ref=f13e2642]
+  - log [ref=f13e2643]
+  - log [ref=f13e2644]
+  - log [ref=f13e2645]
+  - log [ref=f13e2646]
+  - log [ref=f13e2647]
+  - log [ref=f13e2648]
+  - log [ref=f13e2649]
+  - log [ref=f13e2650]
+  - log [ref=f13e2651]
+  - log [ref=f13e2652]
+  - log [ref=f13e2653]
+  - log [ref=f13e2654]
+  - log [ref=f13e2655]
+  - log [ref=f13e2656]
+  - log [ref=f13e2657]
+  - log [ref=f13e2658]
+  - log [ref=f13e2659]
+  - log [ref=f13e2660]
+  - log [ref=f13e2661]
+  - log [ref=f13e2662]
+  - log [ref=f13e2663]
+  - log [ref=f13e2664]
+  - log [ref=f13e2665]
+  - log [ref=f13e2666]
+  - log [ref=f13e2667]
+  - log [ref=f13e2668]
+  - log [ref=f13e2669]
+  - log [ref=f13e2670]
+  - log [ref=f13e2671]
+  - log [ref=f13e2672]
+  - log [ref=f13e2673]
+  - log [ref=f13e2674]
+  - log [ref=f13e2675]
+  - log [ref=f13e2676]
+  - log [ref=f13e2677]
+  - log [ref=f13e2678]
+  - log [ref=f13e2679]
+  - log [ref=f13e2680]
+  - log [ref=f13e2681]
+  - log [ref=f13e2682]
+  - log [ref=f13e2683]
+  - log [ref=f13e2684]
+  - log [ref=f13e2685]
+  - log [ref=f13e2686]
+  - log [ref=f13e2687]
+  - log [ref=f13e2688]
+  - log [ref=f13e2689]
+  - log [ref=f13e2690]
+  - log [ref=f13e2691]
+  - log [ref=f13e2692]
+  - log [ref=f13e2693]
+  - log [ref=f13e2694]
+  - log [ref=f13e2695]
+  - log [ref=f13e2696]
+  - log [ref=f13e2697]
+  - log [ref=f13e2698]
+  - log [ref=f13e2699]
+  - log [ref=f13e2700]
+  - log [ref=f13e2701]
+  - log [ref=f13e2702]
+  - log [ref=f13e2703]
+  - log [ref=f13e2704]
+  - log [ref=f13e2705]
+  - log [ref=f13e2706]
+  - log [ref=f13e2707]
+  - log [ref=f13e2708]
+  - log [ref=f13e2709]
+  - log [ref=f13e2710]
+  - log [ref=f13e2711]
+  - log [ref=f13e2712]
+  - log [ref=f13e2713]
+  - log [ref=f13e2714]
+  - log [ref=f13e2715]
+  - log [ref=f13e2716]
+  - log [ref=f13e2717]
+  - log [ref=f13e2718]
+  - log [ref=f13e2719]
+  - log [ref=f13e2720]
+  - log [ref=f13e2721]
+  - log [ref=f13e2722]
+  - log [ref=f13e2723]
+  - log [ref=f13e2724]
+  - log [ref=f13e2725]
+  - log [ref=f13e2726]
+  - log [ref=f13e2727]
+  - log [ref=f13e2728]
+  - log [ref=f13e2729]
+  - log [ref=f13e2730]
+  - log [ref=f13e2731]
+  - log [ref=f13e2732]
+  - log [ref=f13e2733]
+  - log [ref=f13e2734]
+  - log [ref=f13e2735]
+  - log [ref=f13e2736]
+  - log [ref=f13e2737]
+  - log [ref=f13e2738]
+  - log [ref=f13e2739]
+  - log [ref=f13e2740]
+  - log [ref=f13e2741]
+  - log [ref=f13e2742]
+  - log [ref=f13e2743]
+  - log [ref=f13e2744]
+  - log [ref=f13e2745]
+  - log [ref=f13e2746]
+  - log [ref=f13e2747]
+  - log [ref=f13e2748]
+  - log [ref=f13e2749]
+  - log [ref=f13e2750]
+  - log [ref=f13e2751]
+  - log [ref=f13e2752]
+  - log [ref=f13e2753]
+  - log [ref=f13e2754]
+  - log [ref=f13e2755]
+  - log [ref=f13e2756]
+  - log [ref=f13e2757]
+  - log [ref=f13e2758]
+  - log [ref=f13e2759]
+  - log [ref=f13e2760]
+  - log [ref=f13e2761]
+  - log [ref=f13e2762]
+  - log [ref=f13e2763]
+  - log [ref=f13e2764]
+  - log [ref=f13e2765]
+  - log [ref=f13e2766]
+  - log [ref=f13e2767]
+  - log [ref=f13e2768]
+  - log [ref=f13e2769]
+  - log [ref=f13e2770]
+  - log [ref=f13e2771]
+  - log [ref=f13e2772]
+  - log [ref=f13e2773]
+  - log [ref=f13e2774]:
+    - generic [ref=f13e2775]: Actions
+  - log [ref=f13e2776]
+  - log [ref=f13e2777]
+  - log [ref=f13e2778]
+  - log [ref=f13e2779]
+  - log [ref=f13e2780]
+  - log [ref=f13e2781]
+  - log [ref=f13e2782]
+  - log [ref=f13e2783]
+  - log [ref=f13e2784]
+  - log [ref=f13e2785]
+  - log [ref=f13e2786]
+  - log [ref=f13e2787]
+  - log [ref=f13e2788]
+  - log [ref=f13e2789]
+  - log [ref=f13e2790]
+  - log [ref=f13e2791]
+  - log [ref=f13e2792]
+  - log [ref=f13e2793]
+  - log [ref=f13e2794]
+  - log [ref=f13e2795]
+  - log [ref=f13e2796]
+  - log [ref=f13e2797]
+  - log [ref=f13e2798]
+  - log [ref=f13e2799]
+  - log [ref=f13e2800]
+  - log [ref=f13e2801]
+  - log [ref=f13e2802]
+  - log [ref=f13e2803]
+  - log [ref=f13e2804]
+  - log [ref=f13e2805]
+  - log [ref=f13e2806]
+  - log [ref=f13e2807]
+  - log [ref=f13e2808]
+  - log [ref=f13e2809]
+  - log [ref=f13e2810]
+  - log [ref=f13e2811]
+  - log [ref=f13e2812]
+  - log [ref=f13e2813]
+  - log [ref=f13e2814]
+  - log [ref=f13e2815]
+  - log [ref=f13e2816]
+  - log [ref=f13e2817]
+  - log [ref=f13e2818]
+  - log [ref=f13e2819]
+  - log [ref=f13e2820]
+  - log [ref=f13e2821]
+  - log [ref=f13e2822]
+  - log [ref=f13e2823]
+  - log [ref=f13e2824]
+  - log [ref=f13e2825]
+  - log [ref=f13e2826]
+  - log [ref=f13e2827]
+  - log [ref=f13e2828]
+  - log [ref=f13e2829]
+  - log [ref=f13e2830]
+  - log [ref=f13e2831]
+  - log [ref=f13e2832]
+  - log [ref=f13e2833]
+  - log [ref=f13e2834]
+  - log [ref=f13e2835]
+  - log [ref=f13e2836]
+  - log [ref=f13e2837]
+  - log [ref=f13e2838]
+  - log [ref=f13e2839]
+  - log [ref=f13e2840]
+  - log [ref=f13e2841]
+  - log [ref=f13e2842]
+  - log [ref=f13e2843]
+  - log [ref=f13e2844]
+  - log [ref=f13e2845]
+  - log [ref=f13e2846]
+  - log [ref=f13e2847]
+  - log [ref=f13e2848]
+  - log [ref=f13e2849]
+  - log [ref=f13e2850]
+  - log [ref=f13e2851]
+  - log [ref=f13e2852]
+  - log [ref=f13e2853]
+  - log [ref=f13e2854]
+  - log [ref=f13e2855]
+  - log [ref=f13e2856]
+  - log [ref=f13e2857]
+  - log [ref=f13e2858]
+  - log [ref=f13e2859]
+  - log [ref=f13e2860]
+  - log [ref=f13e2861]
+  - log [ref=f13e2862]
+  - log [ref=f13e2863]
+  - log [ref=f13e2864]
+  - log [ref=f13e2865]
+  - log [ref=f13e2866]
+  - log [ref=f13e2867]
+  - log [ref=f13e2868]
+  - log [ref=f13e2869]
+  - log [ref=f13e2870]
+  - log [ref=f13e2871]
+  - log [ref=f13e2872]
+  - log [ref=f13e2873]
+  - log [ref=f13e2874]
+  - log [ref=f13e2875]
+  - log [ref=f13e2876]
+  - log [ref=f13e2877]
+  - log [ref=f13e2878]
+  - log [ref=f13e2879]
+  - log [ref=f13e2880]
+  - log [ref=f13e2881]
+  - log [ref=f13e2882]
+  - log [ref=f13e2883]
+  - log [ref=f13e2884]
+  - log [ref=f13e2885]
+  - log [ref=f13e2886]
+  - log [ref=f13e2887]
+  - log [ref=f13e2888]
+  - log [ref=f13e2889]
+  - log [ref=f13e2890]
+  - log [ref=f13e2891]
+  - log [ref=f13e2892]
+  - log [ref=f13e2893]
+  - log [ref=f13e2894]
+  - log [ref=f13e2895]
+  - log [ref=f13e2896]
+  - log [ref=f13e2897]
+  - log [ref=f13e2898]
+  - log [ref=f13e2899]
+  - log [ref=f13e2900]
+  - log [ref=f13e2901]
+  - log [ref=f13e2902]
+  - log [ref=f13e2903]
+  - log [ref=f13e2904]
+  - log [ref=f13e2905]
+  - log [ref=f13e2906]
+  - log [ref=f13e2907]
+  - log [ref=f13e2908]
+  - log [ref=f13e2909]
+  - log [ref=f13e2910]
+  - log [ref=f13e2911]
+  - log [ref=f13e2912]
+  - log [ref=f13e2913]
+  - log [ref=f13e2914]
+  - log [ref=f13e2915]
+  - log [ref=f13e2916]
+  - log [ref=f13e2917]
+  - log [ref=f13e2918]
+  - log [ref=f13e2919]
+  - log [ref=f13e2920]
+  - log [ref=f13e2921]
+  - log [ref=f13e2922]
+  - log [ref=f13e2923]
+  - log [ref=f13e2924]
+  - log [ref=f13e2925]
+  - log [ref=f13e2926]
+  - log [ref=f13e2927]
+  - log [ref=f13e2928]
+  - log [ref=f13e2929]
+  - log [ref=f13e2930]
+  - log [ref=f13e2931]
+  - log [ref=f13e2932]
+  - log [ref=f13e2933]
+  - log [ref=f13e2934]
+  - log [ref=f13e2935]
+  - log [ref=f13e2936]
+  - log [ref=f13e2937]
+  - log [ref=f13e2938]
+  - log [ref=f13e2939]
+  - log [ref=f13e2940]
+  - log [ref=f13e2941]
+  - log [ref=f13e2942]
+  - log [ref=f13e2943]
+  - log [ref=f13e2944]
+  - log [ref=f13e2945]
+  - log [ref=f13e2946]
+  - log [ref=f13e2947]
+  - log [ref=f13e2948]
+  - log [ref=f13e2949]
+  - log [ref=f13e2950]
+  - log [ref=f13e2951]
+  - log [ref=f13e2952]
+  - log [ref=f13e2953]
+  - log [ref=f13e2954]
+  - log [ref=f13e2955]
+  - log [ref=f13e2956]
+  - log [ref=f13e2957]
+  - log [ref=f13e2958]
+  - log [ref=f13e2959]
+  - log [ref=f13e2960]
+  - log [ref=f13e2961]
+  - log [ref=f13e2962]
+  - log [ref=f13e2963]
+  - log [ref=f13e2964]
+  - log [ref=f13e2965]
+  - log [ref=f13e2966]
+  - log [ref=f13e2967]
+  - log [ref=f13e2968]
+  - log [ref=f13e2969]
+  - log [ref=f13e2970]
+  - log [ref=f13e2971]
+  - log [ref=f13e2972]
+  - log [ref=f13e2973]
+  - log [ref=f13e2974]
+  - log [ref=f13e2975]
+  - log [ref=f13e2976]
+  - log [ref=f13e2977]
+  - log [ref=f13e2978]
+  - log [ref=f13e2979]
+  - log [ref=f13e2980]
+  - log [ref=f13e2981]
+  - log [ref=f13e2982]
+  - log [ref=f13e2983]
+  - log [ref=f13e2984]
+  - log [ref=f13e2985]
+  - log [ref=f13e2986]
+  - log [ref=f13e2987]
+  - log [ref=f13e2988]
+  - log [ref=f13e2989]
+  - log [ref=f13e2990]
+  - log [ref=f13e2991]
+  - log [ref=f13e2992]
+  - log [ref=f13e2993]
+  - log [ref=f13e2994]
+  - log [ref=f13e2995]
+  - log [ref=f13e2996]
+  - log [ref=f13e2997]
+  - log [ref=f13e2998]
+  - log [ref=f13e2999]
+  - log [ref=f13e3000]
+  - log [ref=f13e3001]
+  - log [ref=f13e3002]
+  - log [ref=f13e3003]
+  - log [ref=f13e3004]
+  - log [ref=f13e3005]
+  - log [ref=f13e3006]
+  - log [ref=f13e3007]
+  - log [ref=f13e3008]
+  - log [ref=f13e3009]
+  - log [ref=f13e3010]
+  - log [ref=f13e3011]
+  - log [ref=f13e3012]
+  - log [ref=f13e3013]
+  - log [ref=f13e3014]
+  - log [ref=f13e3015]
+  - log [ref=f13e3016]
+  - log [ref=f13e3017]
+  - log [ref=f13e3018]
+  - log [ref=f13e3019]
+  - log [ref=f13e3020]
+  - log [ref=f13e3021]
+  - log [ref=f13e3022]
+  - log [ref=f13e3023]
+  - log [ref=f13e3024]
+  - log [ref=f13e3025]
+  - log [ref=f13e3026]
+  - log [ref=f13e3027]
+  - log [ref=f13e3028]
+  - log [ref=f13e3029]
+  - log [ref=f13e3030]
+  - log [ref=f13e3031]
+  - log [ref=f13e3032]
+  - log [ref=f13e3033]
+  - log [ref=f13e3034]
+  - log [ref=f13e3035]
+  - log [ref=f13e3036]
+  - log [ref=f13e3037]
+  - log [ref=f13e3038]
+  - log [ref=f13e3039]
+  - log [ref=f13e3040]
+  - log [ref=f13e3041]
+  - log [ref=f13e3042]
+  - log [ref=f13e3043]
+  - log [ref=f13e3044]
+  - log [ref=f13e3045]
+  - log [ref=f13e3046]
+  - log [ref=f13e3047]
+  - log [ref=f13e3048]
+  - log [ref=f13e3049]
+  - log [ref=f13e3050]
+  - log [ref=f13e3051]
+  - log [ref=f13e3052]
+  - log [ref=f13e3053]
+  - log [ref=f13e3054]
+  - log [ref=f13e3055]
+  - log [ref=f13e3056]
+  - log [ref=f13e3057]
+  - log [ref=f13e3058]
+  - log [ref=f13e3059]
+  - log [ref=f13e3060]
+  - log [ref=f13e3061]
+  - log [ref=f13e3062]
+  - log [ref=f13e3063]
+  - log [ref=f13e3064]
+  - log [ref=f13e3065]
+  - log [ref=f13e3066]
+  - log [ref=f13e3067]
+  - log [ref=f13e3068]
+  - log [ref=f13e3069]
+  - log [ref=f13e3070]
+  - log [ref=f13e3071]
+  - log [ref=f13e3072]
+  - log [ref=f13e3073]
+  - log [ref=f13e3074]
+  - log [ref=f13e3075]
+  - log [ref=f13e3076]
+  - log [ref=f13e3077]
+  - log [ref=f13e3078]
+  - log [ref=f13e3079]
+  - log [ref=f13e3080]
+  - log [ref=f13e3081]
+  - log [ref=f13e3082]
+  - log [ref=f13e3083]
+  - log [ref=f13e3084]
+  - log [ref=f13e3085]
+  - log [ref=f13e3086]
+  - log [ref=f13e3087]
+  - log [ref=f13e3088]
+  - log [ref=f13e3089]
+  - log [ref=f13e3090]
+  - log [ref=f13e3091]
+  - log [ref=f13e3092]
+  - log [ref=f13e3093]
+  - log [ref=f13e3094]
+  - log [ref=f13e3095]
+  - log [ref=f13e3096]
+  - log [ref=f13e3097]
+  - log [ref=f13e3098]
+  - log [ref=f13e3099]
+  - log [ref=f13e3100]
+  - log [ref=f13e3101]
+  - log [ref=f13e3102]
+  - log [ref=f13e3103]
+  - log [ref=f13e3104]
+  - log [ref=f13e3105]
+  - log [ref=f13e3106]
+  - log [ref=f13e3107]
+  - log [ref=f13e3108]
+  - log [ref=f13e3109]
+  - log [ref=f13e3110]
+  - log [ref=f13e3111]
+  - log [ref=f13e3112]
+  - log [ref=f13e3113]
+  - log [ref=f13e3114]
+  - log [ref=f13e3115]
+  - log [ref=f13e3116]
+  - log [ref=f13e3117]
+  - log [ref=f13e3118]
+  - log [ref=f13e3119]
+  - log [ref=f13e3120]
+  - log [ref=f13e3121]
+  - log [ref=f13e3122]
+  - log [ref=f13e3123]
+  - log [ref=f13e3124]
+  - log [ref=f13e3125]
+  - log [ref=f13e3126]
+  - log [ref=f13e3127]
+  - log [ref=f13e3128]
+  - log [ref=f13e3129]
+  - log [ref=f13e3130]
+  - log [ref=f13e3131]
+  - log [ref=f13e3132]
+  - log [ref=f13e3133]
+  - log [ref=f13e3134]
+  - log [ref=f13e3135]
+  - log [ref=f13e3136]
+  - log [ref=f13e3137]
+  - log [ref=f13e3138]
+  - log [ref=f13e3139]
+  - log [ref=f13e3140]
+  - log [ref=f13e3141]
+  - log [ref=f13e3142]
+  - log [ref=f13e3143]
+  - log [ref=f13e3144]
+  - log [ref=f13e3145]
+  - log [ref=f13e3146]
+  - log [ref=f13e3147]
+  - log [ref=f13e3148]
+  - log [ref=f13e3149]
+  - log [ref=f13e3150]
+  - log [ref=f13e3151]
+  - log [ref=f13e3152]
+  - log [ref=f13e3153]
+  - log [ref=f13e3154]
+  - log [ref=f13e3155]
+  - log [ref=f13e3156]
+  - log [ref=f13e3157]
+  - log [ref=f13e3158]
+  - log [ref=f13e3159]
+  - log [ref=f13e3160]
+  - log [ref=f13e3161]
+  - log [ref=f13e3162]
+  - log [ref=f13e3163]
+  - log [ref=f13e3164]
+  - log [ref=f13e3165]
+  - log [ref=f13e3166]
+  - log [ref=f13e3167]
+  - log [ref=f13e3168]
+  - log [ref=f13e3169]
+  - log [ref=f13e3170]
+  - log [ref=f13e3171]
+  - log [ref=f13e3172]
+  - log [ref=f13e3173]
+  - log [ref=f13e3174]
+  - log [ref=f13e3175]
+  - log [ref=f13e3176]
+  - log [ref=f13e3177]
+  - log [ref=f13e3178]
+  - log [ref=f13e3179]
+  - log [ref=f13e3180]
+  - log [ref=f13e3181]
+  - log [ref=f13e3182]
+  - log [ref=f13e3183]
+  - log [ref=f13e3184]
+  - log [ref=f13e3185]
+  - log [ref=f13e3186]
+  - log [ref=f13e3187]
+  - log [ref=f13e3188]
+  - log [ref=f13e3189]
+  - log [ref=f13e3190]
+  - log [ref=f13e3191]
+  - log [ref=f13e3192]
+  - log [ref=f13e3193]
+  - log [ref=f13e3194]
+  - log [ref=f13e3195]
+  - log [ref=f13e3196]
+  - log [ref=f13e3197]
+  - log [ref=f13e3198]
+  - log [ref=f13e3199]
+  - log [ref=f13e3200]
+  - log [ref=f13e3201]
+  - log [ref=f13e3202]
+  - log [ref=f13e3203]
+  - log [ref=f13e3204]
+  - log [ref=f13e3205]
+  - log [ref=f13e3206]
+  - log [ref=f13e3207]
+  - log [ref=f13e3208]
+  - log [ref=f13e3209]
+  - log [ref=f13e3210]
+  - log [ref=f13e3211]
+  - log [ref=f13e3212]
+  - log [ref=f13e3213]
+  - log [ref=f13e3214]
+  - log [ref=f13e3215]
+  - log [ref=f13e3216]
+  - log [ref=f13e3217]
+  - log [ref=f13e3218]
+  - log [ref=f13e3219]
+  - log [ref=f13e3220]
+  - log [ref=f13e3221]
+  - log [ref=f13e3222]
+  - log [ref=f13e3223]
+  - log [ref=f13e3224]
+  - log [ref=f13e3225]
+  - log [ref=f13e3226]
+  - log [ref=f13e3227]
+  - log [ref=f13e3228]
+  - log [ref=f13e3229]
+  - log [ref=f13e3230]
+  - log [ref=f13e3231]
+  - log [ref=f13e3232]
+  - log [ref=f13e3233]
+  - log [ref=f13e3234]
+  - log [ref=f13e3235]
+  - log [ref=f13e3236]
+  - log [ref=f13e3237]
+  - log [ref=f13e3238]
+  - log [ref=f13e3239]
+  - log [ref=f13e3240]
+  - log [ref=f13e3241]
+  - log [ref=f13e3242]
+  - log [ref=f13e3243]
+  - log [ref=f13e3244]
+  - log [ref=f13e3245]
+  - log [ref=f13e3246]
+  - log [ref=f13e3247]
+  - insertion [ref=f13e3249]
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import MainPage from '../pages/main.page';
+  3  | import RoadmapPage from '../pages/roadmap.page';
+  4  | 
+  5  | test.describe('Redmine tests', () => {
+  6  |   test('TC-03: Delete task in roadmap (negative)', async ( { page } ) => {
+  7  |     await page.goto('https://www.redmine.org/');
+  8  | 
+  9  |     const mainPage = new MainPage(page);
+  10 |     await expect(mainPage.roadmapLink).toBeVisible();
+  11 |     await mainPage.findAndOpenRoadmapPage();
+  12 | 
+  13 |     const roadmapPage = new RoadmapPage(page);
+  14 |     await roadmapPage.closeAdIfPresent();
+  15 |     const issueText = await roadmapPage.findFirstIssue();
+  16 |     await roadmapPage.deleteIssue();
+> 17 |     expect(roadmapPage.subject.nth(0).innerText()).toBe(issueText);
+     |                                                    ^ Error: expect(received).toBe(expected) // Object.is equality
+  18 |   });
+  19 | });
+  20 | 
+```
