@@ -18,16 +18,16 @@ class IssuesPage {
     constructor(page: Page) {
         this.page = page;
         this.statusFilterButton = page.locator('select#operators_status_id');
-        this.submitFormButton = page.locator('a.icon.icon-checked');
-        const firstRow = page.getByRole('table').getByRole('row').nth(1);
-        this.firstRowId = firstRow.getByRole('cell', { name: /^\d+$/ }).getByRole('link');
-        this.firstRowStatus = firstRow.getByRole('cell').nth(2);
-        this.closedStatusSpan = page.getByText('Closed', { exact: true });
+        this.submitFormButton = page.getByRole('link', { name: 'Apply' });
+        const firstRow = page.getByRole('table').locator('tbody').getByRole('row').first();
+        this.firstRowId = firstRow.locator('td.id a');
+        this.firstRowStatus = firstRow.locator('td.status');
+        this.closedStatusSpan = page.locator('div').filter({ hasText: /^Closed$/ })
 
         this.addFilterButton = page.getByLabel('Add filter').or(page.locator('select#add_filter_select'));
         this.operatorsCategoryButton = page.locator('select#operators_category_id');
         this.selectCategoryButton = page.locator('select#values_category_id_1');
-        this.issueCategory = page.getByRole('row', { name: 'Category:' }).getByRole('cell').nth(1);
+        this.issueCategory = page.locator('div.attribute', { hasText: 'Category:' }).locator('div.value');
     }
 
     async setClosedStatus(): Promise<void> {
